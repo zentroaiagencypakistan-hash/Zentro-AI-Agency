@@ -1,1730 +1,2115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zentro AI Agency — Intelligent Digital Solutions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #040810;
-  --bg2: #070d1a;
-  --bg3: #0c1525;
-  --accent: #0af;
-  --accent2: #6c63ff;
-  --accent3: #00e5c3;
-  --gold: #f0b429;
-  --text: #e8edf5;
-  --text2: #8a99b3;
-  --text3: #4a5a72;
-  --border: rgba(10,170,255,0.12);
-  --border2: rgba(255,255,255,0.06);
-  --glow: 0 0 40px rgba(10,170,255,0.15);
-  --card: rgba(12,21,37,0.85);
-  --radius: 16px;
-  --radius2: 24px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}
-h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;line-height:1.2}
-
-/* ─── SCROLLBAR ─────────────────────────────────── */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-
-/* ─── NOISE OVERLAY ─────────────────────────────── */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
-
-/* ─── NAV ───────────────────────────────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(4,8,16,0.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:all .3s}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.02em}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;letter-spacing:.01em}
-.nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#000;padding:.55rem 1.4rem;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s;letter-spacing:.01em}
-.nav-cta:hover{background:#fff;color:#000;transform:translateY(-1px)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.nav-hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(4,8,16,0.97);backdrop-filter:blur(20px);padding:2rem 5%;z-index:998;flex-direction:column;gap:1.2rem;border-bottom:1px solid var(--border2)}
-.mobile-menu a{color:var(--text2);text-decoration:none;font-size:1.05rem;font-weight:500;padding:.5rem 0;border-bottom:1px solid var(--border2)}
-.mobile-menu a:last-child{border:none}
-.mobile-menu.active{display:flex}
-
-/* ─── HERO ──────────────────────────────────────── */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 5% 80px;overflow:hidden}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(10,170,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,170,255,0.04) 1px,transparent 1px);background-size:60px 60px;opacity:.6}
-.hero-orb1{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(10,170,255,0.12) 0%,transparent 70%);top:-100px;right:-100px;border-radius:50%;animation:float1 8s ease-in-out infinite}
-.hero-orb2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,0.1) 0%,transparent 70%);bottom:-50px;left:10%;border-radius:50%;animation:float2 10s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
-@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
-.hero-content{position:relative;z-index:1;max-width:760px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.25);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .8s .1s both}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-h1.hero-title{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:1.4rem;animation:fadeUp .8s .2s both}
-h1.hero-title .line2{color:var(--accent)}
-.hero-sub{font-size:1.15rem;color:var(--text2);max-width:560px;line-height:1.75;margin-bottom:2.4rem;animation:fadeUp .8s .3s both;font-weight:300}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .4s both}
-.btn-primary{background:var(--accent);color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:none;cursor:pointer}
-.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.3)}
-.btn-outline{background:transparent;color:var(--text);padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:1px solid var(--border);cursor:pointer}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:3rem;margin-top:3.5rem;animation:fadeUp .8s .5s both;flex-wrap:wrap}
-.stat{display:flex;flex-direction:column}
-.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff}
-.stat-num span{color:var(--accent)}
-.stat-label{font-size:.8rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* ─── SECTION COMMONS ───────────────────────────── */
-section{padding:100px 5%}
-.section-label{font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.section-title{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:1rem}
-.section-sub{font-size:1.05rem;color:var(--text2);max-width:540px;line-height:1.75;font-weight:300}
-.section-header{margin-bottom:4rem}
-.section-header.centered{text-align:center}
-.section-header.centered .section-sub{margin:0 auto}
-
-/* ─── SERVICES ──────────────────────────────────── */
-#services{background:var(--bg2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.service-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,170,255,0.04) 0%,transparent 60%);opacity:0;transition:opacity .3s}
-.service-card:hover{border-color:rgba(10,170,255,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(10,170,255,0.1)}
-.service-card:hover::before{opacity:1}
-.svc-icon{width:52px;height:52px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.4rem}
-.svc-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.7rem}
-.svc-desc{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.4rem;font-weight:300}
-.svc-btn{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;background:none;border:none;cursor:pointer;padding:0;transition:gap .2s;letter-spacing:.01em}
-.svc-btn:hover{gap:.7rem}
-.svc-btn::after{content:'→'}
-
-/* ─── PORTFOLIO ─────────────────────────────────── */
-#portfolio{background:var(--bg)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.port-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);overflow:hidden;transition:all .3s}
-.port-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px rgba(0,0,0,0.5);border-color:rgba(10,170,255,0.25)}
-.port-img{height:200px;position:relative;overflow:hidden}
-.port-img-restaurant{background:linear-gradient(135deg,#1a0a00 0%,#3d1a00 50%,#6b2d0f 100%);display:flex;align-items:center;justify-content:center;font-size:4rem}
-.port-img-realestate{background:linear-gradient(135deg,#001a0d 0%,#003d1a 50%,#0a5c2a 100%);display:flex;align-items:center;justify-content:center;font-size:4rem}
-.port-img-clinic{background:linear-gradient(135deg,#000d1a 0%,#001f3d 50%,#0a3d6b 100%);display:flex;align-items:center;justify-content:center;font-size:4rem}
-.port-img-label{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);padding:.35rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;color:#fff;letter-spacing:.05em;border:1px solid rgba(255,255,255,0.1)}
-.port-body{padding:1.8rem}
-.port-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
-.port-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.6rem}
-.port-desc{font-size:.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem;font-weight:300}
-.port-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
-.port-feat{background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);padding:.25rem .7rem;border-radius:50px;font-size:.75rem;color:var(--accent);font-weight:500}
-.port-demo-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.65rem 1.6rem;border-radius:50px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;letter-spacing:.01em}
-.port-demo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.35)}
-
-/* ─── PRICING ───────────────────────────────────── */
-#pricing{background:var(--bg2)}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;align-items:start}
-.price-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
-.price-card:hover{transform:translateY(-4px);border-color:rgba(10,170,255,0.3)}
-.price-card.popular{border-color:rgba(10,170,255,0.5);background:rgba(10,170,255,0.04)}
-.price-card.popular::before{content:'Most Popular';position:absolute;top:1rem;right:1rem;background:var(--accent);color:#000;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
-.price-card.premium{background:linear-gradient(135deg,rgba(108,99,255,0.08) 0%,rgba(10,170,255,0.04) 100%);border-color:rgba(108,99,255,0.35)}
-.price-card.enterprise{background:linear-gradient(135deg,rgba(240,180,41,0.06) 0%,rgba(240,180,41,0.02) 100%);border-color:rgba(240,180,41,0.3)}
-.price-plan{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
-.price-amount{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1}
-.price-amount span{font-size:1rem;color:var(--text2);font-weight:400}
-.price-desc{font-size:.82rem;color:var(--text2);margin-bottom:1.4rem;line-height:1.6;font-weight:300}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
-.price-features li{font-size:.83rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
-.price-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:.05rem}
-.price-card.enterprise .price-features li::before{color:var(--gold)}
-.price-cta{width:100%;background:rgba(10,170,255,0.1);border:1px solid rgba(10,170,255,0.25);color:var(--accent);padding:.7rem;border-radius:50px;font-weight:700;font-size:.85rem;cursor:pointer;transition:all .25s;letter-spacing:.01em}
-.price-cta:hover{background:var(--accent);color:#000}
-.price-card.enterprise .price-cta{background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.3);color:var(--gold)}
-.price-card.enterprise .price-cta:hover{background:var(--gold);color:#000}
-.premium-badge{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:.3rem}
-
-/* ─── PROCESS ───────────────────────────────────── */
-#process{background:var(--bg)}
-.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem}
-.process-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.4rem 1.8rem;position:relative;overflow:hidden;transition:all .3s;min-height:240px;display:flex;flex-direction:column}
-.process-card:hover{border-color:rgba(10,170,255,0.25);transform:translateY(-3px)}
-.process-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(10,170,255,0.07);position:absolute;top:.5rem;right:1rem;line-height:1;letter-spacing:-.05em}
-.process-icon{font-size:1.6rem;margin-bottom:1rem}
-.process-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.7rem}
-.process-desc{font-size:.85rem;color:var(--text2);line-height:1.75;font-weight:300;flex:1}
-
-/* ─── FAQ ───────────────────────────────────────── */
-#faq{background:var(--bg2)}
-.faq-wrap{max-width:760px;margin:0 auto}
-.faq-item{border:1px solid var(--border2);border-radius:var(--radius);margin-bottom:.8rem;overflow:hidden;transition:border-color .3s}
-.faq-item.active{border-color:rgba(10,170,255,0.3)}
-.faq-q{width:100%;background:none;border:none;color:#fff;padding:1.4rem 1.6rem;text-align:left;font-family:'Syne',sans-serif;font-size:.98rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .2s}
-.faq-q:hover{color:var(--accent)}
-.faq-item.active .faq-q{color:var(--accent)}
-.faq-arrow{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--text3)}
-.faq-item.active .faq-arrow{transform:rotate(45deg);color:var(--accent)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-.faq-item.active .faq-a{max-height:300px}
-.faq-a-inner{padding:0 1.6rem 1.4rem;color:var(--text2);font-size:.9rem;line-height:1.8;font-weight:300}
-
-/* ─── CONTACT ───────────────────────────────────── */
-#contact{background:var(--bg)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:1.8rem}
-.contact-info-title{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.3}
-.contact-info-sub{color:var(--text2);font-size:.9rem;line-height:1.75;font-weight:300}
-.contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;background:var(--card);border:1px solid var(--border2);border-radius:var(--radius)}
-.contact-item-icon{width:40px;height:40px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.contact-item-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.2rem}
-.contact-item-val{font-size:.9rem;color:var(--text);font-weight:500}
-.contact-form{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.5rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.form-label{font-size:.78rem;font-weight:600;color:var(--text2);letter-spacing:.05em;text-transform:uppercase}
-.form-input,.form-select,.form-textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:10px;padding:.8rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s,box-shadow .2s;width:100%;outline:none;-webkit-appearance:none;appearance:none}
-.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a99b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:12px;padding-right:2.5rem;cursor:pointer}
-.form-select option{background:#0c1525;color:#e8edf5}
-.form-textarea{resize:vertical;min-height:120px}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(10,170,255,0.5);box-shadow:0 0 0 3px rgba(10,170,255,0.08)}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--text3)}
-.form-error{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem}
-.form-error.active{display:block}
-.form-error-title{font-size:.82rem;font-weight:700;color:#ff6b6b;margin-bottom:.5rem}
-.form-error ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
-.form-error ul li{font-size:.82rem;color:#ff8a8a;display:flex;align-items:center;gap:.4rem}
-.form-error ul li::before{content:'!';width:16px;height:16px;background:rgba(255,80,80,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;flex-shrink:0}
-.form-success{display:none;background:rgba(10,170,255,0.06);border:1px solid rgba(10,170,255,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;color:var(--accent);font-size:.88rem;font-weight:500}
-.form-success.active{display:block}
-.field-error{border-color:rgba(255,80,80,0.5)!important}
-
-/* ─── FOOTER ────────────────────────────────────── */
-footer{background:var(--bg2);border-top:1px solid var(--border2);padding:60px 5% 30px}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand{display:flex;flex-direction:column;gap:1rem}
-.footer-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff}
-.footer-logo span{color:var(--accent)}
-.footer-tagline{font-size:.88rem;color:var(--text3);line-height:1.7;font-weight:300;max-width:260px}
-.footer-col-title{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{color:var(--text3);text-decoration:none;font-size:.88rem;transition:color .2s}
-.footer-links a:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid var(--border2);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.82rem;color:var(--text3)}
-.footer-copy span{color:var(--accent)}
-
-/* ─── MODAL ─────────────────────────────────────── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s}
-.modal-overlay.active{opacity:1;pointer-events:all}
-.modal-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);max-width:700px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s;position:relative}
-.modal-overlay.active .modal-box{transform:translateY(0)}
-.modal-header{padding:2rem 2rem 1.2rem;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;position:sticky;top:0;background:var(--bg3);z-index:1}
-.modal-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff}
-.modal-close{width:36px;height:36px;background:rgba(255,255,255,0.06);border:none;color:var(--text2);border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.modal-close:hover{background:rgba(255,80,80,0.15);color:#ff6b6b}
-.modal-body{padding:1.8rem 2rem}
-.modal-intro{font-size:.9rem;color:var(--text2);line-height:1.75;margin-bottom:1.6rem;font-weight:300}
-.modal-points{display:flex;flex-direction:column;gap:1rem}
-.modal-point{background:rgba(10,170,255,0.04);border:1px solid rgba(10,170,255,0.1);border-radius:12px;padding:1.2rem 1.4rem}
-.modal-point-title{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--accent);margin-bottom:.4rem}
-.modal-point-desc{font-size:.86rem;color:var(--text2);line-height:1.75;font-weight:300}
-
-/* ─── DEMO PAGES ─────────────────────────────────── */
-.demo-page{display:none;position:fixed;inset:0;z-index:1500;overflow-y:auto;background:#fff}
-.demo-page.active{display:block}
-
-/* Restaurant Demo */
-.r-nav{background:#1a0800;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.r-logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#f0b429}
-.r-nav-links{display:flex;gap:1.5rem;list-style:none}
-.r-nav-links a{color:#e8d5b0;text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s}
-.r-nav-links a:hover{color:#f0b429}
-.r-hero{background:linear-gradient(135deg,#1a0800 0%,#3d1500 40%,#6b2200 100%);min-height:70vh;display:flex;align-items:center;padding:80px 5%;position:relative;overflow:hidden}
-.r-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 50%,rgba(240,180,41,0.1) 0%,transparent 60%)}
-.r-hero-content{position:relative;z-index:1;max-width:600px}
-.r-badge{display:inline-block;background:rgba(240,180,41,0.15);border:1px solid rgba(240,180,41,0.3);color:#f0b429;padding:.35rem .9rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
-.r-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;margin-bottom:1rem;line-height:1.15}
-.r-hero h1 span{color:#f0b429}
-.r-hero p{color:#c4a882;font-size:1.05rem;margin-bottom:2rem;line-height:1.7}
-.r-hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.r-btn{background:#f0b429;color:#1a0800;padding:.75rem 1.8rem;border-radius:50px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:all .2s}
-.r-btn:hover{background:#fff;transform:translateY(-2px)}
-.r-btn-outline{background:transparent;color:#f0b429;padding:.75rem 1.8rem;border-radius:50px;font-weight:600;font-size:.9rem;border:1px solid rgba(240,180,41,0.3);cursor:pointer;transition:all .2s}
-.r-btn-outline:hover{background:rgba(240,180,41,0.1)}
-.r-section{padding:70px 5%}
-.r-section-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#1a0800;margin-bottom:.4rem;text-align:center}
-.r-section-sub{color:#7a5c3a;text-align:center;margin-bottom:3rem;font-size:.95rem}
-.r-menu-tabs{display:flex;justify-content:center;gap:.6rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.r-tab{background:transparent;border:1px solid #e8d5b0;color:#7a5c3a;padding:.5rem 1.2rem;border-radius:50px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s}
-.r-tab.active,.r-tab:hover{background:#f0b429;border-color:#f0b429;color:#1a0800}
-.r-menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.r-menu-card{background:#fff;border:1px solid #f0e6d2;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s}
-.r-menu-card:hover{transform:translateY(-4px)}
-.r-menu-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
-.r-menu-img.i1{background:linear-gradient(135deg,#fff8f0,#ffe8cc)}
-.r-menu-img.i2{background:linear-gradient(135deg,#f0fff8,#ccffe8)}
-.r-menu-img.i3{background:linear-gradient(135deg,#f0f8ff,#cce8ff)}
-.r-menu-img.i4{background:linear-gradient(135deg,#fff0f8,#ffcce8)}
-.r-menu-body{padding:1.2rem}
-.r-menu-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#1a0800;margin-bottom:.3rem}
-.r-menu-desc{font-size:.82rem;color:#7a5c3a;margin-bottom:.8rem;line-height:1.6}
-.r-menu-price{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#f0b429}
-.r-gallery{padding:70px 5%;background:#faf8f5}
-.r-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:1rem}
-.r-gal-item{border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:3rem}
-.r-gal-item:nth-child(1){grid-column:span 2;height:200px;background:linear-gradient(135deg,#3d1500,#6b2200)}
-.r-gal-item:nth-child(2){height:200px;background:linear-gradient(135deg,#5c2800,#8b3a00)}
-.r-gal-item:nth-child(3){height:180px;background:linear-gradient(135deg,#2d1000,#4a1a00)}
-.r-gal-item:nth-child(4){grid-column:span 2;height:180px;background:linear-gradient(135deg,#6b2200,#8b3a10)}
-.r-reservation{padding:70px 5%;background:#1a0800}
-.r-res-wrap{max-width:650px;margin:0 auto;text-align:center}
-.r-res-wrap h2{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;margin-bottom:.5rem}
-.r-res-wrap p{color:#c4a882;margin-bottom:2rem}
-.r-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:left;margin-bottom:1rem}
-.r-form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(240,180,41,0.2);border-radius:10px;padding:.8rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.9rem;width:100%;outline:none;transition:border-color .2s}
-.r-form-input:focus{border-color:rgba(240,180,41,0.5)}
-.r-form-input::placeholder{color:#7a5c3a}
-.r-contact-section{padding:70px 5%;background:#fff}
-.r-contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
-.r-contact-card{text-align:center;padding:2rem;background:#faf8f5;border-radius:16px}
-.r-contact-icon{font-size:2rem;margin-bottom:1rem}
-.r-contact-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#1a0800;margin-bottom:.4rem}
-.r-contact-val{font-size:.88rem;color:#7a5c3a}
-
-/* Real Estate Demo */
-.re-nav{background:#fff;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 20px rgba(0,0,0,0.08)}
-.re-logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#1a2e1a}
-.re-logo span{color:#2d7a2d}
-.re-nav-links{display:flex;gap:1.5rem;list-style:none}
-.re-nav-links a{color:#5a7a5a;text-decoration:none;font-size:.88rem;font-weight:500}
-.re-hero{background:linear-gradient(135deg,#0a2010 0%,#1a4020 50%,#2d6030 100%);min-height:70vh;display:flex;align-items:center;padding:80px 5%;position:relative;overflow:hidden}
-.re-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 60% 40%,rgba(45,122,45,0.15) 0%,transparent 60%)}
-.re-hero-content{position:relative;z-index:1;max-width:620px}
-.re-badge{display:inline-block;background:rgba(45,122,45,0.15);border:1px solid rgba(45,122,45,0.4);color:#7dca7d;padding:.35rem .9rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
-.re-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;margin-bottom:1rem;line-height:1.2}
-.re-hero h1 span{color:#7dca7d}
-.re-hero p{color:#a0c0a0;font-size:1rem;margin-bottom:2rem;line-height:1.7}
-.re-search{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.2rem;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-.re-search input,.re-search select{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:.65rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;min-width:140px;flex:1}
-.re-search input::placeholder{color:#a0c0a0}
-.re-search select option{background:#1a4020;color:#fff}
-.re-search-btn{background:#2d7a2d;color:#fff;border:none;padding:.65rem 1.4rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.85rem;white-space:nowrap}
-.re-section{padding:70px 5%}
-.re-section-title{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#1a2e1a;margin-bottom:.4rem}
-.re-section-sub{color:#5a7a5a;margin-bottom:2.5rem;font-size:.9rem}
-.re-listings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.re-card{background:#fff;border:1px solid #e0ece0;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:transform .2s}
-.re-card:hover{transform:translateY(-4px)}
-.re-card-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
-.re-card-img.c1{background:linear-gradient(135deg,#d4ead4,#a0d4a0)}
-.re-card-img.c2{background:linear-gradient(135deg,#d4e8ff,#a0c8f0)}
-.re-card-img.c3{background:linear-gradient(135deg,#ead4d4,#f0a0a0)}
-.re-card-img.c4{background:linear-gradient(135deg,#e8d4ea,#c8a0d0)}
-.re-card-img.c5{background:linear-gradient(135deg,#d4eae4,#a0d4c8)}
-.re-card-img.c6{background:linear-gradient(135deg,#eae8d4,#d0c8a0)}
-.re-badge-tag{position:absolute;top:.8rem;left:.8rem;background:#2d7a2d;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:50px}
-.re-card-body{padding:1.2rem}
-.re-price{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#2d7a2d;margin-bottom:.3rem}
-.re-addr{font-size:.85rem;color:#1a2e1a;font-weight:600;margin-bottom:.3rem}
-.re-type{font-size:.78rem;color:#5a7a5a;margin-bottom:.8rem}
-.re-specs{display:flex;gap:1rem}
-.re-spec{font-size:.78rem;color:#5a7a5a;display:flex;align-items:center;gap:.3rem}
-.re-featured{padding:70px 5%;background:#f0f8f0}
-.re-agents{padding:70px 5%}
-.re-agents-title{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#1a2e1a;margin-bottom:.4rem}
-.re-agents-sub{color:#5a7a5a;margin-bottom:2.5rem;font-size:.9rem}
-.re-agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
-.re-agent{background:#fff;border:1px solid #e0ece0;border-radius:16px;padding:1.8rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
-.re-agent-avatar{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 1rem}
-.re-agent-avatar.a1{background:linear-gradient(135deg,#d4f4d4,#a0d4a0)}
-.re-agent-avatar.a2{background:linear-gradient(135deg,#d4e4f4,#a0c0d4)}
-.re-agent-avatar.a3{background:linear-gradient(135deg,#f4d4e4,#d4a0c0)}
-.re-agent-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#1a2e1a;margin-bottom:.2rem}
-.re-agent-title{font-size:.78rem;color:#5a7a5a;margin-bottom:.8rem}
-.re-agent-stats{display:flex;justify-content:center;gap:1.5rem}
-.re-agent-stat{text-align:center}
-.re-agent-stat-num{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#2d7a2d}
-.re-agent-stat-label{font-size:.7rem;color:#5a7a5a}
-.re-contact{padding:70px 5%;background:#1a2e1a}
-.re-contact-wrap{max-width:700px;margin:0 auto;text-align:center}
-.re-contact-wrap h2{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;margin-bottom:.5rem}
-.re-contact-wrap p{color:#a0c0a0;margin-bottom:2.5rem}
-.re-contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-.re-contact-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;text-align:center}
-.re-contact-card-icon{font-size:1.6rem;margin-bottom:.6rem}
-.re-contact-card-title{font-size:.78rem;font-weight:600;color:#a0c0a0;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
-.re-contact-card-val{font-size:.9rem;color:#fff;font-weight:500}
-
-/* Clinic Demo */
-.cl-nav{background:#fff;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 20px rgba(0,0,0,0.08)}
-.cl-logo{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#0a2d4a}
-.cl-logo span{color:#0a8fd1}
-.cl-nav-links{display:flex;gap:1.5rem;list-style:none}
-.cl-nav-links a{color:#4a7a9b;text-decoration:none;font-size:.88rem;font-weight:500}
-.cl-hero{background:linear-gradient(135deg,#020d1a 0%,#061e3d 50%,#0a2d5a 100%);min-height:68vh;display:flex;align-items:center;padding:80px 5%;position:relative;overflow:hidden}
-.cl-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 65% 50%,rgba(10,143,209,0.12) 0%,transparent 60%)}
-.cl-hero-content{position:relative;z-index:1;max-width:580px}
-.cl-badge{display:inline-block;background:rgba(10,143,209,0.12);border:1px solid rgba(10,143,209,0.3);color:#4cc8ff;padding:.35rem .9rem;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
-.cl-hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:#fff;margin-bottom:1rem;line-height:1.2}
-.cl-hero h1 span{color:#4cc8ff}
-.cl-hero p{color:#7ab0cc;font-size:1rem;margin-bottom:2rem;line-height:1.7}
-.cl-hero-stats{display:flex;gap:2rem;flex-wrap:wrap}
-.cl-stat{text-align:center}
-.cl-stat-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
-.cl-stat-label{font-size:.75rem;color:#7ab0cc}
-.cl-services{padding:70px 5%;background:#f5f9fd}
-.cl-services-title{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#0a2d4a;margin-bottom:.4rem;text-align:center}
-.cl-services-sub{color:#4a7a9b;text-align:center;margin-bottom:2.5rem}
-.cl-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem}
-.cl-svc{background:#fff;border:1px solid #d0e8f4;border-radius:14px;padding:1.8rem;text-align:center;transition:all .2s}
-.cl-svc:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(10,143,209,0.1)}
-.cl-svc-icon{font-size:2.2rem;margin-bottom:.8rem}
-.cl-svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#0a2d4a;margin-bottom:.4rem}
-.cl-svc-desc{font-size:.8rem;color:#4a7a9b;line-height:1.6}
-.cl-doctors{padding:70px 5%}
-.cl-doctors-title{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#0a2d4a;margin-bottom:.4rem}
-.cl-doctors-sub{color:#4a7a9b;margin-bottom:2.5rem;font-size:.9rem}
-.cl-doctors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
-.cl-doc{background:#fff;border:1px solid #d0e8f4;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform .2s}
-.cl-doc:hover{transform:translateY(-4px)}
-.cl-doc-header{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.cl-doc-header.d1{background:linear-gradient(135deg,#d0edf8,#a0d4ec)}
-.cl-doc-header.d2{background:linear-gradient(135deg,#d0f8e0,#a0ecb8)}
-.cl-doc-header.d3{background:linear-gradient(135deg,#f8d0d0,#eca0a0)}
-.cl-doc-header.d4{background:linear-gradient(135deg,#f0d0f8,#d0a0ec)}
-.cl-doc-body{padding:1.2rem}
-.cl-doc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#0a2d4a;margin-bottom:.2rem}
-.cl-doc-spec{font-size:.78rem;color:#0a8fd1;font-weight:600;margin-bottom:.4rem}
-.cl-doc-exp{font-size:.78rem;color:#4a7a9b}
-.cl-appointment{padding:70px 5%;background:#0a2d4a}
-.cl-appt-wrap{max-width:680px;margin:0 auto;text-align:center}
-.cl-appt-wrap h2{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;margin-bottom:.5rem}
-.cl-appt-wrap p{color:#7ab0cc;margin-bottom:2rem}
-.cl-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:left;margin-bottom:1rem}
-.cl-form-input,.cl-form-select{background:rgba(255,255,255,0.07);border:1px solid rgba(10,143,209,0.2);border-radius:10px;padding:.8rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;width:100%;outline:none;transition:border-color .2s}
-.cl-form-input:focus,.cl-form-select:focus{border-color:rgba(10,143,209,0.5)}
-.cl-form-input::placeholder{color:#4a7a9b}
-.cl-form-select option{background:#0a2d4a}
-.cl-contact-section{padding:70px 5%;background:#f5f9fd}
-.cl-contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:860px;margin:0 auto}
-.cl-contact-card{background:#fff;border:1px solid #d0e8f4;border-radius:14px;padding:1.8rem;text-align:center}
-.cl-contact-icon{font-size:1.8rem;margin-bottom:.7rem}
-.cl-contact-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:#0a2d4a;margin-bottom:.3rem}
-.cl-contact-val{font-size:.85rem;color:#4a7a9b}
-
-/* Demo End Banner */
-.demo-end{background:#040810;border-top:1px solid rgba(10,170,255,0.15);padding:3rem 5%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.2rem}
-.demo-end-label{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
-.demo-end-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text2)}
-.demo-back-btn{background:var(--accent);color:#000;padding:.75rem 2rem;border-radius:50px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:all .25s}
-.demo-back-btn:hover{background:#fff;transform:translateY(-2px)}
-
-/* ─── RESPONSIVE ─────────────────────────────────── */
-@media(max-width:1024px){
-  .footer-top{grid-template-columns:1fr 1fr}
-  .contact-wrap{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  nav .nav-links,.nav-cta{display:none}
-  .nav-hamburger{display:flex}
-  .hero-stats{gap:1.5rem}
-  .form-row{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
-  .pricing-grid{grid-template-columns:1fr 1fr}
-  .r-form-grid,.cl-form-grid{grid-template-columns:1fr}
-  .r-gallery-grid{grid-template-columns:1fr 1fr}
-  .r-gal-item:nth-child(1),.r-gal-item:nth-child(4){grid-column:span 1}
-  .r-nav-links,.re-nav-links,.cl-nav-links{display:none}
-}
-@media(max-width:500px){
-  .footer-top{grid-template-columns:1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .re-search{flex-direction:column}
-  .process-grid{grid-template-columns:1fr 1fr}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zentro AI Agency | Premium Web Development & Business Automation</title>
+    <meta name="description" content="Elevate your brand with Zentro AI Agency. We build premium, high-converting websites, AI chatbots, and business automation software for enterprises, schools, clinics, and real estate.">
+    
+    <!-- Open Graph / Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zentro AI Agency | Premium Digital Experiences">
+    <meta property="og:description" content="Luxury web engineering and AI automation built to drive massive conversion rates.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JSON-LD Structured Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Zentro AI Agency",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+923006573512",
+      "url": "https://zentroaiagency.com",
+      "priceRange": "$300-$5000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════
-     MAIN WEBSITE
-══════════════════════════════════════════════════ -->
+    <!-- Header Navigation Grid -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="brand-logo">
+                ZENTRO <span class="accent-dot">AI</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-btn-mobile">Get Started</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="nav-btn-desktop">Get Started <i class="fa-solid fa-arrow-right-long"></i></a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<!-- NAV -->
-<nav id="main-nav">
-  <a href="#hero" class="nav-logo">Zentro <span>AI</span> Agency</a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get Started</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
-  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-  <a href="#process" onclick="closeMobileMenu()">Process</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-</div>
+    <!-- Hero Showcase Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <div class="badge-premium"><i class="fa-solid fa-crown"></i> Next-Gen Digital Engineering</div>
+                <h1>We Architecture Next-Level <span class="gradient-text">Websites & AI Engines</span> That Scale Profit.</h1>
+                <p class="hero-subtitle">We design ultra-premium digital solutions for schools, medical clinics, luxury restaurants, real estate firms, and modern corporations looking to eclipse their competition.</p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn btn-primary">Initiate Project <i class="fa-solid fa-bolt"></i></a>
+                    <a href="#portfolio" class="btn btn-secondary">Explore Live Demos</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>99.9%</h4>
+                        <p>Performance Index</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>3.4x</h4>
+                        <p>Avg Conversion Boost</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="glass-hero-card">
+                    <div class="card-header-ux">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <div class="mock-url">https://zentroaiagency.com/dashboard</div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Premium Metrics Control Hub" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">AI-Powered Digital Agency</div>
-    <h1 class="hero-title">
-      We Build Intelligent<br>
-      <span class="line2">Digital Solutions</span>
-    </h1>
-    <p class="hero-sub">Zentro AI Agency crafts cutting-edge websites, AI chatbots, business automation systems, and SEO strategies that drive real growth for businesses worldwide.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Start Your Project</a>
-      <a href="#portfolio" class="btn-outline">View Our Work</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">120<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
-      <div class="stat"><span class="stat-num">98<span>%</span></span><span class="stat-label">Client Satisfaction</span></div>
-      <div class="stat"><span class="stat-num">5<span>x</span></span><span class="stat-label">Avg. ROI Increase</span></div>
-    </div>
-  </div>
-</section>
+    <!-- Services Grid Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tagline">Capabilities & Expertise</span>
+                <h2>Architectural Digital Capabilities</h2>
+                <p class="section-desc">Engineered for absolute performance, high aesthetic status, and flawless responsiveness across all system dynamic break-points.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-code"></i></div>
+                    <h3>Core Website Development</h3>
+                    <p>Ultra-optimized structural layouts rendering fast page speeds and custom layout flows tailored precisely to enterprise conversion goals.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>School Systems</h3>
+                    <p>Sophisticated multi-campus informational layouts built to handle parent portals, digital registrations, and clean academy events calendar designs.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Clinic Portals</h3>
+                    <p>High-trust, medical structures configured with quick conversion paths for seamless patient booking workflows and professional medical team representation.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Restaurant Hubs</h3>
+                    <p>Visually arresting digital structures presenting luxury parallax culinary galleries, menu arrays, and smooth reservation engines.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-building-user"></i></div>
+                    <h3>Real Estate Catalogs</h3>
+                    <p>Dynamic structural assets tailored for high-ticket property portfolios, filterable farmhouses, commercial shops, layouts, and organic agent showcases.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Corporate Portals</h3>
+                    <p>Premium architectural spaces engineered for institutional trust, complete career dashboards, and clean investor layout presentation.</p>
+                </div>
+                <!-- Service Card 7 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Advanced SEO Architectures</h3>
+                    <p>Deep foundational schema optimizations and systematic asset formatting rendering immediate visibility across core search engine parameters.</p>
+                </div>
+                <!-- Service Card 8 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Cognitive AI Chatbots</h3>
+                    <p>Context-aware conversational engines automated to ingest live site vectors, capture incoming leads, and optimize customer journeys 24/7.</p>
+                </div>
+                <!-- Service Card 9 -->
+                <div class="service-card reveal">
+                    <div class="service-icon-wrapper"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Business Automation</h3>
+                    <p>Eliminate repetitive analytical tasks via structural API pipelines, customer relations software linking, and operational infrastructure workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Our Core Services</h2>
-    <p class="section-sub">From AI-powered websites to intelligent automation, we deliver complete digital transformation for modern businesses.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card" onclick="openModal('ai-websites')">
-      <div class="svc-icon">🌐</div>
-      <div class="svc-title">AI Websites</div>
-      <p class="svc-desc">Custom-built, AI-integrated websites designed for performance, conversions, and intelligent user experiences that scale with your business.</p>
-      <button class="svc-btn">Learn More</button>
-    </div>
-    <div class="service-card" onclick="openModal('ai-chatbots')">
-      <div class="svc-icon">🤖</div>
-      <div class="svc-title">AI Chatbots</div>
-      <p class="svc-desc">Intelligent conversational agents trained on your business data to handle customer queries, qualify leads, and automate support 24/7.</p>
-      <button class="svc-btn">Learn More</button>
-    </div>
-    <div class="service-card" onclick="openModal('automation')">
-      <div class="svc-icon">⚙️</div>
-      <div class="svc-title">Business Automation</div>
-      <p class="svc-desc">End-to-end workflow automation that eliminates repetitive tasks, reduces operational costs, and frees your team for high-value work.</p>
-      <button class="svc-btn">Learn More</button>
-    </div>
-    <div class="service-card" onclick="openModal('seo')">
-      <div class="svc-icon">📈</div>
-      <div class="svc-title">SEO Growth</div>
-      <p class="svc-desc">Data-driven SEO strategies combining technical optimization, content authority, and AI-powered insights to dominate search rankings.</p>
-      <button class="svc-btn">Learn More</button>
-    </div>
-  </div>
-</section>
+    <!-- Portfolio Demo Hub Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tagline">Interactive Blueprints</span>
+                <h2>Production-Ready Blueprints</h2>
+                <p class="section-desc">Launch into our fully built multi-page blueprints created to display elite UI/UX implementation across six target industry spaces.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Portfolio Card 1 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Zentro School Workspace System">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro School Platform</h3>
+                        <p>Complete multi-campus infrastructure. Includes automated registration pathways, Principal panels, news feeds, and dynamic parents informational dashboards.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Admissions Link</span>
+                            <span><i class="fa-solid fa-check"></i> Multi-Campus Matrix</span>
+                        </div>
+                        <a href="demos/school-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-header">
-    <div class="section-label">Our Work</div>
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-sub">Explore our showcase demos — real, working examples of what we build for our clients across different industries.</p>
-  </div>
-  <div class="portfolio-grid">
-    <div class="port-card">
-      <div class="port-img port-img-restaurant">
-        🍽️
-        <span class="port-img-label">Restaurant</span>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Food &amp; Dining</div>
-        <div class="port-title">La Maison Restaurant</div>
-        <p class="port-desc">A full-featured restaurant website with an interactive menu, online reservation system, food gallery, and seamless contact flow.</p>
-        <div class="port-features">
-          <span class="port-feat">Online Reservations</span>
-          <span class="port-feat">Menu System</span>
-          <span class="port-feat">Food Gallery</span>
-          <span class="port-feat">Mobile Ready</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('restaurant')">🔍 View Demo</button>
-      </div>
-    </div>
-    <div class="port-card">
-      <div class="port-img port-img-realestate">
-        🏡
-        <span class="port-img-label">Real Estate</span>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Property &amp; Real Estate</div>
-        <div class="port-title">Evergreen Properties</div>
-        <p class="port-desc">A professional real estate platform with property listings, featured properties, agent profiles, and an integrated contact system.</p>
-        <div class="port-features">
-          <span class="port-feat">Property Listings</span>
-          <span class="port-feat">Agent Profiles</span>
-          <span class="port-feat">Property Search</span>
-          <span class="port-feat">Lead Forms</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('realestate')">🔍 View Demo</button>
-      </div>
-    </div>
-    <div class="port-card">
-      <div class="port-img port-img-clinic">
-        🏥
-        <span class="port-img-label">Healthcare</span>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Healthcare &amp; Clinic</div>
-        <div class="port-title">MediCore Clinic</div>
-        <p class="port-desc">A trustworthy clinic website featuring medical services, doctor profiles, online appointment booking, and patient-friendly contact options.</p>
-        <div class="port-features">
-          <span class="port-feat">Doctor Profiles</span>
-          <span class="port-feat">Appointment Booking</span>
-          <span class="port-feat">Service Pages</span>
-          <span class="port-feat">Patient Portal</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('clinic')">🔍 View Demo</button>
-      </div>
-    </div>
-  </div>
-</section>
+                <!-- Portfolio Card 2 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1584515933487-780216b29953?auto=format&fit=crop&w=600&q=80" alt="Zentro Clinic Premium Network">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro Medical Clinic Portal</h3>
+                        <p>High-end trust optimization framework constructed for private hospitals and specialized practitioners. Features intuitive appointment calendar routes.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Scheduling UX</span>
+                            <span><i class="fa-solid fa-check"></i> Practitioner Roster</span>
+                        </div>
+                        <a href="demos/clinic-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="section-header centered">
-    <div class="section-label">Investment</div>
-    <h2 class="section-title">Transparent Pricing Plans</h2>
-    <p class="section-sub">Flexible packages designed to match your project scope, from starter businesses to large-scale enterprise solutions.</p>
-  </div>
-  <div class="pricing-grid">
-    <!-- Plan 1 -->
-    <div class="price-card">
-      <div class="price-plan">Plan 01</div>
-      <div class="price-amount">$80 <span>— $150</span></div>
-      <p class="price-desc">Perfect for startups and small businesses launching their first digital presence.</p>
-      <ul class="price-features">
-        <li>Single-page website</li>
-        <li>Mobile responsive design</li>
-        <li>Basic SEO setup</li>
-        <li>Contact form integration</li>
-        <li>1 revision round</li>
-        <li>7-day delivery</li>
-      </ul>
-      <button class="price-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-    </div>
-    <!-- Plan 2 -->
-    <div class="price-card popular">
-      <div class="price-plan">Plan 02</div>
-      <div class="price-amount">$150 <span>— $300</span></div>
-      <p class="price-desc">For growing businesses needing a multi-page site with stronger branding and functionality.</p>
-      <ul class="price-features">
-        <li>Up to 5-page website</li>
-        <li>Custom UI/UX design</li>
-        <li>On-page SEO optimization</li>
-        <li>Lead generation forms</li>
-        <li>Google Analytics setup</li>
-        <li>2 revision rounds</li>
-        <li>14-day delivery</li>
-      </ul>
-      <button class="price-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-    </div>
-    <!-- Plan 3 -->
-    <div class="price-card">
-      <div class="price-plan">Plan 03</div>
-      <div class="price-amount">$300 <span>— $550</span></div>
-      <p class="price-desc">Ideal for established businesses needing advanced features and AI-powered functionality.</p>
-      <ul class="price-features">
-        <li>Up to 10-page website</li>
-        <li>AI chatbot integration</li>
-        <li>CRM integration</li>
-        <li>Advanced SEO strategy</li>
-        <li>Performance optimization</li>
-        <li>Email marketing setup</li>
-        <li>3 revision rounds</li>
-        <li>21-day delivery</li>
-      </ul>
-      <button class="price-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-    </div>
-    <!-- Plan 4 -->
-    <div class="price-card premium">
-      <div class="premium-badge">★ Premium</div>
-      <div class="price-plan">Plan 04</div>
-      <div class="price-amount">$550<span>+</span></div>
-      <p class="price-desc">Full-scale digital solution with complete AI integration, automation, and bespoke design for ambitious brands.</p>
-      <ul class="price-features">
-        <li>Unlimited pages</li>
-        <li>Custom AI solutions</li>
-        <li>Full business automation</li>
-        <li>Advanced analytics dashboard</li>
-        <li>Priority support</li>
-        <li>Full SEO campaign</li>
-        <li>Unlimited revisions</li>
-        <li>30-day delivery</li>
-      </ul>
-      <button class="price-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
-    </div>
-    <!-- Plan 5 -->
-    <div class="price-card enterprise">
-      <div class="premium-badge" style="color:var(--gold)">👑 Enterprise</div>
-      <div class="price-plan">Plan 05</div>
-      <div class="price-amount" style="color:var(--gold)">Custom</div>
-      <p class="price-desc">Pricing depends on project scope, features, integrations, automation requirements, and overall complexity. Enterprise projects are quoted individually.</p>
-      <ul class="price-features">
-        <li>Custom enterprise architecture</li>
-        <li>Dedicated project team</li>
-        <li>Complex AI/ML integrations</li>
-        <li>Multi-platform deployment</li>
-        <li>SLA guarantees</li>
-        <li>Ongoing maintenance plan</li>
-        <li>Monthly strategy reviews</li>
-        <li>White-label options available</li>
-      </ul>
-      <button class="price-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Quote</button>
-    </div>
-  </div>
-</section>
+                <!-- Portfolio Card 3 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Zentro Restaurant Culinary Engine">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro Restaurant Digital Hub</h3>
+                        <p>Immersive luxury visual layouts featuring premium typography and fluid grid galleries configured for elite fine-dining houses and culinary spaces.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Reservation Desk</span>
+                            <span><i class="fa-solid fa-check"></i> Interactive Menu UI</span>
+                        </div>
+                        <a href="demos/restaurant-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-header">
-    <div class="section-label">How We Work</div>
-    <h2 class="section-title">Our Proven Process</h2>
-    <p class="section-sub">A structured, transparent workflow that ensures every project is delivered on time, on budget, and beyond expectations.</p>
-  </div>
-  <div class="process-grid">
-    <div class="process-card">
-      <div class="process-num">01</div>
-      <div class="process-icon">🔍</div>
-      <div class="process-title">Discovery</div>
-      <p class="process-desc">We deeply understand your business goals, target audience, competitive landscape, and project requirements before any planning begins. This phase ensures every decision is data-informed and purposeful.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">02</div>
-      <div class="process-icon">🗺️</div>
-      <div class="process-title">Planning</div>
-      <p class="process-desc">We define project architecture, create wireframes, develop a comprehensive strategy, establish timelines, and allocate resources. Clear milestones are set so stakeholders stay aligned throughout the project.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">03</div>
-      <div class="process-icon">💻</div>
-      <div class="process-title">Development</div>
-      <p class="process-desc">Our team builds the frontend, backend, integrations, and AI components with performance optimization as a priority. Clean code, scalable architecture, and full implementation of all agreed functionality.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">04</div>
-      <div class="process-icon">🧪</div>
-      <div class="process-title">Testing</div>
-      <p class="process-desc">Rigorous performance testing, cross-device responsiveness checks, bug fixes, security verification, and full quality assurance. Nothing ships until it passes every test across all devices and browsers.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">05</div>
-      <div class="process-icon">🚀</div>
-      <div class="process-title">Launch</div>
-      <p class="process-desc">Smooth deployment to production, final review, live monitoring, and comprehensive post-launch support. We remain available to address any issues and ensure a perfect go-live experience for your business.</p>
-    </div>
-  </div>
-</section>
+                <!-- Portfolio Card 4 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Zentro Real Estate Luxury Index">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro Real Estate System</h3>
+                        <p>Premium real-estate ecosystem designed to scale property assets, mango orchard fields, luxury farmhouses, and commercial plots with filter queries.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Property Matrix</span>
+                            <span><i class="fa-solid fa-check"></i> Broker Network UI</span>
+                        </div>
+                        <a href="demos/real-estate-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="section-header centered">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-sub">Everything you need to know about working with Zentro AI Agency. Can't find your answer? Contact us directly.</p>
-  </div>
-  <div class="faq-wrap">
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        How long does it take to build a website?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Project timelines vary based on scope and complexity. A basic website typically takes 7–14 days, a multi-page professional website takes 2–4 weeks, and a full-scale AI-integrated platform can take 4–8 weeks. During the Discovery phase, we provide a precise timeline tailored to your project. We always communicate milestones clearly and keep you updated throughout every stage of development.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Do you offer AI automation services?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Absolutely. Business automation is one of our core specialties. We build custom automation workflows using AI tools to eliminate repetitive tasks such as lead follow-ups, data entry, appointment scheduling, invoice generation, and customer support routing. Our automation solutions integrate with your existing CRM, email platforms, and business software to create seamless, hands-free operations that save time and reduce cost.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Can you redesign an existing website?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we specialize in website redesigns and migrations. Whether your current site is outdated, slow, not mobile-friendly, or simply no longer reflects your brand, we can rebuild it from the ground up while preserving your existing content, SEO rankings, and domain authority. We conduct a full audit before starting to identify what needs improvement and what is worth keeping.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        What industries do you work with?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">We work across a wide range of industries including restaurants and hospitality, real estate and property management, healthcare and clinics, e-commerce and retail, education and e-learning, technology startups, marketing agencies, law firms, and financial services. Our team adapts its approach to match the specific user expectations, compliance requirements, and conversion strategies relevant to each sector.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Will my website be mobile friendly?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Yes, every website we build is fully responsive and optimized for all screen sizes — smartphones, tablets, and desktops. With over 60% of web traffic coming from mobile devices, we design mobile-first by default. We thoroughly test each project on multiple real devices and browsers to ensure flawless performance, fast load times, and an excellent user experience on every platform.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Do you provide ongoing support?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Yes, we offer ongoing maintenance and support packages for all clients. This includes regular software updates, security monitoring, content updates, performance optimization, and bug fixes. For enterprise clients, we provide dedicated support with agreed SLA response times. We believe in building long-term partnerships, not just one-time projects, and we are committed to keeping your digital assets running at their best.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        How do I get started?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Getting started is simple. Fill out our contact form below with details about your project — your business type, goals, budget range, and timeline. Our team will review your submission and reach out within 24 hours to schedule a free discovery call. During that call, we will discuss your needs in detail, answer all your questions, and provide a clear proposal. No commitment is required until you are fully satisfied with our plan.</div></div>
-    </div>
-  </div>
-</section>
+                <!-- Portfolio Card 5 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Zentro Corporate Enterprise Hub">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro Corporate Space</h3>
+                        <p>High-end architectural layout for public enterprises, international brands, and B2B groups needing deep compliance trust, careers layout, and brand poise.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Career Hub</span>
+                            <span><i class="fa-solid fa-check"></i> B2B Engine Pipelines</span>
+                        </div>
+                        <a href="demos/corporate-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-header">
-    <div class="section-label">Let's Talk</div>
-    <h2 class="section-title">Start Your Project Today</h2>
-    <p class="section-sub">Ready to build something exceptional? Fill in the form and our team will be in touch within 24 hours.</p>
-  </div>
-  <div class="contact-wrap">
-    <div class="contact-info">
-      <div>
-        <div class="contact-info-title">We'd love to hear about your project</div>
-        <p class="contact-info-sub">Whether you need a brand new website, an AI chatbot, automation workflows, or a complete digital transformation — we have the expertise to make it happen.</p>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">💬</div>
-        <div>
-          <div class="contact-item-label">Response Time</div>
-          <div class="contact-item-val">Within 24 hours</div>
+                <!-- Portfolio Card 6 -->
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-thumb">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Zentro Scale Business Suite">
+                        <div class="portfolio-badge">5-7 Live Pages</div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <h3>Zentro Scale Business Portal</h3>
+                        <p>A conversion-centric system engineered specifically for startups and agencies looking to unpack services and close client leads rapidly.</p>
+                        <div class="feature-tags">
+                            <span><i class="fa-solid fa-check"></i> Micro-Solutions Stack</span>
+                            <span><i class="fa-solid fa-check"></i> Optimized Conversion Flow</span>
+                        </div>
+                        <a href="demos/business-demo/index.html" target="_blank" class="btn btn-portfolio-link">Explore Real Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">🌍</div>
-        <div>
-          <div class="contact-item-label">We Work Globally</div>
-          <div class="contact-item-val">Serving clients worldwide</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">🔒</div>
-        <div>
-          <div class="contact-item-label">Privacy</div>
-          <div class="contact-item-val">Your data is always secure</div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form">
-      <div class="form-error" id="form-error">
-        <div class="form-error-title">Please complete the following fields:</div>
-        <ul id="error-list"></ul>
-      </div>
-      <div class="form-success" id="form-success">✅ Thank you! Your message has been received. We'll be in touch within 24 hours.</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name *</label>
-          <input type="text" class="form-input" id="f-firstname" placeholder="John">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name *</label>
-          <input type="text" class="form-input" id="f-lastname" placeholder="Smith">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email Address *</label>
-        <input type="email" class="form-input" id="f-email" placeholder="john@company.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Business Type *</label>
-        <select class="form-select" id="f-business">
-          <option value="">Select your business type</option>
-          <option>Restaurant</option>
-          <option>Real Estate</option>
-          <option>Clinic</option>
-          <option>Ecommerce</option>
-          <option>Agency</option>
-          <option>Education</option>
-          <option>Technology</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Budget Range *</label>
-          <select class="form-select" id="f-budget">
-            <option value="">Select budget</option>
-            <option>$80 – $150</option>
-            <option>$150 – $300</option>
-            <option>$300 – $550</option>
-            <option>$550+</option>
-            <option>Custom / Enterprise</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Timeline *</label>
-          <select class="form-select" id="f-timeline">
-            <option value="">Select timeline</option>
-            <option>ASAP (1–2 weeks)</option>
-            <option>Standard (2–4 weeks)</option>
-            <option>Flexible (1–2 months)</option>
-            <option>Long-term (3+ months)</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Project Details *</label>
-        <textarea class="form-textarea" id="f-message" placeholder="Tell us about your project, goals, and any specific requirements..."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;justify-content:center;display:flex;" onclick="submitForm()">Send Message →</button>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">Zentro <span>AI</span> Agency</div>
-      <p class="footer-tagline">Building intelligent digital solutions that transform businesses through AI-powered websites, automation, and strategic growth.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links">
-        <li><a href="#services">AI Websites</a></li>
-        <li><a href="#services">AI Chatbots</a></li>
-        <li><a href="#services">Business Automation</a></li>
-        <li><a href="#services">SEO Growth</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-links">
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Get Started</div>
-      <ul class="footer-links">
-        <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#pricing">View Plans</a></li>
-        <li><a href="#portfolio">View Demos</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2025 <span>Zentro AI Agency</span>. All rights reserved.</div>
-    <div class="footer-copy">Built with intelligence. Designed for growth.</div>
-  </div>
-</footer>
+    <!-- Pricing Scaled Cards Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tagline">Transparent ROI Investment</span>
+                <h2>Scalable Growth Infrastructure</h2>
+                <p class="section-desc">Choose a foundational starting framework. Every single system deployment is optimized for long-term scalability.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Tier 1 -->
+                <div class="price-card reveal">
+                    <div class="price-header">
+                        <h3>Starter Plan</h3>
+                        <div class="price-amt">$100<span>-$150</span></div>
+                        <p>Best for boutique operators & single landings.</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Core Custom UI Page Architecture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 100% Mobile Fluid Breakpoints</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Essential Organic SEO Mapping</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Standard Form Data Triggers</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-tier-action">Deploy Plan</a>
+                </div>
 
+                <!-- Tier 2 -->
+                <div class="price-card reveal">
+                    <div class="price-header">
+                        <h3>Growth Tier</h3>
+                        <div class="price-amt">$150<span>-$250</span></div>
+                        <p>Engineered for localized expanding brands.</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Up to 5 Fully Responsive Structural Pages</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Premium Custom Motion Animations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Local Competitor Keyword Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dynamic Floating WhatsApp Matrix</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-tier-action">Deploy Plan</a>
+                </div>
 
-<!-- ══════════════════════════════════════════════════
-     SERVICE MODALS
-══════════════════════════════════════════════════ -->
+                <!-- Tier 3: Popular -->
+                <div class="price-card popular reveal">
+                    <div class="popular-ribbon">Most Demanded</div>
+                    <div class="price-header">
+                        <h3>Professional Tier</h3>
+                        <div class="price-amt">$250<span>-$350</span></div>
+                        <p>Ideal for competitive institutions & clinics.</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Multi-page Architecture (Up to 10 Pages)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Deep Conversion Optimization Audit</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Structured Schema Markup Integration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Base AI Lead Routing Chatbot Setup</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Standard API Database Pipeline Linking</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-tier-action">Deploy Professional Setup</a>
+                </div>
 
-<!-- AI Websites Modal -->
-<div class="modal-overlay" id="modal-ai-websites">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div>
-        <div style="font-size:.75rem;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem">Our Service</div>
-        <div class="modal-title">🌐 AI Websites</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('modal-ai-websites')">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-intro">We design and develop AI-powered websites that go far beyond static brochure sites. Every website we build is a high-performance conversion machine engineered to grow your business automatically.</p>
-      <div class="modal-points">
-        <div class="modal-point">
-          <div class="modal-point-title">📱 Responsive Design</div>
-          <div class="modal-point-desc">Every website we build is fully responsive and pixel-perfect across all devices — smartphones, tablets, and desktops. We design mobile-first to ensure your visitors get the best experience regardless of screen size, which directly improves engagement rates and reduces bounce rates.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🎯 Conversion Optimization</div>
-          <div class="modal-point-desc">We apply proven CRO (Conversion Rate Optimization) principles to every page we build — from strategic call-to-action placement and trust signal integration to heatmap-informed layouts that guide visitors naturally toward desired actions such as form submissions, purchases, or bookings.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">⚡ Speed Optimization</div>
-          <div class="modal-point-desc">Website speed directly impacts both SEO rankings and user experience. We implement advanced techniques including lazy loading, image compression, code minification, CDN integration, and caching strategies to ensure your site loads in under 2 seconds — meeting Core Web Vitals standards set by Google.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🔍 SEO-Structured Architecture</div>
-          <div class="modal-point-desc">Every website is built with a clean, semantic HTML structure, proper heading hierarchy, structured data markup (Schema.org), optimized meta tags, and crawlable site architecture. This gives your site a strong technical SEO foundation from day one, making it easier for search engines to index and rank your pages.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📊 Lead Generation Systems</div>
-          <div class="modal-point-desc">We integrate intelligent lead capture systems including smart contact forms, pop-ups with exit intent, live chat widgets, newsletter sign-ups, and automated email sequences. Every visitor touchpoint is designed to capture information and initiate a follow-up journey that nurtures leads into paying customers.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🤖 AI Integrations</div>
-          <div class="modal-point-desc">We embed AI-powered features directly into your website — personalized content recommendations, AI chatbots for instant visitor engagement, predictive search, dynamic pricing displays, and intelligent product or service suggestions. These features dramatically improve user experience and increase time-on-site and conversion rates.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Tier 4 -->
+                <div class="price-card reveal">
+                    <div class="price-header">
+                        <h3>Business Suite</h3>
+                        <div class="price-amt">$350<span>-$550</span></div>
+                        <p>Built for advanced market realtors & corporate assets.</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Uncapped Specialized Sub-Page Arrays</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Complete Premium Custom Branding Identity</li>
+                        <li><i class="fa-solid fa-circle-check"></i> High-Cognition Interactive AI Agent Engine</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Advanced Filter Queries (Properties/Menus)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> 90 Days Post-Launch Optimization Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-tier-action">Deploy Plan</a>
+                </div>
 
-<!-- AI Chatbots Modal -->
-<div class="modal-overlay" id="modal-ai-chatbots">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div>
-        <div style="font-size:.75rem;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem">Our Service</div>
-        <div class="modal-title">🤖 AI Chatbots</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('modal-ai-chatbots')">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-intro">Our AI chatbots are trained on your specific business data and workflows to deliver intelligent, human-like conversations that convert visitors, handle support, and automate customer interactions around the clock.</p>
-      <div class="modal-points">
-        <div class="modal-point">
-          <div class="modal-point-title">🧠 Custom AI Training</div>
-          <div class="modal-point-desc">We train your chatbot on your specific business knowledge base — product catalogues, FAQs, policies, pricing, and service details — so it responds accurately and helpfully to your customers' real questions. This eliminates generic, unhelpful responses and ensures every interaction reflects your brand voice and expertise.</div>
+                <!-- Tier 5 -->
+                <div class="price-card enterprise reveal">
+                    <div class="price-header">
+                        <h3>Enterprise Custom</h3>
+                        <div class="price-amt">Custom Pricing</div>
+                        <p>Bespoke software automation systems.</p>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Dynamic Multi-Campus / Node Ecosystems</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Deep Internal CRM Integration Pathways</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Custom High-Load Automation Flows</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dedicated Engineering Infrastructure Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-tier-action">Consult Engineers</a>
+                </div>
+            </div>
         </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📞 24/7 Customer Support</div>
-          <div class="modal-point-desc">Your AI chatbot works around the clock without breaks, handling unlimited simultaneous conversations with customers across all time zones. This dramatically reduces customer support costs, eliminates wait times, and ensures no lead or inquiry ever goes unanswered — even during weekends or public holidays.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🎯 Lead Qualification</div>
-          <div class="modal-point-desc">The chatbot intelligently qualifies incoming leads by asking targeted questions about their needs, budget, timeline, and intent. Qualified leads are automatically routed to your sales team with a full conversation summary, allowing your team to focus exclusively on prospects with genuine buying intent rather than spending time on cold inquiries.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🔗 CRM & Tool Integration</div>
-          <div class="modal-point-desc">We integrate your chatbot seamlessly with your existing CRM (HubSpot, Salesforce, Zoho), email platforms, calendar booking systems, and ticketing tools. Every conversation is logged automatically, leads are added to your pipeline, and appointments are booked without any manual intervention from your team.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📈 Analytics & Insights</div>
-          <div class="modal-point-desc">Gain deep insights into your customer conversations through built-in analytics dashboards. Track resolution rates, common questions, escalation patterns, lead conversion rates, and chatbot performance metrics. This data helps you continuously refine your bot's responses and identify gaps in your product or service offering.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🌐 Multi-Platform Deployment</div>
-          <div class="modal-point-desc">Deploy your AI chatbot across multiple platforms simultaneously — your website, WhatsApp Business, Facebook Messenger, Instagram DMs, and SMS. Customers can reach you through their preferred channel, and all conversations are managed from a single unified dashboard, giving your team complete visibility and control.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- Business Automation Modal -->
-<div class="modal-overlay" id="modal-automation">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div>
-        <div style="font-size:.75rem;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem">Our Service</div>
-        <div class="modal-title">⚙️ Business Automation</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('modal-automation')">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-intro">We design and implement intelligent automation systems that eliminate repetitive manual tasks, reduce operational costs significantly, and allow your team to focus entirely on high-value strategic work that drives real business growth.</p>
-      <div class="modal-points">
-        <div class="modal-point">
-          <div class="modal-point-title">📧 Email & Follow-Up Automation</div>
-          <div class="modal-point-desc">We set up fully automated email sequences triggered by specific customer actions — form submissions, purchases, sign-ups, or abandoned carts. Each email is personalized with dynamic content, sent at optimized times, and designed to nurture leads through your sales funnel without any manual effort from your team.</div>
+    <!-- Deep Authority About Profile Section -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-visual reveal">
+                <div class="luxury-experience-box">
+                    <span class="exp-number">Elite</span>
+                    <span class="exp-text">UX/UI & Conversion Standards</span>
+                </div>
+            </div>
+            <div class="about-text-content reveal">
+                <span class="section-tagline">The Engineering Ethos</span>
+                <h2>We Bridge Luxury Design Concepts with Hard Analytical ROI Metrics.</h2>
+                <p>Typical web development agencies focus purely on basic aesthetic templates. At Zentro AI Agency, we dissect consumer behavior data. Every pixel balance, color pairing, and text block is configured to eliminate user friction points.</p>
+                <p>We work closely with institutional leaders and enterprise entrepreneurs globally to deliver fast loading speeds, clean semantic code structures, and elegant AI systems that streamline manual operations.</p>
+                <div class="pillars-container">
+                    <div class="pillar-item">
+                        <div class="pillar-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Performance-First Engineering</h4>
+                            <p>We maintain a strict zero-bloat code policy to pass global speed metrics.</p>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                        <div>
+                            <h4>Bespoke Identity Focus</h4>
+                            <p>No generic presets. Your digital presence is tailored to build immediate market authority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📋 Data Entry & Reporting</div>
-          <div class="modal-point-desc">Manual data entry is error-prone and time-consuming. We automate data collection, transformation, and reporting across your tools — automatically pulling data from forms, spreadsheets, and apps, populating your CRM, and generating weekly reports delivered directly to your inbox with zero human intervention required.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📅 Appointment & Scheduling Automation</div>
-          <div class="modal-point-desc">We build automated booking systems that integrate with your calendar, send confirmation emails, trigger reminder notifications, and handle rescheduling requests automatically. This eliminates scheduling conflicts, reduces no-shows by up to 60%, and removes the back-and-forth email exchanges that consume valuable time.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🛒 E-Commerce & Order Automation</div>
-          <div class="modal-point-desc">We automate your entire order management workflow — from order confirmation and inventory updates to shipping notifications, invoice generation, and customer review requests. These automations run 24/7, ensuring customers receive timely communications while your team focuses on growth rather than operational tasks.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🔄 Cross-Platform Workflow Integration</div>
-          <div class="modal-point-desc">We connect your disconnected tools and platforms — CRM, accounting software, project management tools, communication apps, and more — into seamless automated workflows. When a lead converts in one system, all other platforms are updated instantly, eliminating data silos and manual transfer errors across your organization.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📊 Performance Monitoring & Alerts</div>
-          <div class="modal-point-desc">We build automated monitoring dashboards that track key business metrics in real-time and send instant alerts when something requires your attention — a spike in refunds, a drop in website traffic, or a missed SLA threshold. This gives you complete operational visibility without having to manually check multiple platforms throughout your day.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- SEO Modal -->
-<div class="modal-overlay" id="modal-seo">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div>
-        <div style="font-size:.75rem;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem">Our Service</div>
-        <div class="modal-title">📈 SEO Growth</div>
-      </div>
-      <button class="modal-close" onclick="closeModal('modal-seo')">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-intro">Our AI-assisted SEO strategies are designed to increase organic visibility, drive qualified traffic, and generate sustainable long-term growth. We combine technical excellence with content authority and data-driven decision making.</p>
-      <div class="modal-points">
-        <div class="modal-point">
-          <div class="modal-point-title">🔧 Technical SEO Audit</div>
-          <div class="modal-point-desc">We conduct a comprehensive technical SEO audit covering crawlability, indexation, site speed, Core Web Vitals, mobile usability, structured data, XML sitemaps, and canonical tag implementation. Every identified issue is resolved systematically, creating a solid technical foundation that enables your content to rank effectively in search results.</div>
+    <!-- Comprehensive 15-Item Expert FAQ System -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-tagline">Knowledge Base</span>
+                <h2>Frequently Asked Strategic Inquiries</h2>
+                <p class="section-desc">Clear answers covering our design methodology, onboarding workflows, code compliance, and performance guarantees.</p>
+            </div>
+            
+            <div class="faq-accordion-wrapper">
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">What sets Zentro AI Agency apart from budget design agencies? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>We blend elite luxury branding with deep frontend engineering and conversion data analysis. Budget options typically rely on bloated, slow pre-built themes. We architect semantic code structures designed to drive conversions and scale cleanly over time.</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Are the live portfolio templates fully customizable? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Absolutely. The industry portals shown represent structural frameworks. We modify every visual asset, data layer, query system, and style guide to match your specific corporate identity.</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">How do the AI Chatbots capture and store client leads? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Our conversational engines leverage secure API endpoints to feed incoming leads straight into your chosen ecosystem—whether it's custom database systems, Email arrays, or CRM tools like HubSpot.</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">What specific SEO standards are baked into your builds? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>We build websites with proper semantic layout elements (H1-H4 structure), highly efficient asset compression, dynamic JSON-LD schema microdata arrays, and fully responsive accessibility styling.</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">How does the property filter query function in Real Estate platforms? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>It utilizes optimized dataset query structures. Users can seamlessly filter listings across asset classes like custom farmhouses, mango orchards, commercial shops, and apartment layouts without any page-load delay.</p>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Can your school website blueprint integrate with external student portals? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Yes. We build clean API middleware structures to safely connect our frontends with standard student databases and third-party education software platforms.</p>
+                    </div>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">What is your turnaround timeframe for standard professional platforms? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Depending on structural complexity, standard deployments take 14 to 30 business days from the initial data-mapping phase to live server launch.</p>
+                    </div>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Is the website hosting infrastructure secured against modern threat parameters? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Yes. We implement advanced safety protocols, including strict SSL configuration, security-focused header integrations, cross-site scripting protections, and optimized deployment pathways.</p>
+                    </div>
+                </div>
+                <!-- FAQ 9 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Do you offer post-launch maintenance packages? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Yes, we provide ongoing support. Our maintenance tracks include continuous speed checks, proactive codebase updates, server health monitoring, and routine asset refreshes.</p>
+                    </div>
+                </div>
+                <!-- FAQ 10 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">How do you track conversion optimization metrics? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>We set up detailed conversion events for form submissions, link clicks, and WhatsApp interactions. This gives you clear, actionable insights into exactly how your users engage with your brand.</p>
+                    </div>
+                </div>
+                <!-- FAQ 11 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Can the restaurant reservation desk block bookings when at capacity? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Yes, the scheduling engine syncs with your restaurant's capacity data to dynamically disable time slots as tables fill up.</p>
+                    </div>
+                </div>
+                <!-- FAQ 12 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Can you build custom workflows to replace manual tasks? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Yes. We focus on automating repetitive workflows. We can connect your core operational touchpoints to automatically route leads, sync invoices, and send text updates to your clients.</p>
+                    </div>
+                </div>
+                <!-- FAQ 13 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">Are your interfaces fully optimized for mobile devices? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>We design with a mobile-first philosophy. Every touch target, viewport shift, and image layout scales beautifully across modern devices.</p>
+                    </div>
+                </div>
+                <!-- FAQ 14 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">What payment paths can be integrated into the platforms? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>We configure global gateways, including Stripe, PayPal, and local digital bank APIs, ensuring your checkout flows are clean, secure, and intuitive.</p>
+                    </div>
+                </div>
+                <!-- FAQ 15 -->
+                <div class="faq-item reveal">
+                    <button class="faq-trigger">How do we initiate the onboarding and engineering phase? <span class="faq-icon-state"></span></button>
+                    <div class="faq-body">
+                        <p>Simply fill out our high-intent inquiry form below. Our architectural engineering team will review your project details and follow up with a tailored proposal within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🔑 Keyword Research & Strategy</div>
-          <div class="modal-point-desc">Using advanced AI-powered keyword research tools, we identify high-intent, high-value keywords your target audience is actively searching for. We map keywords to specific pages, analyze competitor gaps, and build a comprehensive keyword strategy that targets both short-tail volume keywords and long-tail conversion-focused terms relevant to your business.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">✍️ Content Optimization</div>
-          <div class="modal-point-desc">We optimize existing content and create new high-quality, search-optimized content that satisfies both search engine algorithms and genuine user intent. This includes on-page optimization of titles, meta descriptions, headings, internal linking, image alt text, and semantic keyword integration that improves relevance signals without keyword stuffing.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">🔗 Authority Link Building</div>
-          <div class="modal-point-desc">We implement white-hat link building strategies to acquire high-authority backlinks from reputable websites in your industry. Through digital PR, guest posting, resource page outreach, and competitor backlink analysis, we build your domain authority steadily — a critical ranking factor that determines your long-term search performance and competitive positioning.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📍 Local SEO Optimization</div>
-          <div class="modal-point-desc">For businesses serving specific geographic markets, we optimize your Google Business Profile, build local citations across directories, implement local schema markup, and develop location-specific content strategies. This ensures your business appears prominently in local search results and Google Maps when nearby customers are searching for your services.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">📊 Reporting & Continuous Improvement</div>
-          <div class="modal-point-desc">We provide detailed monthly SEO reports covering keyword rankings, organic traffic growth, conversion attribution, backlink profile health, and competitor movement. Using this data, we continuously refine our strategy — doubling down on what is working, fixing what is not, and adapting to algorithm updates to maintain and improve your search positions over time.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
+    <!-- Strategic Conversion Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+            <div class="contact-info-panel reveal">
+                <span class="section-tagline">Secure Your Asset</span>
+                <h2>Let's Engineer Your Competitive Advantage</h2>
+                <p>Fill out our intake form to share your project objectives. Our design and engineering team will analyze your market footprint and build a custom deployment plan for your brand.</p>
+                <div class="agency-contact-details">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <span>Primary Phone / WhatsApp</span>
+                            <a href="https://wa.me/923006573512" class="highlight-link">03-000-657-3512</a>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-envelope-open"></i>
+                        <div>
+                            <span>Operations Hub Email</span>
+                            <p>operations@zentroaiagency.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper reveal">
+                <form id="agencyContactForm" class="premium-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Full Name</label>
+                            <input type="text" id="clientName" required placeholder="e.g., Alexander Mercer">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessName">Corporate Entity Name</label>
+                            <input type="text" id="businessName" required placeholder="e.g., Apex Luxury Living">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientPhone">Direct Contact Number</label>
+                            <input type="tel" id="clientPhone" required placeholder="e.g., +1 415 555 2671">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Corporate Email Address</label>
+                            <input type="email" id="clientEmail" required placeholder="e.g., leadership@company.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceReq">Target Capabilities Solution Required</label>
+                        <select id="serviceReq" required>
+                            <option value="">Select Architecture Vector...</option>
+                            <option value="web-dev">Core Custom Web Engineering</option>
+                            <option value="school">Zentro School Multi-Page Ecosystem</option>
+                            <option value="clinic">Zentro Medical Clinic Framework</option>
+                            <option value="restaurant">Zentro Restaurant Fine-Dining Space</option>
+                            <option value="realestate">Zentro Real Estate Portfolio Portal</option>
+                            <option value="corporate">Enterprise Corporate Portal Platform</option>
+                            <option value="seo">Advanced Search Parameter Dominance</option>
+                            <option value="ai-bot">Cognitive Lead AI Automation Chatbots</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budgetRange">Allocated Investment Parameters</label>
+                        <select id="budgetRange" required>
+                            <option value="">Select Financial Parameters...</option>
+                            <option value="starter">$100 - $150 (Starter Base)</option>
+                            <option value="growth">$150 - $250 (Growth Tier)</option>
+                            <option value="pro">$250 - $350 (Professional Matrix)</option>
+                            <option value="business">$350 - $550 (Enterprise Scale)</option>
+                            <option value="custom">Above $550+ (Custom Enterprise Integration)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectDetails">Project Parameters & Objectives</label>
+                        <textarea id="projectDetails" rows="4" required placeholder="Outline key functionality requirements, design references, and launch timelines..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Transmit Project Brief <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+                <div id="formSuccessMessage" class="hidden-success-banner">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <h4>Transmission Verified</h4>
+                        <p>Your strategic specifications have reached the Zentro operations vault. An engineering architect will connect with you within 2 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ══════════════════════════════════════════════════
-     DEMO PAGES
-══════════════════════════════════════════════════ -->
+    <!-- Premium Footer Network Structure -->
+    <footer class="premium-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-column">
+                <h3>ZENTRO <span class="accent-dot">AI</span></h3>
+                <p>Elite-tier frontend design, conversion optimizations, and custom business automation ecosystems built to scale revenue.</p>
+                <div class="social-row-links">
+                    <a href="#" aria-label="LinkedIn Connect"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter Feed"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-column">
+                <h4>System Capabilities</h4>
+                <a href="#services">Premium Web Design</a>
+                <a href="#portfolio">Enterprise Blueprints</a>
+                <a href="#services">Automated AI Chatbots</a>
+                <a href="#services">Advanced Organic SEO</a>
+            </div>
+            <div class="footer-links-column">
+                <h4>Demo Gateways</h4>
+                <a href="demos/school-demo/index.html" target="_blank">School Portal</a>
+                <a href="demos/clinic-demo/index.html" target="_blank">Medical Clinic</a>
+                <a href="demos/restaurant-demo/index.html" target="_blank">Fine Dining Hub</a>
+                <a href="demos/real-estate-demo/index.html" target="_blank">Real Estate Matrix</a>
+            </div>
+        </div>
+        <div class="container footer-bottom-meta">
+            <p>&copy; 2026 Zentro AI Agency. Architectural Digital Assets Engineered to Excel.</p>
+            <div class="legal-links">
+                <a href="#">Security Protocol</a>
+                <a href="#">Service Terms</a>
+            </div>
+        </div>
+    </footer>
 
-<!-- RESTAURANT DEMO -->
-<div class="demo-page" id="demo-restaurant">
-  <!-- Nav -->
-  <nav class="r-nav">
-    <div class="r-logo">La Maison</div>
-    <ul class="r-nav-links">
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Reserve</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button class="r-btn" style="padding:.5rem 1.2rem;font-size:.82rem">Reserve Now</button>
-  </nav>
-  <!-- Hero -->
-  <div class="r-hero">
-    <div class="r-hero-content">
-      <div class="r-badge">Est. 2018 · Fine Dining</div>
-      <h1>Experience the Art of <span>Authentic Cuisine</span></h1>
-      <p>A culinary journey through bold flavors, fresh ingredients, and unforgettable dining moments crafted with passion by our award-winning chefs.</p>
-      <div class="r-hero-btns">
-        <button class="r-btn">Reserve a Table</button>
-        <button class="r-btn-outline">View Menu</button>
-      </div>
-    </div>
-  </div>
-  <!-- Menu -->
-  <div class="r-section" style="background:#fff">
-    <div class="r-section-title">Our Menu</div>
-    <p class="r-section-sub">Fresh ingredients, bold flavors, unforgettable experiences</p>
-    <div class="r-menu-tabs">
-      <button class="r-tab active">Starters</button>
-      <button class="r-tab" onclick="activateTab(this)">Main Course</button>
-      <button class="r-tab" onclick="activateTab(this)">Desserts</button>
-      <button class="r-tab" onclick="activateTab(this)">Beverages</button>
-    </div>
-    <div class="r-menu-grid">
-      <div class="r-menu-card">
-        <div class="r-menu-img i1">🥗</div>
-        <div class="r-menu-body">
-          <div class="r-menu-name">Garden Fresh Salad</div>
-          <div class="r-menu-desc">Crisp seasonal greens, cherry tomatoes, cucumber, olives, and house vinaigrette dressing</div>
-          <div class="r-menu-price">$12</div>
+    <!-- Fluid Sticky Conversational Floating Engine Element -->
+    <a href="https://wa.me/923006573512" class="floating-whatsapp-container" target="_blank" rel="noopener noreferrer" aria-label="Direct Technical Support Line">
+        <div class="pulse-ring"></div>
+        <div class="whatsapp-icon-bubble">
+            <i class="fa-brands fa-whatsapp"></i>
         </div>
-      </div>
-      <div class="r-menu-card">
-        <div class="r-menu-img i2">🍲</div>
-        <div class="r-menu-body">
-          <div class="r-menu-name">French Onion Soup</div>
-          <div class="r-menu-desc">Classic slow-cooked onion broth, topped with crusty croutons and melted Gruyère cheese</div>
-          <div class="r-menu-price">$14</div>
-        </div>
-      </div>
-      <div class="r-menu-card">
-        <div class="r-menu-img i3">🥩</div>
-        <div class="r-menu-body">
-          <div class="r-menu-name">Beef Carpaccio</div>
-          <div class="r-menu-desc">Thinly sliced premium beef, capers, parmesan shavings, arugula and truffle oil drizzle</div>
-          <div class="r-menu-price">$18</div>
-        </div>
-      </div>
-      <div class="r-menu-card">
-        <div class="r-menu-img i4">🍤</div>
-        <div class="r-menu-body">
-          <div class="r-menu-name">Garlic Butter Prawns</div>
-          <div class="r-menu-desc">Succulent tiger prawns sautéed in garlic butter, lemon zest, white wine and fresh herbs</div>
-          <div class="r-menu-price">$22</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Gallery -->
-  <div class="r-gallery">
-    <div class="r-section-title">Food Gallery</div>
-    <p class="r-section-sub">A visual taste of what awaits you</p>
-    <div class="r-gallery-grid" style="margin-top:2rem">
-      <div class="r-gal-item" style="border-radius:14px">🥩</div>
-      <div class="r-gal-item" style="border-radius:14px">🍝</div>
-      <div class="r-gal-item" style="border-radius:14px">🍮</div>
-      <div class="r-gal-item" style="border-radius:14px">🥂</div>
-    </div>
-  </div>
-  <!-- Reservation -->
-  <div class="r-reservation">
-    <div class="r-res-wrap">
-      <h2>Make a Reservation</h2>
-      <p>Book your table online and we will confirm within 2 hours</p>
-      <div class="r-form-grid">
-        <input class="r-form-input" type="text" placeholder="Full Name">
-        <input class="r-form-input" type="email" placeholder="Email Address">
-        <input class="r-form-input" type="date" placeholder="Date">
-        <input class="r-form-input" type="time" placeholder="Time">
-        <input class="r-form-input" type="number" placeholder="Number of Guests" min="1" max="20">
-        <input class="r-form-input" type="text" placeholder="Special Requests (optional)">
-      </div>
-      <button class="r-btn" style="width:100%">Confirm Reservation</button>
-    </div>
-  </div>
-  <!-- Contact -->
-  <div class="r-contact-section">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <div class="r-section-title">Find Us</div>
-      <p class="r-section-sub">We are open Tuesday to Sunday, 12pm – 10pm</p>
-    </div>
-    <div class="r-contact-grid">
-      <div class="r-contact-card">
-        <div class="r-contact-icon">📍</div>
-        <div class="r-contact-title">Address</div>
-        <div class="r-contact-val">42 Gourmet Lane,<br>Downtown District</div>
-      </div>
-      <div class="r-contact-card">
-        <div class="r-contact-icon">📞</div>
-        <div class="r-contact-title">Phone</div>
-        <div class="r-contact-val">+1 (555) 234-5678</div>
-      </div>
-      <div class="r-contact-card">
-        <div class="r-contact-icon">🕐</div>
-        <div class="r-contact-title">Hours</div>
-        <div class="r-contact-val">Tue–Sun: 12pm–10pm<br>Monday: Closed</div>
-      </div>
-      <div class="r-contact-card">
-        <div class="r-contact-icon">✉️</div>
-        <div class="r-contact-title">Reservations</div>
-        <div class="r-contact-val">reservations@<br>lamaison.com</div>
-      </div>
-    </div>
-  </div>
-  <!-- Demo End -->
-  <div class="demo-end">
-    <div class="demo-end-label">Portfolio Demo</div>
-    <div class="demo-end-title">— Demo Website End —</div>
-    <button class="demo-back-btn" onclick="closeDemo('restaurant')">← Back to Portfolio</button>
-  </div>
-</div>
+        <span class="bubble-hover-intel">Connect with an Expert</span>
+    </a>
 
-<!-- REAL ESTATE DEMO -->
-<div class="demo-page" id="demo-realestate">
-  <nav class="re-nav">
-    <div class="re-logo">Evergreen <span>Properties</span></div>
-    <ul class="re-nav-links">
-      <li><a href="#">Listings</a></li>
-      <li><a href="#">Featured</a></li>
-      <li><a href="#">Agents</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button style="background:#2d7a2d;color:#fff;border:none;padding:.5rem 1.2rem;border-radius:50px;font-weight:700;font-size:.82rem;cursor:pointer">List Property</button>
-  </nav>
-  <!-- Hero -->
-  <div class="re-hero">
-    <div class="re-hero-content">
-      <div class="re-badge">Trusted Since 2015</div>
-      <h1>Find Your <span>Perfect</span><br>Property Today</h1>
-      <p>Discover premium residential and commercial properties with expert guidance from our award-winning agents across every market.</p>
-      <div class="re-search" style="margin-top:1.5rem">
-        <input type="text" placeholder="City, neighborhood or address...">
-        <select>
-          <option>All Types</option>
-          <option>House</option>
-          <option>Apartment</option>
-          <option>Commercial</option>
-        </select>
-        <select>
-          <option>Any Price</option>
-          <option>Under $200K</option>
-          <option>$200K–$500K</option>
-          <option>$500K+</option>
-        </select>
-        <button class="re-search-btn">Search</button>
-      </div>
-    </div>
-  </div>
-  <!-- Listings -->
-  <div class="re-section">
-    <div class="re-section-title">Property Listings</div>
-    <p class="re-section-sub">Browse our latest available properties across all categories</p>
-    <div class="re-listings-grid">
-      <div class="re-card">
-        <div class="re-card-img c1"><span>🏡</span><span class="re-badge-tag">For Sale</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$425,000</div>
-          <div class="re-addr">142 Maple Grove Drive</div>
-          <div class="re-type">Single Family Home · Riverside District</div>
-          <div class="re-specs">
-            <span class="re-spec">🛏 4 beds</span>
-            <span class="re-spec">🛁 2 baths</span>
-            <span class="re-spec">📐 1,850 sqft</span>
-          </div>
-        </div>
-      </div>
-      <div class="re-card">
-        <div class="re-card-img c2"><span>🏢</span><span class="re-badge-tag">For Rent</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$2,200<span style="font-size:.9rem;color:#5a7a5a;font-weight:400">/mo</span></div>
-          <div class="re-addr">88 Skyline Avenue, Apt 12B</div>
-          <div class="re-type">Modern Apartment · City Center</div>
-          <div class="re-specs">
-            <span class="re-spec">🛏 2 beds</span>
-            <span class="re-spec">🛁 2 baths</span>
-            <span class="re-spec">📐 980 sqft</span>
-          </div>
-        </div>
-      </div>
-      <div class="re-card">
-        <div class="re-card-img c3"><span>🏘</span><span class="re-badge-tag">For Sale</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$750,000</div>
-          <div class="re-addr">7 Lakeview Terrace</div>
-          <div class="re-type">Luxury Villa · Lakeview Heights</div>
-          <div class="re-specs">
-            <span class="re-spec">🛏 5 beds</span>
-            <span class="re-spec">🛁 4 baths</span>
-            <span class="re-spec">📐 3,200 sqft</span>
-          </div>
-        </div>
-      </div>
-      <div class="re-card">
-        <div class="re-card-img c4"><span>🏬</span><span class="re-badge-tag">Commercial</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$3,800<span style="font-size:.9rem;color:#5a7a5a;font-weight:400">/mo</span></div>
-          <div class="re-addr">301 Business Park Blvd</div>
-          <div class="re-type">Office Space · Business District</div>
-          <div class="re-specs">
-            <span class="re-spec">🏢 Open plan</span>
-            <span class="re-spec">🅿️ Parking</span>
-            <span class="re-spec">📐 2,100 sqft</span>
-          </div>
-        </div>
-      </div>
-      <div class="re-card">
-        <div class="re-card-img c5"><span>🌿</span><span class="re-badge-tag">For Sale</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$310,000</div>
-          <div class="re-addr">55 Garden Walk Crescent</div>
-          <div class="re-type">Townhouse · Green Valley</div>
-          <div class="re-specs">
-            <span class="re-spec">🛏 3 beds</span>
-            <span class="re-spec">🛁 2 baths</span>
-            <span class="re-spec">📐 1,420 sqft</span>
-          </div>
-        </div>
-      </div>
-      <div class="re-card">
-        <div class="re-card-img c6"><span>🏗️</span><span class="re-badge-tag">New Build</span></div>
-        <div class="re-card-body">
-          <div class="re-price">$590,000</div>
-          <div class="re-addr">12 Prestige Boulevard</div>
-          <div class="re-type">New Build Home · Northside</div>
-          <div class="re-specs">
-            <span class="re-spec">🛏 4 beds</span>
-            <span class="re-spec">🛁 3 baths</span>
-            <span class="re-spec">📐 2,400 sqft</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Featured -->
-  <div class="re-featured">
-    <div style="padding:0 5%">
-      <div class="re-section-title">Featured Properties</div>
-      <p class="re-section-sub" style="margin-bottom:2rem">Handpicked premium properties at exceptional value</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
-        <div class="re-card">
-          <div class="re-card-img c1" style="height:220px"><span style="font-size:4rem">🏰</span><span class="re-badge-tag" style="background:#f0b429;color:#000">⭐ Featured</span></div>
-          <div class="re-card-body">
-            <div class="re-price">$1,250,000</div>
-            <div class="re-addr">The Grand Manor Estate</div>
-            <div class="re-type">Historic Manor · Old Town Heritage District</div>
-            <div class="re-specs"><span class="re-spec">🛏 7 beds</span><span class="re-spec">🛁 5 baths</span><span class="re-spec">📐 6,800 sqft</span></div>
-          </div>
-        </div>
-        <div class="re-card">
-          <div class="re-card-img c3" style="height:220px"><span style="font-size:4rem">🌊</span><span class="re-badge-tag" style="background:#f0b429;color:#000">⭐ Featured</span></div>
-          <div class="re-card-body">
-            <div class="re-price">$890,000</div>
-            <div class="re-addr">Oceanview Penthouse Suite</div>
-            <div class="re-type">Luxury Penthouse · Marina Quarter</div>
-            <div class="re-specs"><span class="re-spec">🛏 3 beds</span><span class="re-spec">🛁 3 baths</span><span class="re-spec">📐 2,800 sqft</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Agents -->
-  <div class="re-agents">
-    <div class="re-agents-title">Meet Our Agents</div>
-    <p class="re-agents-sub">Experienced professionals dedicated to finding you the perfect property</p>
-    <div class="re-agents-grid">
-      <div class="re-agent">
-        <div class="re-agent-avatar a1">👩</div>
-        <div class="re-agent-name">Sarah Mitchell</div>
-        <div class="re-agent-title">Senior Property Advisor</div>
-        <div class="re-agent-stats">
-          <div class="re-agent-stat"><div class="re-agent-stat-num">120+</div><div class="re-agent-stat-label">Sales</div></div>
-          <div class="re-agent-stat"><div class="re-agent-stat-num">8 yrs</div><div class="re-agent-stat-label">Experience</div></div>
-        </div>
-      </div>
-      <div class="re-agent">
-        <div class="re-agent-avatar a2">👨</div>
-        <div class="re-agent-name">James Cooper</div>
-        <div class="re-agent-title">Commercial Specialist</div>
-        <div class="re-agent-stats">
-          <div class="re-agent-stat"><div class="re-agent-stat-num">85+</div><div class="re-agent-stat-label">Deals</div></div>
-          <div class="re-agent-stat"><div class="re-agent-stat-num">6 yrs</div><div class="re-agent-stat-label">Experience</div></div>
-        </div>
-      </div>
-      <div class="re-agent">
-        <div class="re-agent-avatar a3">👩‍💼</div>
-        <div class="re-agent-name">Priya Sharma</div>
-        <div class="re-agent-title">Luxury Properties Expert</div>
-        <div class="re-agent-stats">
-          <div class="re-agent-stat"><div class="re-agent-stat-num">60+</div><div class="re-agent-stat-label">Sales</div></div>
-          <div class="re-agent-stat"><div class="re-agent-stat-num">5 yrs</div><div class="re-agent-stat-label">Experience</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Contact -->
-  <div class="re-contact">
-    <div class="re-contact-wrap">
-      <h2>Get In Touch</h2>
-      <p>Our team is ready to help you find or sell your property. Contact us today.</p>
-      <div class="re-contact-cards">
-        <div class="re-contact-card">
-          <div class="re-contact-card-icon">📞</div>
-          <div class="re-contact-card-title">Phone</div>
-          <div class="re-contact-card-val">+1 (555) 987-6543</div>
-        </div>
-        <div class="re-contact-card">
-          <div class="re-contact-card-icon">📍</div>
-          <div class="re-contact-card-title">Office</div>
-          <div class="re-contact-card-val">200 Property Square, Suite 5</div>
-        </div>
-        <div class="re-contact-card">
-          <div class="re-contact-card-icon">🕐</div>
-          <div class="re-contact-card-title">Hours</div>
-          <div class="re-contact-card-val">Mon–Sat: 9am–6pm</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-end">
-    <div class="demo-end-label">Portfolio Demo</div>
-    <div class="demo-end-title">— Demo Website End —</div>
-    <button class="demo-back-btn" onclick="closeDemo('realestate')">← Back to Portfolio</button>
-  </div>
-</div>
-
-<!-- CLINIC DEMO -->
-<div class="demo-page" id="demo-clinic">
-  <nav class="cl-nav">
-    <div class="cl-logo">MediCore <span>Clinic</span></div>
-    <ul class="cl-nav-links">
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Doctors</a></li>
-      <li><a href="#">Appointments</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <button style="background:#0a8fd1;color:#fff;border:none;padding:.5rem 1.2rem;border-radius:50px;font-weight:700;font-size:.82rem;cursor:pointer">Book Now</button>
-  </nav>
-  <!-- Hero -->
-  <div class="cl-hero">
-    <div class="cl-hero-content">
-      <div class="cl-badge">Accredited Healthcare Provider</div>
-      <h1>Your Health,<br>Our <span>Commitment</span></h1>
-      <p>Compassionate, evidence-based healthcare delivered by experienced specialists. We are here for you at every step of your health journey.</p>
-      <div class="cl-hero-stats">
-        <div class="cl-stat"><div class="cl-stat-num">15,000+</div><div class="cl-stat-label">Patients Served</div></div>
-        <div class="cl-stat"><div class="cl-stat-num">20+</div><div class="cl-stat-label">Specialist Doctors</div></div>
-        <div class="cl-stat"><div class="cl-stat-num">12 yrs</div><div class="cl-stat-label">Established</div></div>
-      </div>
-    </div>
-  </div>
-  <!-- Services -->
-  <div class="cl-services">
-    <div class="cl-services-title">Our Medical Services</div>
-    <p class="cl-services-sub">Comprehensive healthcare services under one roof</p>
-    <div class="cl-services-grid">
-      <div class="cl-svc"><div class="cl-svc-icon">🫀</div><div class="cl-svc-name">Cardiology</div><div class="cl-svc-desc">Heart health assessments, ECG, echocardiography and cardiac risk management</div></div>
-      <div class="cl-svc"><div class="cl-svc-icon">🦷</div><div class="cl-svc-name">Dental Care</div><div class="cl-svc-desc">General dentistry, cosmetic treatments, orthodontics and oral surgery</div></div>
-      <div class="cl-svc"><div class="cl-svc-icon">🧠</div><div class="cl-svc-name">Neurology</div><div class="cl-svc-desc">Brain and nervous system diagnostics, headache clinics and neurological care</div></div>
-      <div class="cl-svc"><div class="cl-svc-icon">👁️</div><div class="cl-svc-name">Ophthalmology</div><div class="cl-svc-desc">Eye exams, vision correction, cataract surgery and retinal care</div></div>
-      <div class="cl-svc"><div class="cl-svc-icon">🦴</div><div class="cl-svc-name">Orthopedics</div><div class="cl-svc-desc">Joint replacement, sports injuries, fracture care and physiotherapy</div></div>
-      <div class="cl-svc"><div class="cl-svc-icon">👶</div><div class="cl-svc-name">Pediatrics</div><div class="cl-svc-desc">Child health checkups, vaccinations and developmental assessments</div></div>
-    </div>
-  </div>
-  <!-- Doctors -->
-  <div class="cl-doctors">
-    <div class="cl-doctors-title">Our Specialist Doctors</div>
-    <p class="cl-doctors-sub">Board-certified physicians with decades of combined experience</p>
-    <div class="cl-doctors-grid">
-      <div class="cl-doc">
-        <div class="cl-doc-header d1">👨‍⚕️</div>
-        <div class="cl-doc-body">
-          <div class="cl-doc-name">Dr. Ahmed Hassan</div>
-          <div class="cl-doc-spec">Cardiologist</div>
-          <div class="cl-doc-exp">MBBS, MD · 15 years exp.</div>
-        </div>
-      </div>
-      <div class="cl-doc">
-        <div class="cl-doc-header d2">👩‍⚕️</div>
-        <div class="cl-doc-body">
-          <div class="cl-doc-name">Dr. Lisa Chen</div>
-          <div class="cl-doc-spec">Neurologist</div>
-          <div class="cl-doc-exp">MBBS, DM · 12 years exp.</div>
-        </div>
-      </div>
-      <div class="cl-doc">
-        <div class="cl-doc-header d3">👨‍⚕️</div>
-        <div class="cl-doc-body">
-          <div class="cl-doc-name">Dr. Omar Khalid</div>
-          <div class="cl-doc-spec">Orthopedic Surgeon</div>
-          <div class="cl-doc-exp">MBBS, MS · 18 years exp.</div>
-        </div>
-      </div>
-      <div class="cl-doc">
-        <div class="cl-doc-header d4">👩‍⚕️</div>
-        <div class="cl-doc-body">
-          <div class="cl-doc-name">Dr. Fatima Malik</div>
-          <div class="cl-doc-spec">Pediatrician</div>
-          <div class="cl-doc-exp">MBBS, DCH · 10 years exp.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Appointment -->
-  <div class="cl-appointment">
-    <div class="cl-appt-wrap">
-      <h2>Book an Appointment</h2>
-      <p>Schedule your visit online and receive instant confirmation</p>
-      <div class="cl-form-grid">
-        <input class="cl-form-input" type="text" placeholder="Full Name">
-        <input class="cl-form-input" type="tel" placeholder="Phone Number">
-        <input class="cl-form-input" type="email" placeholder="Email Address">
-        <select class="cl-form-select">
-          <option value="">Select Department</option>
-          <option>Cardiology</option>
-          <option>Dental Care</option>
-          <option>Neurology</option>
-          <option>Ophthalmology</option>
-          <option>Orthopedics</option>
-          <option>Pediatrics</option>
-        </select>
-        <input class="cl-form-input" type="date">
-        <input class="cl-form-input" type="time">
-      </div>
-      <button style="background:#0a8fd1;color:#fff;border:none;padding:.8rem 2.5rem;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;width:100%">Confirm Appointment</button>
-    </div>
-  </div>
-  <!-- Contact -->
-  <div class="cl-contact-section">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <div class="cl-services-title">Contact Us</div>
-      <p class="cl-services-sub">We are here for you Monday through Saturday</p>
-    </div>
-    <div class="cl-contact-grid">
-      <div class="cl-contact-card">
-        <div class="cl-contact-icon">📍</div>
-        <div class="cl-contact-title">Address</div>
-        <div class="cl-contact-val">15 Health Avenue,<br>Medical District</div>
-      </div>
-      <div class="cl-contact-card">
-        <div class="cl-contact-icon">📞</div>
-        <div class="cl-contact-title">Helpline</div>
-        <div class="cl-contact-val">+1 (555) 100-2020</div>
-      </div>
-      <div class="cl-contact-card">
-        <div class="cl-contact-icon">🚨</div>
-        <div class="cl-contact-title">Emergency</div>
-        <div class="cl-contact-val">+1 (555) 911-0000<br>24/7 Available</div>
-      </div>
-      <div class="cl-contact-card">
-        <div class="cl-contact-icon">🕐</div>
-        <div class="cl-contact-title">Clinic Hours</div>
-        <div class="cl-contact-val">Mon–Sat: 8am–8pm<br>Sunday: 10am–4pm</div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-end">
-    <div class="demo-end-label">Portfolio Demo</div>
-    <div class="demo-end-title">— Demo Website End —</div>
-    <button class="demo-back-btn" onclick="closeDemo('clinic')">← Back to Portfolio</button>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════════════ -->
-<script>
-// ── Mobile Menu ──────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
-function closeMobileMenu(){ mobileMenu.classList.remove('active') }
-
-// ── FAQ Accordion ─────────────────────────────────
-function toggleFaq(btn){
-  const item = btn.parentElement;
-  const isOpen = item.classList.contains('active');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-  if(!isOpen) item.classList.add('active');
+    <script src="script.js"></script>
+</body>
+</html>/* --- PREMIUM ARCHITECTURAL VARIABLE PROTOCOLS --- */
+:root {
+    --bg-dark: #07090e;
+    --bg-surface: rgba(13, 18, 30, 0.75);
+    --bg-card: rgba(20, 27, 45, 0.45);
+    --border-glass: rgba(255, 255, 255, 0.07);
+    --border-glass-active: rgba(255, 255, 255, 0.15);
+    
+    --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    --accent-gold: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --neon-blue: #00f2fe;
+    
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --transition-premium: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-// ── Service Modals ────────────────────────────────
-const modalMap = {
-  'ai-websites': 'modal-ai-websites',
-  'ai-chatbots': 'modal-ai-chatbots',
-  'automation':  'modal-automation',
-  'seo':         'modal-seo'
-};
-function openModal(key){
-  const id = modalMap[key];
-  if(id){ document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden'; }
-}
-function closeModal(id){
-  document.getElementById(id).classList.remove('active');
-  document.body.style.overflow='';
-}
-document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', e => { if(e.target===overlay){ overlay.classList.remove('active'); document.body.style.overflow=''; } });
-});
-document.addEventListener('keydown', e => {
-  if(e.key==='Escape'){
-    document.querySelectorAll('.modal-overlay.active').forEach(m => { m.classList.remove('active'); document.body.style.overflow=''; });
-    document.querySelectorAll('.demo-page.active').forEach(d => { d.classList.remove('active'); document.body.style.overflow=''; });
-  }
-});
-
-// ── Demo Pages ────────────────────────────────────
-function openDemo(type){
-  const page = document.getElementById('demo-' + type);
-  if(page){
-    page.classList.add('active');
-    page.scrollTo(0,0);
-    document.body.style.overflow='hidden';
-  }
-}
-function closeDemo(type){
-  const page = document.getElementById('demo-' + type);
-  if(page){
-    page.classList.remove('active');
-    document.body.style.overflow='';
-    // Smooth scroll to portfolio
-    setTimeout(() => document.getElementById('portfolio').scrollIntoView({behavior:'smooth'}), 50);
-  }
+/* --- FOUNDATIONAL BASE OPTIMIZATIONS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-// ── Restaurant Menu Tabs ──────────────────────────
-function activateTab(btn){
-  btn.closest('.r-menu-tabs').querySelectorAll('.r-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-// ── Form Validation ───────────────────────────────
-function submitForm(){
-  const fields = [
-    { id:'f-firstname', label:'First Name' },
-    { id:'f-lastname',  label:'Last Name' },
-    { id:'f-email',     label:'Email Address' },
-    { id:'f-business',  label:'Business Type' },
-    { id:'f-budget',    label:'Budget' },
-    { id:'f-timeline',  label:'Timeline' },
-    { id:'f-message',   label:'Project Details' }
-  ];
-  const errors = [];
-  // Clear previous
-  fields.forEach(f => document.getElementById(f.id).classList.remove('field-error'));
-  document.getElementById('form-error').classList.remove('active');
-  document.getElementById('form-success').classList.remove('active');
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-  fields.forEach(f => {
-    const el = document.getElementById(f.id);
-    if(!el.value.trim()){
-      errors.push(`You have not completed the <strong>${f.label}</strong> field.`);
-      el.classList.add('field-error');
+/* --- TYPOGRAPHY SYSTEMS --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- HIGH-STATUS REVEAL ANIMATIONS (SCROLL-DRIVEN) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- BUTTON & ACTION SYSTEM DESIGN --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: #000000;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-glass-active);
+    transform: translateY(-3px);
+}
+
+/* --- ULTRA-PREMIUM MAIN HEADER BAR --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--bg-surface);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    transition: var(--transition-premium);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+}
+
+.brand-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.accent-dot {
+    color: #00f2fe;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-premium);
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
+}
+
+.nav-btn-desktop {
+    background: #ffffff;
+    color: #000000;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition-premium);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-btn-desktop:hover {
+    background: #00f2fe;
+    transform: translateY(-2px);
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: var(--transition-premium);
+}
+
+/* --- HERO CORE GRID SHOWCASE --- */
+.hero-section {
+    position: relative;
+    padding: 12rem 0 8rem 0;
+    background: radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.badge-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 242, 254, 0.05);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #00f2fe;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 580px;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 4rem;
+    border-top: 1px solid var(--border-glass);
+    padding-top: 2rem;
+}
+
+.stat-item h4 {
+    font-size: 2rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.25rem;
+}
+
+/* GLASSMORPHISM CARD SIMULATOR */
+.glass-hero-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    padding: 0.5rem;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.card-header-ux {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.75rem 1rem;
+}
+
+.card-header-ux .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #eab308; }
+.dot.green { background: #22c55e; }
+
+.mock-url {
+    background: rgba(255,255,255,0.05);
+    padding: 0.25rem 2rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: auto;
+    width: 60%;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    filter: brightness(0.9);
+}
+
+/* --- COMMON UTILITY SECTION HEADERS --- */
+.section-header {
+    margin-bottom: 5rem;
+}
+
+.section-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: var(--accent-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+
+/* --- SERVICES MATRIX GRID --- */
+.services-section {
+    padding: 8rem 0;
+    position: relative;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    transition: var(--transition-premium);
+    backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+    border-color: var(--border-glass-active);
+    transform: translateY(-5px);
+    background: rgba(20, 27, 45, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.05);
+}
+
+.service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: rgba(0, 242, 254, 0.07);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #00f2fe;
+    margin-bottom: 2rem;
+    transition: var(--transition-premium);
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: var(--primary-gradient);
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* --- PORTFOLIO SYSTEM DESIGN --- */
+.portfolio-section {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,18,30,0.4) 50%, transparent 100%);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+}
+
+.portfolio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-glass-active);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.portfolio-thumb {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+    opacity: 0.85;
+}
+
+.portfolio-card:hover .portfolio-thumb img {
+    transform: scale(1.06);
+    opacity: 1;
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-glass);
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.portfolio-meta {
+    padding: 2.5rem;
+}
+
+.portfolio-meta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-meta p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    height: 70px;
+    overflow: hidden;
+}
+
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.feature-tags span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.04);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.feature-tags i {
+    color: #22c55e;
+    margin-right: 0.25rem;
+}
+
+.btn-portfolio-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-glass);
+    color: #ffffff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.portfolio-card:hover .btn-portfolio-link {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/* --- PRICING GRID SYSTEM --- */
+.pricing-section {
+    padding: 8rem 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.price-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    padding: 3rem 2rem;
+    position: relative;
+    transition: var(--transition-premium);
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.price-card.popular {
+    background: rgba(23, 34, 59, 0.75);
+    border: 2px solid #4facfe;
+    box-shadow: 0 20px 40px rgba(79, 172, 254, 0.15);
+}
+
+.popular-ribbon {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: var(--primary-gradient);
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.price-header h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.price-amt {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.price-amt span {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.price-header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    border-top: 1px solid var(--border-glass);
+    padding-top: 1.5rem;
+}
+
+.price-features li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.price-features li i {
+    color: #4facfe;
+    margin-top: 0.2rem;
+}
+
+.btn-tier-action {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-glass);
+    color: #ffffff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.btn-tier-action:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.price-card.popular .btn-tier-action {
+    background: var(--primary-gradient);
+    color: #000000;
+    border: none;
+}
+
+.price-card.popular .btn-tier-action:hover {
+    box-shadow: 0 5px 20px rgba(0,242,254,0.4);
+    transform: translateY(-2px);
+}
+
+/* --- BRAND AUTHORITY ABOUT SECTION --- */
+.about-section {
+    padding: 8rem 0;
+    background: radial-gradient(circle at 10% 80%, rgba(253, 160, 133, 0.05) 0%, transparent 40%);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-visual {
+    background: linear-gradient(135deg, rgba(20,27,45,0.6) 0%, rgba(10,14,23,0.9) 100%), 
+                url('https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 480px;
+    border-radius: 16px;
+    border: 1px solid var(--border-glass);
+    position: relative;
+}
+
+.luxury-experience-box {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glass-active);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 240px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.luxury-experience-box .exp-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.luxury-experience-box .exp-text {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.about-text-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.about-text-content p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.pillars-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pillar-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.pillar-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #4facfe;
+    flex-shrink: 0;
+}
+
+.pillar-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.pillar-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- STRATEGIC 15-ITEM ACCORDION FAQ --- */
+.faq-section {
+    padding: 8rem 0;
+}
+
+.faq-accordion-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.faq-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.faq-icon-state {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.faq-icon-state::before, .faq-icon-state::after {
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+/* Horizontal line */
+.faq-icon-state::before {
+    top: 7px;
+    left: 0;
+    width: 16px;
+    height: 2px;
+}
+
+/* Vertical line */
+.faq-icon-state::after {
+    top: 0;
+    left: 7px;
+    width: 2px;
+    height: 16px;
+}
+
+.faq-item.expanded .faq-icon-state::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.faq-item.expanded .faq-icon-state::before {
+    transform: rotate(180deg);
+}
+
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-body p {
+    padding: 0 2rem 1.75rem 2rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* --- CONVERSION HIGH-INTENT INTAKE FORM --- */
+.contact-section {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,18,30,0.6) 100%);
+    border-top: 1px solid var(--border-glass);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+}
+
+.agency-contact-details {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border-glass);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.detail-card i {
+    font-size: 1.5rem;
+    color: #00f2fe;
+}
+
+.detail-card span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+}
+
+.highlight-link {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.premium-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    padding: 3rem;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border-glass);
+    padding: 0.85rem 1.2rem;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    transition: var(--transition-premium);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #00f2fe;
+    box-shadow: 0 0 10px rgba(0,242,254,0.15);
+}
+
+.form-group select option {
+    background: #0d121e;
+    color: #ffffff;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.hidden-success-banner {
+    display: none;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 2rem;
+    border-radius: 12px;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hidden-success-banner i {
+    font-size: 2rem;
+    color: #22c55e;
+}
+
+.hidden-success-banner h4 {
+    margin-bottom: 0.25rem;
+}
+
+/* --- PREMIUM FOOTER ARCHITECTURE --- */
+.premium-footer {
+    background: #04060a;
+    border-top: 1px solid var(--border-glass);
+    padding: 6rem 0 3rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.50fr repeat(2, 0.75fr);
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.footer-brand-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand-column p {
+    font-size: 0.9rem;
+    max-width: 320px;
+    margin-bottom: 1.5rem;
+}
+
+.social-row-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-row-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.social-row-links a:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.footer-links-column h4 {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links-column a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: var(--transition-premium);
+}
+
+.footer-links-column a:hover {
+    color: #00f2fe;
+    padding-left: 4px;
+}
+
+.footer-bottom-meta {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.legal-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+/* --- WHATSAPP CONVERSATIONAL FLUID BUBBLE --- */
+.floating-whatsapp-container {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.whatsapp-icon-bubble {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #25d366;
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: bubblePulse 2s infinite ease-out;
+    z-index: 1;
+}
+
+.bubble-hover-intel {
+    position: absolute;
+    right: 80px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glass-active);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: var(--transition-premium);
+    pointer-events: none;
+}
+
+.floating-whatsapp-container:hover .bubble-hover-intel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes bubblePulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* --- RESPONSIVE MEDIA BREAKPOINT LAYOUTS --- */
+@media (max-width: 1024px) {
+    .hero-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
     }
-  });
-
-  // Email validation
-  const emailEl = document.getElementById('f-email');
-  if(emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){
-    errors.push('Please enter a valid <strong>Email Address</strong>.');
-    emailEl.classList.add('field-error');
-  }
-
-  if(errors.length > 0){
-    const list = document.getElementById('error-list');
-    list.innerHTML = errors.map(e => `<li>${e}</li>`).join('');
-    document.getElementById('form-error').classList.add('active');
-    document.getElementById('form-error').scrollIntoView({behavior:'smooth',block:'nearest'});
-    return;
-  }
-
-  // Success
-  document.getElementById('form-success').classList.add('active');
-  fields.forEach(f => { document.getElementById(f.id).value = ''; });
-  document.getElementById('form-success').scrollIntoView({behavior:'smooth',block:'nearest'});
+    .hero-visual {
+        order: -1;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr repeat(2, 1fr);
+    }
 }
 
-// ── Scroll Animation ──────────────────────────────
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.style.opacity = '1'; });
-}, { threshold: 0.1 });
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 76px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 76px);
+        background: #090d16;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        gap: 2rem;
+        transition: var(--transition-premium);
+        backdrop-filter: none;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-btn-desktop {
+        display: none;
+    }
+    .nav-btn-mobile {
+        display: block;
+        background: var(--primary-gradient);
+        color: #000000;
+        padding: 1rem 3rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
 
-// ── Nav scroll effect ─────────────────────────────
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('main-nav');
-  if(window.scrollY > 60) nav.style.background='rgba(4,8,16,0.96)';
-  else nav.style.background='rgba(4,8,16,0.82)';
+    // 1. MOBILE MENU LAYER TOGGLE ENGINE
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('open');
+            // Animate toggle bars
+            const bars = mobileToggle.querySelectorAll('.bar');
+            if(mobileToggle.classList.contains('open')) {
+                bars[0].style.transform = 'rotate(45deg) translate(6px, 5deg)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(6px, -5deg)';
+            } else {
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        });
+    }
+
+    // Close menu on navigation click
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            if(mobileToggle) mobileToggle.classList.remove('open');
+            document.querySelectorAll('.bar').forEach(b => b.style.transform = 'none');
+            document.querySelectorAll('.bar')[1].style.opacity = '1';
+        });
+    });
+
+    // 2. PERFORMANCE-FIRST ACCORDION (FAQ MODULE)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const body = item.querySelector('.faq-body');
+
+        trigger.addEventListener('click', () => {
+            const isExpanded = item.classList.contains('expanded');
+            
+            // Collapse all sibling open accordions gracefully
+            faqItems.forEach(sibling => {
+                sibling.classList.remove('expanded');
+                sibling.querySelector('.faq-body').style.maxHeight = null;
+            });
+
+            if (!isExpanded) {
+                item.classList.add('expanded');
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        });
+    });
+
+    // 3. OBSERVER INTERSECTION SCROLL REVEAL ARRAYS
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Optimize processing resources once animated
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 4. CLIENT LEADS INTAKE CAPTURE VALIDATION
+    const contactForm = document.getElementById('agencyContactForm');
+    const successBanner = document.getElementById('formSuccessMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Client-side payload architecture modeling simulation
+            const clientPayload = {
+                name: document.getElementById('clientName').value,
+                company: document.getElementById('businessName').value,
+                phone: document.getElementById('clientPhone').value,
+                email: document.getElementById('clientEmail').value,
+                service: document.getElementById('serviceReq').value,
+                budget: document.getElementById('budgetRange').value,
+                specs: document.getElementById('projectDetails').value
+            };
+
+            console.log("Transmission sequence verified. Payload data: ", clientPayload);
+            
+            // Smooth view transition states
+            contactForm.style.display = 'none';
+            successBanner.style.display = 'flex';
+        });
+    }
 });
-</script>
+:root {
+    --primary-edu: #1e3a8a;
+    --accent-edu: #b45309;
+    --text-dark: #1f2937;
+    --text-light: #f9fafb;
+}
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); margin:0; padding:0; background:#ffffff;}
+.navbar-edu { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; background:var(--primary-edu); color:#ffffff;}
+.navbar-edu a { color:#ffffff; text-decoration:none; margin-left:2rem; font-weight:500;}
+.hero-edu { padding:6rem 5%; background:linear-gradient(rgba(30,58,138,0.85), rgba(30,58,138,0.95)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80'); background-size:cover; color:#ffffff; text-align:center;}
+.hero-edu h1 { font-size:3rem; margin-bottom:1rem; font-family:'Playfair Display',serif;}
+.grid-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2.5rem; padding:4rem 5%;}
+.edu-card { border:1px solid #e5e7eb; border-radius:8px; padding:2rem; background:#ffffff; box-shadow:0 4px 6px rgba(0,0,0,0.05);}
+.footer-edu { background:#111827; color:#9ca3af; text-align:center; padding:2rem; font-size:0.9rem;}
+.form-edu { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:2rem auto;}
+.form-edu input, .form-edu textarea { padding:0.8rem; border:1px solid #d1d5db; border-radius:4px;}
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; padding:2rem 5%;}
+.gallery-grid img { width:100%; height:200px; object-fit:cover; border-radius:6px;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro International Academy | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar-edu"><h2>ZENTRO ACADEMY</h2><nav><a href="index.html">Home</a><a href="about.html">About School</a><a href="admissions.html">Admissions</a><a href="campuses.html">Campuses</a><a href="gallery.html">Gallery</a><a href="faculty.html">Faculty</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-edu"><h1>Cultivating Elite Thinkers & Global Leaders</h1><p>A premium structural framework for standard academic growth indices.</p></section>
+    <div class="grid-container">
+        <div class="edu-card"><h3>Principal's Executive Counsel</h3><p>"We foster academic excellence with an emphasis on computational logic, historical context, and critical thinking workflows."</p></div>
+        <div class="edu-card"><h3>Academic Announcements</h3><p>Registration arrays for the upcoming competitive scholastic term remain accessible through June 30th.</p></div>
+        <div class="edu-card"><h3> scholsatic Events Matrix</h3><p>The annual Science & Technological Exposition framework is currently scheduled for execution next Tuesday.</p></div>
+    </div>
+    <footer class="footer-edu">&copy; 2026 Zentro Academy Blueprint. Institutional System Data: 0000-0000000 | info@example.com</footer>
+</body>
+</html>
+:root {
+    --primary-med: #0d9488;
+    --accent-med: #0f766e;
+    --text-slate: #334155;
+}
+body { font-family:'Plus Jakarta Sans',sans-serif; color:var(--text-slate); margin:0; padding:0;}
+.nav-med { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; background:#ffffff; border-bottom:1px solid #e2e8f0;}
+.nav-med a { color:var(--text-slate); text-decoration:none; margin-left:2rem; font-weight:600;}
+.hero-med { padding:8rem 5%; background:linear-gradient(90deg, rgba(255,255,255,0.95) 30%, transparent 100%), url('https://images.unsplash.com/photo-1584515933487-780216b29953?auto=format&fit=crop&w=1200&q=80'); background-size:cover;}
+.hero-med h1 { font-size:3rem; color:#0f172a; max-width:600px;}
+.med-container { padding:4rem 5%;}
+.doctor-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;}
+.doctor-card { border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:1.5rem;}
+.doctor-card img { width:100%; height:280px; object-fit:cover;}
+.btn-med { background:var(--primary-med); color:#ffffff; padding:0.75rem 1.5rem; text-decoration:none; border-radius:6px; display:inline-block; margin-top:1rem;}
+.footer-med { background:#0f172a; color:#94a3b8; text-align:center; padding:2.5rem;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro Medical Clinic | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-med"><h2>ZENTRO CLINIC</h2><nav><a href="index.html">Home</a><a href="doctors.html">Doctors</a><a href="services.html">Services</a><a href="appointments.html">Appointments</a><a href="about.html">About</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-med"><h1>Advanced Medical Care & Practitioner Precision</h1><p>High-integrity clinical networks providing data-validated wellness parameters.</p><a href="appointments.html" class="btn-med">Schedule Clinical Intake</a></section>
+    <footer class="footer-med">&copy; 2026 Zentro Medical Clinic Blueprint. Operational Channels: 0000-0000000 | info@example.com</footer>
+</body>
+</html>
+:root {
+    --lux-gold: #c2410c;
+    --charcoal: #111827;
+}
+body { font-family:'Playfair Display',serif; color:#ffffff; background:#0b0f19; margin:0; padding:0;}
+.nav-rest { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; background:rgba(11,15,25,0.9); border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-rest a { color:#ffffff; font-family:'Plus Jakarta Sans',sans-serif; text-decoration:none; margin-left:2rem; font-size:0.95rem;}
+.hero-rest { padding:12rem 5% 8rem 5%; text-align:center; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80'); background-size:cover;}
+.hero-rest h1 { font-size:4rem; margin-bottom:1rem;}
+.menu-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:3rem; padding:5rem 5%;}
+.menu-item { border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:1.5rem;}
+.menu-header { display:flex; justify-content:space-between; font-weight:600; color:var(--lux-gold); font-size:1.25rem;}
+.menu-item p { font-family:'Plus Jakarta Sans',sans-serif; color:#9ca3af; font-size:0.9rem; margin-top:0.5rem;}
+.footer-rest { background:#030712; color:#6b7280; text-align:center; padding:3rem; font-family:'Plus Jakarta Sans',sans-serif;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro Culinary Arts | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-rest"><h2>ZENTRO CULINARY</h2><nav><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="gallery.html">Gallery</a><a href="reservations.html">Reservations</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-rest"><h1>Symphony of Gourmet Flavor Structures</h1><p style="font-family:'Plus Jakarta Sans',sans-serif; color:#e5e7eb;">An immersive sensory destination designed for culinary purists.</p></section>
+    <footer class="footer-rest">&copy; 2026 Zentro Culinary Blueprint. Curated Bookings Desk: 0000-0000000 | info@example.com</footer>
+</body>
+</html>
+:root {
+    --estate-dark: #0f172a;
+    --estate-gold: #ca8a04;
+}
+body { font-family:'Plus Jakarta Sans',sans-serif; color:#334155; margin:0; padding:0;}
+.nav-estate { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; background:var(--estate-dark); color:#ffffff;}
+.nav-estate a { color:#ffffff; text-decoration:none; margin-left:2rem; font-weight:500;}
+.hero-estate { padding:10rem 5%; background:linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.85)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'); background-size:cover; color:#ffffff; text-align:center;}
+.prop-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2.5rem; padding:4rem 5%;}
+.prop-card { border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:#ffffff;}
+.prop-card img { width:100%; height:220px; object-fit:cover;}
+.prop-details { padding:1.5rem;}
+.prop-price { font-size:1.5rem; font-weight:700; color:var(--estate-gold); margin-bottom:0.5rem;}
+.footer-estate { background:var(--estate-dark); color:#94a3b8; text-align:center; padding:3rem;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro Premium Real Estate | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-estate"><h2>ZENTRO LUXURY HOLDINGS</h2><nav><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="agents.html">Agents</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-estate"><h1>Acquire Unrivaled High-Ticket Architectural Space</h1><p>Vetted high-yield luxury farmhouses, commercial networks, mango orchards, and modern apartments.</p></section>
+    <div class="prop-grid">
+        <div class="prop-card"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=80" alt="Luxury Farmhouse Asset"><div class="prop-details"><div class="prop-price">$850,000</div><h4>The Oasis Premium Farmhouse</h4><p>Multan Road Corridor - 4 Acres Structured Perimeter Asset.</p></div></div>
+        <div class="prop-card"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=500&q=80" alt="Commercial Corporate Office Hub"><div class="prop-details"><div class="prop-price">$1,200,000</div><h4>Commercial Strategic Retail Hubs</h4><p>Main Downtown Central Business Sector Blocks.</p></div></div>
+    </div>
+    <footer class="footer-estate">&copy; 2026 Zentro Real Estate Blueprint. Broker Intake Channels: 0000-0000000 | info@example.com</footer>
+</body>
+</html>
+:root {
+    --corp-navy: #0f172a;
+    --corp-blue: #2563eb;
+}
+body { font-family:'Plus Jakarta Sans',sans-serif; color:#334155; margin:0; padding:0; background:#f8fafc;}
+.nav-corp { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.nav-corp a { color:#1e293b; text-decoration:none; margin-left:2rem; font-weight:600;}
+.hero-corp { padding:8rem 5%; background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color:#ffffff;}
+.hero-corp h1 { font-size:3.5rem; max-width:700px; line-height:1.2;}
+.corp-container { padding:5rem 5%;}
+.grid-corp { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2.5rem;}
+.card-corp { background:#ffffff; padding:2.5rem; border:1px solid #e2e8f0; border-radius:8px;}
+.footer-corp { background:#0f172a; color:#94a3b8; text-align:center; padding:2.5rem;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro Corporate Enterprise | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-corp"><h2>ZENTRO ENTERPRISE</h2><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="team.html">Team</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-corp"><h1>Engineered for Global Scale. Managed for Absolute Efficiency.</h1><p style="color:#94a3b8; font-size:1.2rem; margin-top:1rem;">Enterprise web ecosystems built to institutional standards.</p></section>
+    <footer class="footer-corp">&copy; 2026 Zentro Corporate Blueprint. Relations Desk: 0000-0000000 | info@example.com</footer>
+</body>
+</html>
+body { font-family:'Plus Jakarta Sans',sans-serif; color:#1e293b; margin:0; padding:0; background:#ffffff;}
+.nav-biz { display:flex; justify-content:space-between; align-items:center; padding:1.5rem 5%; border-bottom:1px solid #f1f5f9;}
+.nav-biz a { color:#475569; text-decoration:none; margin-left:2rem; font-weight:500;}
+.hero-biz { padding:7rem 5%; text-align:center; background:#f8fafc;}
+.hero-biz h1 { font-size:3.2rem; color:#0f172a;}
+.biz-container { padding:4rem 5%; max-width:1000px; margin:0 auto;}
+.faq-box { border:1px solid #e2e8f0; border-radius:6px; margin-bottom:1rem; padding:1.5rem; background:#ffffff;}
+.footer-biz { background:#0f172a; color:#94a3b8; text-align:center; padding:2rem;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Zentro Business Solutions | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-biz"><h2>ZENTRO STRATEGY</h2><nav><a href="index.html">Home</a><a href="solutions.html">Solutions</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a></nav></div>
+    <section class="hero-biz"><h1>Accelerating Digital Workflows for Growing Brands</h1><p>High-conversion, custom layouts built to turn traffic into brand profit.</p></section>
+    <footer class="footer-biz">&copy; 2026 Zentro Business Blueprint. Corporate Headquarters: 0000-0000000 | info@example.com</footer>
 </body>
 </html>
