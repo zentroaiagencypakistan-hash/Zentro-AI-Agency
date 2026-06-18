@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zentro AI Development Agency</title>
+    <meta name="title" content="Zentro AI Development Agency | Web Development, AI Bots & Digital Solutions Pakistan">
+    <meta name="description" content="Zentro AI Development Agency delivers premium web development, Meta ads management, AI bots automation, SEO optimization, and business solutions for Pakistani enterprises. Transform your business digitally with expert developers.">
+    <meta name="keywords" content="web development Pakistan, AI bots, Meta ads, SEO services, digital marketing agency, business automation, website design, development company Karachi">
+    <meta name="author" content="Zentro AI Development Agency">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zentro AI Development Agency | Premium Digital Solutions">
+    <meta property="og:description" content="Professional web development, AI automation, Meta ads management, and SEO optimization services for businesses ready to scale.">
+    <meta property="og:url" content="https://zentroai.com">
+    <meta property="og:site_name" content="Zentro AI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zentro AI Development Agency">
+    <meta name="twitter:description" content="Transform your business with premium web development and AI automation solutions.">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="canonical" href="https://zentroai.com">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zentro AI Development Agency",
+      "url": "https://zentroai.com",
+      "description": "Premium AI development and digital solutions agency",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+92-323-8194763",
+        "email": "zentroaiagencypakistan@gmail.com"
+      }
+    }
+    </script>
+    <title>Zentro AI Development Agency | Web Development, AI Bots & Digital Solutions Pakistan</title>
     <style>
         * {
             margin: 0;
@@ -17,31 +51,36 @@
             --accent: #ec4899;
             --dark: #0f172a;
             --light: #f8fafc;
-            --glass: rgba(255, 255, 255, 0.1);
             --text: #1e293b;
             --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--light);
             color: var(--text);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
+        header {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(248, 250, 252, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
         }
 
-        .nav-container {
-            max-width: 1200px;
+        nav {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
@@ -51,16 +90,17 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
@@ -68,6 +108,7 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
             cursor: pointer;
         }
@@ -76,69 +117,93 @@
             color: var(--primary);
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
+        main {
+            margin-top: 70px;
         }
 
-        /* Hero Section */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
         .hero {
-            margin-top: 60px;
-            min-height: calc(100vh - 60px);
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
             overflow: hidden;
+            position: relative;
         }
 
         .hero-content {
-            max-width: 1200px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            width: 100%;
+            padding: 6rem 2rem;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
             background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.2;
             animation: slideInLeft 0.8s ease;
         }
 
         .hero-text p {
             font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            line-height: 1.6;
             animation: slideInLeft 0.8s ease 0.1s both;
         }
 
-        .hero-buttons {
+        .hero-cta {
             display: flex;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-top: 2rem;
             animation: slideInLeft 0.8s ease 0.2s both;
+            flex-wrap: wrap;
         }
 
-        button {
-            padding: 0.75rem 2rem;
+        .btn {
+            padding: 0.85rem 2rem;
             border: none;
             border-radius: 0.5rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 1rem;
+            display: inline-block;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -148,7 +213,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
         }
 
@@ -161,12 +226,6 @@
         .btn-secondary:hover {
             background: var(--primary);
             color: white;
-        }
-
-        .trust-message {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            animation: slideInLeft 0.8s ease 0.3s both;
         }
 
         .hero-visual {
@@ -228,78 +287,55 @@
             }
         }
 
-        /* Services Section */
-        .services {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-heading h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 4rem;
         }
 
         .service-card {
             background: white;
             border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s;
             cursor: pointer;
-            border: 1px solid #e2e8f0;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
             border-color: var(--primary);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         .service-card p {
-            color: var(--text-light);
             margin-bottom: 1.5rem;
-            line-height: 1.6;
         }
 
         .learn-more-btn {
             background: var(--primary);
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border: none;
-            border-radius: 0.5rem;
+            border-radius: 0.4rem;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
 
         .learn-more-btn:hover {
             background: var(--secondary);
+            transform: translateX(5px);
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -325,9 +361,9 @@
 
         .modal-content {
             background: white;
-            border-radius: 1rem;
+            border-radius: 1.5rem;
             padding: 3rem;
-            max-width: 600px;
+            max-width: 650px;
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
@@ -354,32 +390,32 @@
             font-size: 2rem;
             cursor: pointer;
             color: var(--text-light);
+            transition: color 0.3s;
         }
 
         .modal-close:hover {
             color: var(--text);
         }
 
-        .modal h3 {
+        .modal-content h3 {
             color: var(--primary);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
         }
 
-        .modal ul {
+        .modal-content ul {
             list-style: none;
-            margin-bottom: 2rem;
         }
 
-        .modal ul li {
-            padding: 0.75rem 0;
+        .modal-content ul li {
+            padding: 0.8rem 0;
             color: var(--text-light);
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
         }
 
-        .modal ul li:before {
+        .modal-content ul li:before {
             content: "✓";
             color: var(--primary);
             font-weight: bold;
@@ -387,40 +423,28 @@
             font-size: 1.2rem;
         }
 
-        /* Demo Sites Section */
-        .demo-sites {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        }
-
-        .demo-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .demo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .demo-card {
             background: white;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s;
-            cursor: pointer;
-            border: 1px solid #e2e8f0;
         }
 
         .demo-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
         }
 
-        .demo-card-header {
+        .demo-header {
             height: 150px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
@@ -431,29 +455,28 @@
             font-weight: 700;
         }
 
-        .demo-card-body {
+        .demo-body {
             padding: 2rem;
         }
 
-        .demo-card-body h3 {
+        .demo-body h3 {
             margin-bottom: 1rem;
             color: var(--primary);
-            font-size: 1.3rem;
         }
 
-        .demo-card-body ul {
+        .demo-body ul {
             list-style: none;
             margin-bottom: 1.5rem;
         }
 
-        .demo-card-body ul li {
+        .demo-body ul li {
             color: var(--text-light);
             padding: 0.5rem 0;
             display: flex;
             align-items: center;
         }
 
-        .demo-card-body ul li:before {
+        .demo-body ul li:before {
             content: "•";
             color: var(--primary);
             margin-right: 0.75rem;
@@ -464,7 +487,7 @@
             width: 100%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 0.75rem;
+            padding: 0.8rem;
             border: none;
             border-radius: 0.5rem;
             font-weight: 600;
@@ -473,11 +496,10 @@
         }
 
         .view-demo-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
         }
 
-        /* Demo Page Styling */
         .demo-page {
             display: none;
             position: fixed;
@@ -495,31 +517,30 @@
             animation: fadeIn 0.3s;
         }
 
-        .demo-header {
+        .demo-page-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .demo-header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .demo-page-header h1 {
+            color: white;
+            margin-bottom: 1.5rem;
         }
 
         .demo-nav {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
             flex-wrap: wrap;
         }
 
         .demo-nav button {
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border: 1px solid white;
             border-radius: 0.5rem;
             cursor: pointer;
@@ -533,13 +554,13 @@
             color: var(--primary);
         }
 
-        .demo-page-content {
-            max-width: 1000px;
+        .demo-content {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
         }
 
-        .back-to-site-btn {
+        .back-btn {
             position: fixed;
             top: 20px;
             right: 20px;
@@ -554,22 +575,21 @@
             transition: all 0.3s;
         }
 
-        .back-to-site-btn:hover {
-            transform: translateY(-2px);
+        .back-btn:hover {
+            transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
         }
 
-        /* Restaurant Demo */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 2rem 0;
         }
 
         .menu-item {
             background: white;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
             border-radius: 0.75rem;
             padding: 1.5rem;
             transition: all 0.3s;
@@ -586,7 +606,6 @@
         }
 
         .menu-item p {
-            color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
@@ -595,11 +614,11 @@
             display: flex;
             justify-content: space-between;
             padding-top: 1rem;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--border);
             font-weight: 600;
+            color: var(--primary);
         }
 
-        /* Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -634,29 +653,36 @@
         .gallery-item p {
             font-size: 0.9rem;
             opacity: 0.9;
+            color: white;
         }
 
-        /* Form Styling */
+        form {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            max-width: 600px;
+        }
+
         .form-group {
-            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-group label {
-            display: block;
+            font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--text);
-            font-weight: 600;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
+            padding: 0.85rem;
+            border: 1px solid var(--border);
             border-radius: 0.5rem;
             font-family: inherit;
-            transition: border-color 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
@@ -674,7 +700,6 @@
         }
 
         .submit-btn {
-            width: 100%;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 1rem;
@@ -687,12 +712,11 @@
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
 
-        /* Properties Grid */
-        .properties-grid {
+        .property-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
@@ -701,7 +725,7 @@
 
         .property-card {
             background: white;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border);
             border-radius: 0.75rem;
             overflow: hidden;
             transition: all 0.3s;
@@ -721,6 +745,7 @@
             justify-content: center;
             color: white;
             font-size: 3rem;
+            font-weight: 300;
         }
 
         .property-details {
@@ -742,9 +767,9 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
+            margin-top: 1rem;
         }
 
-        /* Contact Section */
         .contact-info {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -754,8 +779,8 @@
         }
 
         .contact-info h3 {
+            color: white;
             margin-bottom: 1.5rem;
-            font-size: 1.3rem;
         }
 
         .contact-item {
@@ -777,35 +802,283 @@
             opacity: 0.8;
         }
 
-        /* Responsive */
+        .about-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .process-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .faq-section {
+            background: white;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-question.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+        }
+
+        .pricing-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .delivery {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
+                padding: 3rem 1rem;
             }
 
-            .hero-text h1 {
+            h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-buttons {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-cta {
                 flex-direction: column;
             }
 
-            .button {
+            .btn {
                 width: 100%;
+                text-align: center;
             }
 
             .hero-visual {
                 height: 300px;
             }
 
-            .ai-sphere {
-                width: 200px;
-                height: 200px;
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
             }
 
-            .section-heading h2 {
-                font-size: 1.8rem;
+            .services-grid,
+            .demo-grid,
+            .pricing-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
             .modal-content {
@@ -813,1363 +1086,1604 @@
                 padding: 1.5rem;
             }
 
+            .menu-grid,
+            .gallery-grid,
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
             .demo-nav {
+                flex-wrap: wrap;
                 gap: 0.5rem;
             }
 
             .demo-nav button {
                 padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .back-to-site-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
+            section {
+                padding: 3rem 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.8rem;
+            h1 {
+                font-size: 2rem;
             }
 
-            .hero-text p {
-                font-size: 0.95rem;
+            h2 {
+                font-size: 1.5rem;
             }
 
-            .service-card, .demo-card {
-                padding: 1.5rem;
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .nav-links {
+                flex-direction: column;
                 gap: 0.5rem;
-                font-size: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
+    <header>
+        <nav>
             <div class="logo">Zentro AI</div>
             <ul class="nav-links">
-                <li><a onclick="scrollToSection('services')">Services</a></li>
-                <li><a onclick="scrollToSection('demos')">Demo Sites</a></li>
-                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a onclick="scrollTo('services')">Services</a></li>
+                <li><a onclick="scrollTo('demos')">Demos</a></li>
+                <li><a onclick="scrollTo('pricing')">Pricing</a></li>
+                <li><a onclick="scrollTo('contact')">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Premium AI Development Solutions</h1>
-                <p>We build high-performance websites, intelligent automation systems, and data-driven marketing campaigns for businesses ready to scale.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="scrollToSection('services')">Explore Services</button>
-                    <button class="btn-secondary" onclick="scrollToSection('contact')">Get Started</button>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Premium AI Development Solutions</h1>
+                    <p>Transform your business with cutting-edge web development, intelligent AI bots, strategic Meta ads management, and comprehensive SEO optimization. We deliver results that matter.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" onclick="scrollTo('services')">Explore Services</button>
+                        <button class="btn btn-secondary" onclick="scrollTo('contact')">Get Started</button>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-top: 2rem;">Trusted by businesses across Pakistan</p>
                 </div>
-                <p class="trust-message">Trusted by businesses across Pakistan</p>
+                <div class="hero-visual">
+                    <div class="ai-sphere"></div>
+                    <div class="ai-sphere-2"></div>
+                </div>
             </div>
-            <div class="hero-visual">
-                <div class="ai-sphere"></div>
-                <div class="ai-sphere-2"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-heading">
-            <h2>Our Services</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
+        <section id="services">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 0.5rem;">Our Services</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">We provide comprehensive digital solutions tailored to your business needs and growth objectives.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Web Development</h3>
+                        <p>Custom websites and applications designed for performance, usability, and conversion optimization.</p>
+                        <button class="learn-more-btn" onclick="openModal('web-dev')">Learn More</button>
+                    </div>
+                    <div class="service-card">
+                        <h3>Meta Ads Development</h3>
+                        <p>Strategic Facebook and Instagram campaigns designed to reach your target audience effectively.</p>
+                        <button class="learn-more-btn" onclick="openModal('meta-ads')">Learn More</button>
+                    </div>
+                    <div class="service-card">
+                        <h3>AI Bots & Automation</h3>
+                        <p>Intelligent automation systems including WhatsApp bots, email automation, and workflow optimization.</p>
+                        <button class="learn-more-btn" onclick="openModal('ai-bots')">Learn More</button>
+                    </div>
+                    <div class="service-card">
+                        <h3>SEO Growth</h3>
+                        <p>Comprehensive SEO strategies to increase search visibility and drive organic traffic sustainably.</p>
+                        <button class="learn-more-btn" onclick="openModal('seo')">Learn More</button>
+                    </div>
+                    <div class="service-card">
+                        <h3>Problem Solving</h3>
+                        <p>Technical consultation, maintenance, bug fixing, and performance optimization for your digital assets.</p>
+                        <button class="learn-more-btn" onclick="openModal('problem-solving')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="web-dev-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('web-dev-modal')">×</button>
                 <h3>Web Development</h3>
-                <p>Custom websites and web applications built with modern technologies for optimal performance and user experience.</p>
-                <button class="learn-more-btn" onclick="openModal('web-dev')">Learn More</button>
+                <p>Our comprehensive web development process ensures professional results:</p>
+                <ul>
+                    <li>Requirement Analysis</li>
+                    <li>UI/UX Planning</li>
+                    <li>Responsive Design</li>
+                    <li>Frontend Development</li>
+                    <li>Backend Development</li>
+                    <li>Testing & QA</li>
+                    <li>Optimization</li>
+                    <li>Deployment</li>
+                    <li>Support & Maintenance</li>
+                </ul>
             </div>
-            <div class="service-card">
+        </div>
+
+        <div class="modal" id="meta-ads-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('meta-ads-modal')">×</button>
                 <h3>Meta Ads Development</h3>
-                <p>Strategic Facebook and Instagram campaigns designed to reach your target audience and drive conversions.</p>
-                <button class="learn-more-btn" onclick="openModal('meta-ads')">Learn More</button>
+                <p>Strategic approach to Facebook and Instagram advertising:</p>
+                <ul>
+                    <li>Campaign Strategy</li>
+                    <li>Audience Research</li>
+                    <li>Ad Creatives</li>
+                    <li>Funnel Planning</li>
+                    <li>Tracking Setup</li>
+                    <li>Optimization Process</li>
+                    <li>Performance Monitoring</li>
+                </ul>
             </div>
-            <div class="service-card">
+        </div>
+
+        <div class="modal" id="ai-bots-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('ai-bots-modal')">×</button>
                 <h3>AI Bots & Automation</h3>
-                <p>Intelligent automation systems including WhatsApp bots, email automation, and workflow optimization.</p>
-                <button class="learn-more-btn" onclick="openModal('ai-bots')">Learn More</button>
+                <p>Intelligent systems to streamline your operations:</p>
+                <ul>
+                    <li>WhatsApp Bots</li>
+                    <li>Email Automation</li>
+                    <li>Social Media Bots</li>
+                    <li>Business Automation</li>
+                    <li>Lead Capture Systems</li>
+                    <li>Customer Support Automation</li>
+                    <li>Workflow Integration</li>
+                </ul>
             </div>
-            <div class="service-card">
+        </div>
+
+        <div class="modal" id="seo-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('seo-modal')">×</button>
                 <h3>SEO Growth</h3>
-                <p>Comprehensive SEO strategies to increase your search visibility and organic traffic.</p>
-                <button class="learn-more-btn" onclick="openModal('seo')">Learn More</button>
+                <p>Complete SEO strategy to boost your presence:</p>
+                <ul>
+                    <li>Technical SEO</li>
+                    <li>On-Page SEO</li>
+                    <li>Content Optimization</li>
+                    <li>Site Structure</li>
+                    <li>Performance Optimization</li>
+                    <li>Search Visibility Improvement</li>
+                    <li>Monthly Reporting</li>
+                </ul>
             </div>
-            <div class="service-card">
+        </div>
+
+        <div class="modal" id="problem-solving-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('problem-solving-modal')">×</button>
                 <h3>Problem Solving</h3>
-                <p>Technical consultation, maintenance, bug fixing, and performance improvements for your digital assets.</p>
-                <button class="learn-more-btn" onclick="openModal('problem-solving')">Learn More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Modals -->
-    <div class="modal" id="web-dev-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('web-dev-modal')">×</button>
-            <h3>Web Development</h3>
-            <p>Our comprehensive web development process ensures quality results:</p>
-            <ul>
-                <li>Planning & Strategy</li>
-                <li>Market & Competitor Research</li>
-                <li>Wireframing & Information Architecture</li>
-                <li>UI Design</li>
-                <li>UX Design & Testing</li>
-                <li>Frontend Development</li>
-                <li>Backend Development</li>
-                <li>Quality Assurance & Testing</li>
-                <li>Performance Optimization</li>
-                <li>Deployment</li>
-                <li>Ongoing Maintenance & Support</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="meta-ads-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('meta-ads-modal')">×</button>
-            <h3>Meta Ads Development</h3>
-            <p>Strategic approach to Facebook and Instagram advertising:</p>
-            <ul>
-                <li>Audience Research & Segmentation</li>
-                <li>Ad Creative Design & Copywriting</li>
-                <li>Campaign Structure & Setup</li>
-                <li>Conversion Tracking Implementation</li>
-                <li>Continuous A/B Testing</li>
-                <li>Lead Generation Optimization</li>
-                <li>Performance Monitoring & Reporting</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="ai-bots-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('ai-bots-modal')">×</button>
-            <h3>AI Bots & Automation</h3>
-            <p>Intelligent systems to streamline your business operations:</p>
-            <ul>
-                <li>WhatsApp Business Bots</li>
-                <li>Email Automation Systems</li>
-                <li>Social Media Automation</li>
-                <li>Business Process Automation</li>
-                <li>Lead Capture Automation</li>
-                <li>Customer Support Automation</li>
-                <li>Workflow Automation & Integration</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="seo-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('seo-modal')">×</button>
-            <h3>SEO Growth</h3>
-            <p>Complete SEO strategy to boost your online presence:</p>
-            <ul>
-                <li>Technical SEO Audit & Implementation</li>
-                <li>On-Page SEO Optimization</li>
-                <li>Keyword Research & Strategy</li>
-                <li>Content Creation & Optimization</li>
-                <li>Website Performance Optimization</li>
-                <li>Search Visibility Enhancement</li>
-                <li>Monthly Reporting & Analysis</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="problem-solving-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('problem-solving-modal')">×</button>
-            <h3>Problem Solving</h3>
-            <p>Technical expertise to maintain and improve your digital presence:</p>
-            <ul>
-                <li>Website Maintenance Services</li>
-                <li>Bug Fixing & Debugging</li>
-                <li>Technical Consultation</li>
-                <li>Performance Improvements</li>
-                <li>Growth Suggestions</li>
-                <li>Free Technical Advice</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Demo Sites Section -->
-    <section class="demo-sites" id="demos">
-        <div class="demo-container">
-            <div class="section-heading">
-                <h2>Demo Sites</h2>
-            </div>
-            <div class="demo-grid">
-                <div class="demo-card">
-                    <div class="demo-card-header">🍽️ Restaurant</div>
-                    <div class="demo-card-body">
-                        <h3>Restaurant Platform</h3>
-                        <ul>
-                            <li>Menu Management</li>
-                            <li>Food Gallery</li>
-                            <li>Online Reservations</li>
-                            <li>Location Details</li>
-                            <li>Contact Information</li>
-                        </ul>
-                        <button class="view-demo-btn" onclick="showDemo('restaurant')">View Demo</button>
-                    </div>
-                </div>
-
-                <div class="demo-card">
-                    <div class="demo-card-header">🏠 Real Estate</div>
-                    <div class="demo-card-body">
-                        <h3>Real Estate Platform</h3>
-                        <ul>
-                            <li>Property Listings</li>
-                            <li>Advanced Filters</li>
-                            <li>Property Details</li>
-                            <li>Location Maps</li>
-                            <li>Contact Agents</li>
-                        </ul>
-                        <button class="view-demo-btn" onclick="showDemo('realestate')">View Demo</button>
-                    </div>
-                </div>
-
-                <div class="demo-card">
-                    <div class="demo-card-header">🎓 School</div>
-                    <div class="demo-card-body">
-                        <h3>School Management</h3>
-                        <ul>
-                            <li>Academics Info</li>
-                            <li>Faculty Directory</li>
-                            <li>Student Gallery</li>
-                            <li>Online Admissions</li>
-                            <li>Contact Details</li>
-                        </ul>
-                        <button class="view-demo-btn" onclick="showDemo('school')">View Demo</button>
-                    </div>
-                </div>
-
-                <div class="demo-card">
-                    <div class="demo-card-header">🏢 Corporate</div>
-                    <div class="demo-card-body">
-                        <h3>Corporate Portal</h3>
-                        <ul>
-                            <li>About Company</li>
-                            <li>Services Overview</li>
-                            <li>Team Directory</li>
-                            <li>Portfolio Projects</li>
-                            <li>Client Inquiries</li>
-                        </ul>
-                        <button class="view-demo-btn" onclick="showDemo('corporate')">View Demo</button>
-                    </div>
-                </div>
-
-                <div class="demo-card">
-                    <div class="demo-card-header">💼 Healthcare</div>
-                    <div class="demo-card-body">
-                        <h3>Healthcare Clinic</h3>
-                        <ul>
-                            <li>Doctor Profiles</li>
-                            <li>Services Available</li>
-                            <li>Appointment Booking</li>
-                            <li>Patient Resources</li>
-                            <li>Contact & Hours</li>
-                        </ul>
-                        <button class="view-demo-btn" onclick="showDemo('healthcare')">View Demo</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Restaurant Demo Page -->
-    <div class="demo-page" id="restaurant-demo">
-        <button class="back-to-site-btn" onclick="closeDemo('restaurant')">← Back to Site</button>
-        <div class="demo-header">
-            <h1>Zentro Restaurant Demo</h1>
-            <div class="demo-nav">
-                <button class="active" onclick="showRestaurantPage('home')">Home</button>
-                <button onclick="showRestaurantPage('menu')">Menu</button>
-                <button onclick="showRestaurantPage('gallery')">Gallery</button>
-                <button onclick="showRestaurantPage('reservation')">Reservation</button>
-                <button onclick="showRestaurantPage('location')">Location</button>
-                <button onclick="showRestaurantPage('contact')">Contact</button>
+                <p>Technical expertise and consultation:</p>
+                <ul>
+                    <li>Website Maintenance</li>
+                    <li>Bug Fixing</li>
+                    <li>Performance Improvements</li>
+                    <li>Technical Consultation</li>
+                    <li>Growth Opportunities</li>
+                    <li>Free Advisory Services</li>
+                </ul>
             </div>
         </div>
 
-        <div class="demo-page-content">
-            <!-- Restaurant Home -->
-            <div id="restaurant-home" class="restaurant-page active">
-                <h2>Welcome to Zentro Restaurant</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Experience authentic culinary delights with our diverse menu featuring Pakistani, Chinese, Italian, and French cuisines. Our expert chefs prepare every dish with precision and passion.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Reserve your table today and enjoy an unforgettable dining experience in a modern, comfortable atmosphere.</p>
-            </div>
+        <section id="demos" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 0.5rem;">Demo Sites</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore our professional demo websites showcasing diverse industry solutions.</p>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="demo-header">🍽️ Restaurant</div>
+                        <div class="demo-body">
+                            <h3>Restaurant Platform</h3>
+                            <ul>
+                                <li>Menu Management</li>
+                                <li>Food Gallery</li>
+                                <li>Reservation System</li>
+                                <li>Location Details</li>
+                                <li>Contact Info</li>
+                            </ul>
+                            <button class="view-demo-btn" onclick="showDemo('restaurant')">View Demo</button>
+                        </div>
+                    </div>
 
-            <!-- Restaurant Menu -->
-            <div id="restaurant-menu" class="restaurant-page" style="display: none;">
-                <h2>Our Menu</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <h4>Biryani</h4>
-                        <p>Traditional Pakistani rice dish with spiced meat</p>
-                        <div class="price-row">
-                            <span>Half: 500 PKR</span>
-                            <span>Full: 900 PKR</span>
+                    <div class="demo-card">
+                        <div class="demo-header">🏠 Real Estate</div>
+                        <div class="demo-body">
+                            <h3>Real Estate Platform</h3>
+                            <ul>
+                                <li>Property Listings</li>
+                                <li>Advanced Search</li>
+                                <li>Property Details</li>
+                                <li>Agent Info</li>
+                                <li>Contact Agents</li>
+                            </ul>
+                            <button class="view-demo-btn" onclick="showDemo('realestate')">View Demo</button>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <h4>Karahi</h4>
-                        <p>Tender meat cooked with tomatoes and spices</p>
-                        <div class="price-row">
-                            <span>Half: 450 PKR</span>
-                            <span>Full: 800 PKR</span>
+
+                    <div class="demo-card">
+                        <div class="demo-header">🎓 School</div>
+                        <div class="demo-body">
+                            <h3>School Management</h3>
+                            <ul>
+                                <li>Academics Info</li>
+                                <li>Faculty Directory</li>
+                                <li>Gallery</li>
+                                <li>Admissions</li>
+                                <li>Events</li>
+                            </ul>
+                            <button class="view-demo-btn" onclick="showDemo('school')">View Demo</button>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <h4>Nihari</h4>
-                        <p>Slow-cooked meat stew with aromatic spices</p>
-                        <div class="price-row">
-                            <span>Half: 400 PKR</span>
-                            <span>Full: 700 PKR</span>
+
+                    <div class="demo-card">
+                        <div class="demo-header">💼 Clinic</div>
+                        <div class="demo-body">
+                            <h3>Healthcare Clinic</h3>
+                            <ul>
+                                <li>Services</li>
+                                <li>Doctor Profiles</li>
+                                <li>Appointments</li>
+                                <li>Gallery</li>
+                                <li>Contact</li>
+                            </ul>
+                            <button class="view-demo-btn" onclick="showDemo('clinic')">View Demo</button>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <h4>Kebab</h4>
-                        <p>Grilled meat kebabs with fresh herbs</p>
-                        <div class="price-row">
-                            <span>Half: 350 PKR</span>
-                            <span>Full: 650 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Tandoori Chicken</h4>
-                        <p>Spiced chicken roasted in clay oven</p>
-                        <div class="price-row">
-                            <span>Half: 380 PKR</span>
-                            <span>Full: 700 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Tikka Masala</h4>
-                        <p>Marinated chicken in creamy tomato sauce</p>
-                        <div class="price-row">
-                            <span>Half: 420 PKR</span>
-                            <span>Full: 800 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Fried Rice (Pakistani)</h4>
-                        <p>Fragrant rice with vegetables and meat</p>
-                        <div class="price-row">
-                            <span>Regular: 300 PKR</span>
-                            <span>Large: 500 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Chow Mein</h4>
-                        <p>Chinese noodles with meat and vegetables</p>
-                        <div class="price-row">
-                            <span>Regular: 280 PKR</span>
-                            <span>Large: 480 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Kung Pao Chicken</h4>
-                        <p>Diced chicken with peanuts in spicy sauce</p>
-                        <div class="price-row">
-                            <span>Half: 400 PKR</span>
-                            <span>Full: 750 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Sweet & Sour Pork</h4>
-                        <p>Tender pork with sweet and tangy sauce</p>
-                        <div class="price-row">
-                            <span>Half: 420 PKR</span>
-                            <span>Full: 800 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Spaghetti Carbonara</h4>
-                        <p>Creamy pasta with bacon and parmesan</p>
-                        <div class="price-row">
-                            <span>Regular: 350 PKR</span>
-                            <span>Large: 600 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Risotto</h4>
-                        <p>Creamy Italian rice with mushrooms</p>
-                        <div class="price-row">
-                            <span>Regular: 380 PKR</span>
-                            <span>Large: 650 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Coq au Vin</h4>
-                        <p>Chicken braised in red wine</p>
-                        <div class="price-row">
-                            <span>Half: 480 PKR</span>
-                            <span>Full: 900 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Beef Bourguignon</h4>
-                        <p>Tender beef in rich wine sauce</p>
-                        <div class="price-row">
-                            <span>Half: 520 PKR</span>
-                            <span>Full: 950 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Burger</h4>
-                        <p>Juicy beef patty with fresh toppings</p>
-                        <div class="price-row">
-                            <span>Single: 250 PKR</span>
-                            <span>Double: 450 PKR</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Chicken Wings</h4>
-                        <p>Crispy fried wings with garlic sauce</p>
-                        <div class="price-row">
-                            <span>6 pcs: 200 PKR</span>
-                            <span>12 pcs: 380 PKR</span>
+
+                    <div class="demo-card">
+                        <div class="demo-header">🛍️ E-Commerce</div>
+                        <div class="demo-body">
+                            <h3>E-Commerce Store</h3>
+                            <ul>
+                                <li>Product Catalog</li>
+                                <li>Categories</li>
+                                <li>Shopping Cart</li>
+                                <li>Checkout</li>
+                                <li>Contact</li>
+                            </ul>
+                            <button class="view-demo-btn" onclick="showDemo('ecommerce')">View Demo</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Restaurant Gallery -->
-            <div id="restaurant-gallery" class="restaurant-page" style="display: none;">
-                <h2>Food Gallery</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <h4>Biryani</h4>
-                        <p>Pakistan's favorite rice dish</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Karahi</h4>
-                        <p>Popular across South Asia</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Nihari</h4>
-                        <p>Traditional breakfast favorite</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Kebab</h4>
-                        <p>Grilled to perfection</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Tandoori Chicken</h4>
-                        <p>Authentic Indian preparation</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Tikka Masala</h4>
-                        <p>Loved worldwide</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Kung Pao Chicken</h4>
-                        <p>Classic Chinese cuisine</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Chow Mein</h4>
-                        <p>Chinese favorite</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Spaghetti Carbonara</h4>
-                        <p>Italian classic</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Risotto</h4>
-                        <p>Creamy and delicious</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Coq au Vin</h4>
-                        <p>French specialty</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Beef Bourguignon</h4>
-                        <p>Traditional French dish</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Burger</h4>
-                        <p>Fast food favorite</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Pizza</h4>
-                        <p>Italian favorite</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Wings</h4>
-                        <p>Crispy and tasty</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Soup</h4>
-                        <p>Warm and comforting</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Salad</h4>
-                        <p>Fresh and healthy</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Dessert</h4>
-                        <p>Sweet ending</p>
-                    </div>
+        <div class="demo-page" id="restaurant-demo">
+            <button class="back-btn" onclick="closeDemo('restaurant')">← Back</button>
+            <div class="demo-page-header">
+                <h1>Zentro Restaurant Demo Site</h1>
+                <div class="demo-nav">
+                    <button class="active" onclick="showRestaurantPage('home')">Home</button>
+                    <button onclick="showRestaurantPage('menu')">Menu</button>
+                    <button onclick="showRestaurantPage('gallery')">Gallery</button>
+                    <button onclick="showRestaurantPage('reservation')">Reservation</button>
+                    <button onclick="showRestaurantPage('location')">Location</button>
+                    <button onclick="showRestaurantPage('contact')">Contact</button>
                 </div>
             </div>
+            <div class="demo-content">
+                <div id="restaurant-home" class="demo-section active">
+                    <h2>Welcome to Zentro Restaurant</h2>
+                    <p>Experience authentic culinary delights with our diverse menu featuring Pakistani, Chinese, Italian, and French cuisines. Our expert chefs prepare every dish with premium ingredients and traditional techniques.</p>
+                    <p>Reserve your table today and enjoy an unforgettable dining experience in our modern, comfortable atmosphere.</p>
+                </div>
 
-            <!-- Restaurant Reservation -->
-            <div id="restaurant-reservation" class="restaurant-page" style="display: none;">
-                <h2>Make a Reservation</h2>
-                <form onsubmit="handleReservation(event)">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" required>
+                <div id="restaurant-menu" class="demo-section" style="display: none;">
+                    <h2>Our Menu</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Chicken Biryani</h4>
+                            <p>Fragrant basmati rice with tender chicken and traditional spices</p>
+                            <div class="price-row">
+                                <span>Half: 500 PKR</span>
+                                <span>Full: 900 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Mutton Karahi</h4>
+                            <p>Tender mutton with fresh tomatoes and aromatic spices</p>
+                            <div class="price-row">
+                                <span>Half: 550 PKR</span>
+                                <span>Full: 950 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Beef Nihari</h4>
+                            <p>Slow-cooked beef stew with aromatic spices</p>
+                            <div class="price-row">
+                                <span>Half: 480 PKR</span>
+                                <span>Full: 850 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Seekh Kebab</h4>
+                            <p>Spiced meat kebabs grilled with herbs</p>
+                            <div class="price-row">
+                                <span>4 pcs: 350 PKR</span>
+                                <span>6 pcs: 500 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Tandoori Chicken</h4>
+                            <p>Marinated chicken roasted in traditional clay oven</p>
+                            <div class="price-row">
+                                <span>Half: 420 PKR</span>
+                                <span>Full: 750 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Butter Chicken</h4>
+                            <p>Marinated chicken in creamy tomato sauce</p>
+                            <div class="price-row">
+                                <span>Half: 450 PKR</span>
+                                <span>Full: 800 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Pakistani Fried Rice</h4>
+                            <p>Fragrant rice with vegetables and meat</p>
+                            <div class="price-row">
+                                <span>Regular: 320 PKR</span>
+                                <span>Large: 520 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Chow Mein</h4>
+                            <p>Chinese noodles with vegetables</p>
+                            <div class="price-row">
+                                <span>Regular: 300 PKR</span>
+                                <span>Large: 500 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Kung Pao Chicken</h4>
+                            <p>Diced chicken with peanuts in spicy sauce</p>
+                            <div class="price-row">
+                                <span>Half: 420 PKR</span>
+                                <span>Full: 800 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Sweet and Sour Pork</h4>
+                            <p>Tender pork with tangy sauce</p>
+                            <div class="price-row">
+                                <span>Half: 450 PKR</span>
+                                <span>Full: 850 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Spaghetti Carbonara</h4>
+                            <p>Creamy pasta with bacon and parmesan</p>
+                            <div class="price-row">
+                                <span>Regular: 380 PKR</span>
+                                <span>Large: 650 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Fettuccine Alfredo</h4>
+                            <p>Pasta in creamy alfredo sauce</p>
+                            <div class="price-row">
+                                <span>Regular: 400 PKR</span>
+                                <span>Large: 700 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Risotto Mushroom</h4>
+                            <p>Creamy Italian rice with mushrooms</p>
+                            <div class="price-row">
+                                <span>Regular: 420 PKR</span>
+                                <span>Large: 750 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Coq au Vin</h4>
+                            <p>Chicken braised in French red wine</p>
+                            <div class="price-row">
+                                <span>Half: 520 PKR</span>
+                                <span>Full: 950 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Beef Bourguignon</h4>
+                            <p>Tender beef in rich French wine sauce</p>
+                            <div class="price-row">
+                                <span>Half: 580 PKR</span>
+                                <span>Full: 1050 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Grilled Salmon</h4>
+                            <p>Fresh salmon with lemon and herbs</p>
+                            <div class="price-row">
+                                <span>Half: 650 PKR</span>
+                                <span>Full: 1200 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Classic Burger</h4>
+                            <p>Juicy beef patty with fresh vegetables</p>
+                            <div class="price-row">
+                                <span>Single: 280 PKR</span>
+                                <span>Double: 480 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Fried Chicken</h4>
+                            <p>Golden fried chicken pieces</p>
+                            <div class="price-row">
+                                <span>6 pcs: 320 PKR</span>
+                                <span>12 pcs: 600 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Chicken Wings</h4>
+                            <p>Crispy wings with garlic sauce</p>
+                            <div class="price-row">
+                                <span>6 pcs: 280 PKR</span>
+                                <span>12 pcs: 500 PKR</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>BBQ Ribs</h4>
+                            <p>Tender ribs glazed with BBQ sauce</p>
+                            <div class="price-row">
+                                <span>Half: 580 PKR</span>
+                                <span>Full: 1050 PKR</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-row">
+                </div>
+
+                <div id="restaurant-gallery" class="demo-section" style="display: none;">
+                    <h2>Food Gallery</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <h4>Biryani</h4>
+                            <p>Pakistan's beloved rice dish</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h4>Karahi</h4>
+                            <p>Popular across South Asia</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h4>Tandoori Chicken</h4>
+                            <p>Authentic Indian preparation</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h4>Kung Pao Chicken</h4>
+                            <p>Classic Chinese cuisine</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h4>Spaghetti Carbonara</h4>
+                            <p>Italian classic</p>
+                        </div>
+                        <div class="gallery-item">
+                            <h4>Coq au Vin</h4>
+                            <p>French specialty</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="restaurant-reservation" class="demo-section" style="display: none;">
+                    <h2>Make a Reservation</h2>
+                    <form onsubmit="handleReservation(event)">
                         <div class="form-group">
-                            <label>Number of Guests</label>
-                            <input type="number" min="1" max="50" required>
+                            <label>Full Name</label>
+                            <input type="text" required>
                         </div>
-                        <div class="form-group">
-                            <label>Date</label>
-                            <input type="date" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Number of Guests</label>
+                                <input type="number" min="1" max="50" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Time</label>
+                                <input type="time" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Meal Type</label>
+                                <select required>
+                                    <option>Breakfast</option>
+                                    <option>Lunch</option>
+                                    <option>Dinner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Group Type</label>
+                                <select required>
+                                    <option>Family</option>
+                                    <option>Boys Group</option>
+                                    <option>Girls Group</option>
+                                    <option>Couple</option>
+                                    <option>Solo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Reserve Table</button>
+                    </form>
+                </div>
+
+                <div id="restaurant-location" class="demo-section" style="display: none;">
+                    <h2>Our Location</h2>
+                    <div class="contact-info">
+                        <h3>📍 Zentro Restaurant</h3>
+                        <p><strong>Shop 45, Restaurant Plaza</strong></p>
+                        <p><strong>Main Street, Demo City</strong></p>
+                    </div>
+                </div>
+
+                <div id="restaurant-contact" class="demo-section" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <h3>📞 Get In Touch</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+923001234567">+92 300 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>WhatsApp:</strong>
+                            <a href="https://wa.me/923001234567">+92 300 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:info@restaurantdemo.com">info@restaurantdemo.com</a>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Time</label>
-                            <input type="time" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-page" id="realestate-demo">
+            <button class="back-btn" onclick="closeDemo('realestate')">← Back</button>
+            <div class="demo-page-header">
+                <h1>Zentro Real Estate</h1>
+                <div class="demo-nav">
+                    <button class="active" onclick="showRealEstatePage('home')">Home</button>
+                    <button onclick="showRealEstatePage('properties')">Properties</button>
+                    <button onclick="showRealEstatePage('services')">Services</button>
+                    <button onclick="showRealEstatePage('about')">About</button>
+                    <button onclick="showRealEstatePage('contact')">Contact</button>
+                </div>
+            </div>
+            <div class="demo-content">
+                <div id="realestate-home" class="demo-section active">
+                    <h2>Find Your Dream Property</h2>
+                    <p>Welcome to Zentro Real Estate, your trusted partner in finding the perfect property. We offer comprehensive selection of residential and commercial properties in desirable locations.</p>
+                </div>
+
+                <div id="realestate-properties" class="demo-section" style="display: none;">
+                    <h2>Our Properties</h2>
+                    <div class="property-grid">
+                        <div class="property-card">
+                            <div class="property-image">🏢</div>
+                            <div class="property-details">
+                                <h4>Modern Apartment</h4>
+                                <p class="property-location">Downtown, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">2 Bed | 2 Bath | 1000 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Meal Type</label>
-                            <select required>
-                                <option>Breakfast</option>
-                                <option>Lunch</option>
-                                <option>Dinner</option>
-                            </select>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Family House</h4>
+                                <p class="property-location">Suburban Area, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">3 Bed | 2 Bath | 1500 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏢</div>
+                            <div class="property-details">
+                                <h4>Commercial Space</h4>
+                                <p class="property-location">Business District, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">4000 Sq Ft | Ground Floor</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Luxury Villa</h4>
+                                <p class="property-location">Prime Location, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">5 Bed | 4 Bath | 3000 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏢</div>
+                            <div class="property-details">
+                                <h4>Office Building</h4>
+                                <p class="property-location">Tech Park, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">6 Floors | Modern Amenities</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Starter Home</h4>
+                                <p class="property-location">Affordable Area, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">2 Bed | 1 Bath | 800 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Garden House</h4>
+                                <p class="property-location">Residential District, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">4 Bed | 3 Bath | 2500 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏢</div>
+                            <div class="property-details">
+                                <h4>Retail Space</h4>
+                                <p class="property-location">Shopping Center, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">2000 Sq Ft | High Traffic</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Penthouse</h4>
+                                <p class="property-location">City Center, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">3 Bed | 3 Bath | 2000 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Cottage</h4>
+                                <p class="property-location">Rural Area, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">2 Bed | 1 Bath | 600 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏢</div>
+                            <div class="property-details">
+                                <h4>Industrial Lot</h4>
+                                <p class="property-location">Industrial Zone, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">50000 Sq Ft | Loading Access</p>
+                                <div class="property-price">****$</div>
+                            </div>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-image">🏠</div>
+                            <div class="property-details">
+                                <h4>Studio Apartment</h4>
+                                <p class="property-location">Urban Center, Demo City</p>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">1 Bed | 1 Bath | 500 Sq Ft</p>
+                                <div class="property-price">****$</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-row">
+                </div>
+
+                <div id="realestate-services" class="demo-section" style="display: none;">
+                    <h2>Our Services</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Buy Properties</h3>
+                            <p style="color: var(--text-light);">Find and purchase ideal properties from our listings.</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Sell Properties</h3>
+                            <p style="color: var(--text-light);">List and sell your properties to qualified buyers.</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Rent Properties</h3>
+                            <p style="color: var(--text-light);">Explore rental options for all segments.</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">Investment Advice</h3>
+                            <p style="color: var(--text-light);">Expert guidance on real estate investments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="realestate-about" class="demo-section" style="display: none;">
+                    <h2>About Zentro Real Estate</h2>
+                    <p>With extensive experience in real estate industry, Zentro is committed to providing exceptional service and helping clients achieve their property goals through expert guidance and professional support.</p>
+                </div>
+
+                <div id="realestate-contact" class="demo-section" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <h3>📞 Get In Touch</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+923101234567">+92 310 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>WhatsApp:</strong>
+                            <a href="https://wa.me/923101234567">+92 310 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:sales@realestatedemo.com">sales@realestatedemo.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-page" id="school-demo">
+            <button class="back-btn" onclick="closeDemo('school')">← Back</button>
+            <div class="demo-page-header">
+                <h1>Zentro System of Education</h1>
+                <div class="demo-nav">
+                    <button class="active" onclick="showSchoolPage('home')">Home</button>
+                    <button onclick="showSchoolPage('academics')">Academics</button>
+                    <button onclick="showSchoolPage('admissions')">Admissions</button>
+                    <button onclick="showSchoolPage('facilities')">Facilities</button>
+                    <button onclick="showSchoolPage('gallery')">Gallery</button>
+                    <button onclick="showSchoolPage('events')">Events</button>
+                    <button onclick="showSchoolPage('contact')">Contact</button>
+                </div>
+            </div>
+            <div class="demo-content">
+                <div id="school-home" class="demo-section active">
+                    <h2>Zentro System of Education</h2>
+                    <p>Welcome to Zentro, where we nurture bright minds and foster excellence. Our institution is committed to providing quality education that develops students into responsible and capable individuals.</p>
+                </div>
+
+                <div id="school-academics" class="demo-section" style="display: none;">
+                    <h2>Academics</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Primary Section</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Classes 1-5 with comprehensive foundational curriculum</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Secondary Section</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Classes 6-8 with focused academic programs</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Higher Secondary</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Classes 9-12 with advanced studies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="school-admissions" class="demo-section" style="display: none;">
+                    <h2>Admissions Form</h2>
+                    <form onsubmit="handleAdmission(event)">
                         <div class="form-group">
-                            <label>Group Type</label>
-                            <select required>
-                                <option>Family</option>
-                                <option>Boys Group</option>
-                                <option>Girls Group</option>
-                                <option>Couple</option>
-                                <option>Solo</option>
-                            </select>
+                            <label>Student Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Class</label>
+                                <select required>
+                                    <option>Class 1</option>
+                                    <option>Class 5</option>
+                                    <option>Class 8</option>
+                                    <option>Class 10</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>Father's Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
                             <input type="tel" required>
                         </div>
-                    </div>
-                    <button type="submit" class="submit-btn">Reserve Table</button>
-                </form>
-            </div>
-
-            <!-- Restaurant Location -->
-            <div id="restaurant-location" class="restaurant-page" style="display: none;">
-                <h2>Our Location</h2>
-                <div class="contact-info">
-                    <h3>📍 Zentro Restaurant</h3>
-                    <p><strong>Shop 45, Restaurant Plaza</strong></p>
-                    <p><strong>Main Street, Demo City</strong></p>
-                    <p style="margin-top: 1rem; opacity: 0.9;">Located in the heart of the city with easy parking and accessible entrance.</p>
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
                 </div>
-            </div>
 
-            <!-- Restaurant Contact -->
-            <div id="restaurant-contact" class="restaurant-page" style="display: none;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>📞 Get In Touch</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:+923001234567">+92 300 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>WhatsApp:</strong>
-                        <a href="https://wa.me/923001234567">+92 300 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:info@restaurantdemo.com">info@restaurantdemo.com</a>
-                    </div>
+                <div id="school-facilities" class="demo-section" style="display: none;">
+                    <h2>Our Facilities</h2>
+                    <ul style="list-style: none; margin-top: 2rem;">
+                        <li style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem; border-radius: 0.5rem;">
+                            <strong style="color: var(--primary);">Modern Classrooms</strong> - Equipped with interactive boards
+                        </li>
+                        <li style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem; border-radius: 0.5rem;">
+                            <strong style="color: var(--primary);">Computer Labs</strong> - State-of-the-art technology
+                        </li>
+                        <li style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem; border-radius: 0.5rem;">
+                            <strong style="color: var(--primary);">Science Labs</strong> - Complete practical facilities
+                        </li>
+                        <li style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem; border-radius: 0.5rem;">
+                            <strong style="color: var(--primary);">Library</strong> - Extensive resource collection
+                        </li>
+                        <li style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem; border-radius: 0.5rem;">
+                            <strong style="color: var(--primary);">Sports Ground</strong> - Multiple sports facilities
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Real Estate Demo Page -->
-    <div class="demo-page" id="realestate-demo">
-        <button class="back-to-site-btn" onclick="closeDemo('realestate')">← Back to Site</button>
-        <div class="demo-header">
-            <h1>Zentro Real Estate Demo</h1>
-            <div class="demo-nav">
-                <button class="active" onclick="showRealEstatePage('home')">Home</button>
-                <button onclick="showRealEstatePage('properties')">Properties</button>
-                <button onclick="showRealEstatePage('services')">Services</button>
-                <button onclick="showRealEstatePage('about')">About</button>
-                <button onclick="showRealEstatePage('contact')">Contact</button>
-            </div>
-        </div>
-
-        <div class="demo-page-content">
-            <!-- Real Estate Home -->
-            <div id="realestate-home" class="realestate-page active">
-                <h2>Find Your Dream Property</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro Real Estate, your trusted partner in finding the perfect property. We offer a comprehensive selection of residential and commercial properties in the most desirable locations.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Browse our exclusive listings and discover properties tailored to your lifestyle and investment goals.</p>
-            </div>
-
-            <!-- Real Estate Properties -->
-            <div id="realestate-properties" class="realestate-page" style="display: none;">
-                <h2>Our Properties</h2>
-                <div class="properties-grid">
-                    <div class="property-card">
-                        <div class="property-image">🏡</div>
-                        <div class="property-details">
-                            <h4>Modern Apartment</h4>
-                            <p class="property-location">Downtown, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 2 Bath | 1000 Sq Ft</p>
-                            <div class="property-price">****$</div>
+                <div id="school-gallery" class="demo-section" style="display: none;">
+                    <h2>School Gallery</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <h4>Classroom</h4>
+                            <p>Modern learning space</p>
                         </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏠</div>
-                        <div class="property-details">
-                            <h4>Family House</h4>
-                            <p class="property-location">Suburban Area, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">3 Bed | 2 Bath | 1500 Sq Ft</p>
-                            <div class="property-price">****$</div>
+                        <div class="gallery-item">
+                            <h4>Science Lab</h4>
+                            <p>Practical experiments</p>
                         </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏢</div>
-                        <div class="property-details">
-                            <h4>Commercial Space</h4>
-                            <p class="property-location">Business District, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">4000 Sq Ft | Ground Floor | Corner Plot</p>
-                            <div class="property-price">****$</div>
+                        <div class="gallery-item">
+                            <h4>Computer Lab</h4>
+                            <p>Technology center</p>
                         </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏡</div>
-                        <div class="property-details">
-                            <h4>Luxury Villa</h4>
-                            <p class="property-location">Prime Location, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">5 Bed | 4 Bath | 3000 Sq Ft</p>
-                            <div class="property-price">****$</div>
+                        <div class="gallery-item">
+                            <h4>Library</h4>
+                            <p>Knowledge resource</p>
                         </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏢</div>
-                        <div class="property-details">
-                            <h4>Office Building</h4>
-                            <p class="property-location">Tech Park, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">6 Floors | 2000 Sq Ft each | Modern Amenities</p>
-                            <div class="property-price">****$</div>
+                        <div class="gallery-item">
+                            <h4>School Building</h4>
+                            <p>School premises</p>
                         </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏠</div>
-                        <div class="property-details">
-                            <h4>Starter Home</h4>
-                            <p class="property-location">Affordable Area, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 1 Bath | 800 Sq Ft</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏡</div>
-                        <div class="property-details">
-                            <h4>Garden House</h4>
-                            <p class="property-location">Residential District, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">4 Bed | 3 Bath | 2500 Sq Ft</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏢</div>
-                        <div class="property-details">
-                            <h4>Retail Space</h4>
-                            <p class="property-location">Shopping Center, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2000 Sq Ft | High Traffic Area | Ready to Lease</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏠</div>
-                        <div class="property-details">
-                            <h4>Penthouse</h4>
-                            <p class="property-location">City Center, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">3 Bed | 3 Bath | 2000 Sq Ft | Rooftop</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏡</div>
-                        <div class="property-details">
-                            <h4>Cottage</h4>
-                            <p class="property-location">Rural Area, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 1 Bath | 600 Sq Ft | Peaceful Setting</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏢</div>
-                        <div class="property-details">
-                            <h4>Industrial Lot</h4>
-                            <p class="property-location">Industrial Zone, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">50,000 Sq Ft | Open Space | Loading Access</p>
-                            <div class="property-price">****$</div>
-                        </div>
-                    </div>
-                    <div class="property-card">
-                        <div class="property-image">🏠</div>
-                        <div class="property-details">
-                            <h4>Studio Apartment</h4>
-                            <p class="property-location">Urban Center, Demo City</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">1 Bed | 1 Bath | 500 Sq Ft | Furnished</p>
-                            <div class="property-price">****$</div>
+                        <div class="gallery-item">
+                            <h4>Sports Ground</h4>
+                            <p>Athletic facilities</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Real Estate Services -->
-            <div id="realestate-services" class="realestate-page" style="display: none;">
-                <h2>Our Services</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Buy Properties</h3>
-                        <p style="color: var(--text-light);">Find and purchase your ideal property from our extensive listings.</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Sell Properties</h3>
-                        <p style="color: var(--text-light);">List your property and connect with qualified buyers quickly.</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Rent Properties</h3>
-                        <p style="color: var(--text-light);">Explore rental options across residential and commercial segments.</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Investment Advice</h3>
-                        <p style="color: var(--text-light);">Get expert guidance on real estate investment opportunities.</p>
+                <div id="school-events" class="demo-section" style="display: none;">
+                    <h2>School Events</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Annual Sports Day</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Athletic competitions and celebration</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Science Exhibition</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Student projects showcase</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Cultural Programs</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Talent and art performances</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Educational Trips</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Learning experiences</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Real Estate About -->
-            <div id="realestate-about" class="realestate-page" style="display: none;">
-                <h2>About Zentro Real Estate</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">With over a decade of experience in the real estate industry, Zentro Real Estate is committed to providing exceptional service and helping clients achieve their property goals.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Our team of experienced professionals understands the market and is dedicated to finding the perfect property match for every client.</p>
-            </div>
-
-            <!-- Real Estate Contact -->
-            <div id="realestate-contact" class="realestate-page" style="display: none;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>📞 Get In Touch</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:+923101234567">+92 310 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>WhatsApp:</strong>
-                        <a href="https://wa.me/923101234567">+92 310 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:sales@realestatedemo.com">sales@realestatedemo.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Office:</strong>
-                        <span>Suite 100, Business Tower, Demo City</span>
+                <div id="school-contact" class="demo-section" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <h3>📞 Get In Touch</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+923211234567">+92 321 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:admin@schooldemo.edu">admin@schooldemo.edu</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Address:</strong>
+                            <span>Education Complex, Demo City</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- School Demo Page -->
-    <div class="demo-page" id="school-demo">
-        <button class="back-to-site-btn" onclick="closeDemo('school')">← Back to Site</button>
-        <div class="demo-header">
-            <h1>Zentro System of Education</h1>
-            <div class="demo-nav">
-                <button class="active" onclick="showSchoolPage('home')">Home</button>
-                <button onclick="showSchoolPage('academics')">Academics</button>
-                <button onclick="showSchoolPage('facilities')">Facilities</button>
-                <button onclick="showSchoolPage('faculty')">Faculty</button>
-                <button onclick="showSchoolPage('admissions')">Admissions</button>
-                <button onclick="showSchoolPage('gallery')">Gallery</button>
-                <button onclick="showSchoolPage('contact')">Contact</button>
+        <div class="demo-page" id="clinic-demo">
+            <button class="back-btn" onclick="closeDemo('clinic')">← Back</button>
+            <div class="demo-page-header">
+                <h1>Zentro Clinic</h1>
+                <div class="demo-nav">
+                    <button class="active" onclick="showClinicPage('home')">Home</button>
+                    <button onclick="showClinicPage('services')">Services</button>
+                    <button onclick="showClinicPage('doctors')">Doctors</button>
+                    <button onclick="showClinicPage('departments')">Departments</button>
+                    <button onclick="showClinicPage('appointment')">Appointment</button>
+                    <button onclick="showClinicPage('contact')">Contact</button>
+                </div>
+            </div>
+            <div class="demo-content">
+                <div id="clinic-home" class="demo-section active">
+                    <h2>Welcome to Zentro Clinic</h2>
+                    <p>Providing professional healthcare services with experienced doctors and modern medical facilities. We are committed to delivering quality medical care with compassion and professionalism.</p>
+                </div>
+
+                <div id="clinic-services" class="demo-section" style="display: none;">
+                    <h2>Our Services</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">General Consultation</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Regular checkups and health advice</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Diagnostic Services</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Laboratory and imaging tests</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Vaccinations</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Immunization programs</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Emergency Care</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">24/7 emergency services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="clinic-doctors" class="demo-section" style="display: none;">
+                    <h2>Our Doctors</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                            <h3 style="color: var(--primary);">Dr. Ahmed Khan</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">General Practitioner</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                            <h3 style="color: var(--primary);">Dr. Sarah Ali</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Cardiologist</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                            <h3 style="color: var(--primary);">Dr. Fatima Hassan</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Pediatrician</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="clinic-departments" class="demo-section" style="display: none;">
+                    <h2>Departments</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Cardiology</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Heart and cardiovascular care</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Pediatrics</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Children's health services</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Laboratory</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Diagnostic testing</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border);">
+                            <h3 style="color: var(--primary);">Imaging</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">X-ray and ultrasound</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="clinic-appointment" class="demo-section" style="display: none;">
+                    <h2>Book Appointment</h2>
+                    <form onsubmit="handleAppointment(event)">
+                        <div class="form-group">
+                            <label>Patient Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Doctor</label>
+                                <select required>
+                                    <option>Dr. Ahmed Khan</option>
+                                    <option>Dr. Sarah Ali</option>
+                                    <option>Dr. Fatima Hassan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Appointment Date</label>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Appointment Time</label>
+                            <input type="time" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Book Appointment</button>
+                    </form>
+                </div>
+
+                <div id="clinic-contact" class="demo-section" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <h3>📞 Get In Touch</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+923441234567">+92 344 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Emergency:</strong>
+                            <a href="tel:+923441234568">+92 344 1234568</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:info@clinicdemo.com">info@clinicdemo.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="demo-page-content">
-            <!-- School Home -->
-            <div id="school-home" class="school-page active">
-                <h2>Zentro System of Education</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro, where we nurture bright minds and foster excellence. Our institution is committed to providing quality education that develops students into responsible and capable individuals.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">With modern facilities, experienced faculty, and student-centered approaches, we create an environment conducive to holistic development.</p>
+        <div class="demo-page" id="ecommerce-demo">
+            <button class="back-btn" onclick="closeDemo('ecommerce')">← Back</button>
+            <div class="demo-page-header">
+                <h1>Zentro E-Commerce</h1>
+                <div class="demo-nav">
+                    <button class="active" onclick="showEcommercePage('home')">Home</button>
+                    <button onclick="showEcommercePage('categories')">Categories</button>
+                    <button onclick="showEcommercePage('products')">Products</button>
+                    <button onclick="showEcommercePage('featured')">Featured</button>
+                    <button onclick="showEcommercePage('contact')">Contact</button>
+                </div>
             </div>
+            <div class="demo-content">
+                <div id="ecommerce-home" class="demo-section active">
+                    <h2>Welcome to Zentro E-Commerce</h2>
+                    <p>Shop the finest selection of quality products at competitive prices. We offer convenient shopping experience with fast delivery and excellent customer service.</p>
+                </div>
 
-            <!-- School Academics -->
-            <div id="school-academics" class="school-page" style="display: none;">
-                <h2>Academics</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Primary Section</h3>
-                        <p style="color: var(--text-light);">Classes 1-5 with foundational curriculum</p>
+                <div id="ecommerce-categories" class="demo-section" style="display: none;">
+                    <h2>Shop by Category</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center; cursor: pointer;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">👕</div>
+                            <h3 style="color: var(--primary);">Clothing</h3>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center; cursor: pointer;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                            <h3 style="color: var(--primary);">Electronics</h3>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center; cursor: pointer;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">👟</div>
+                            <h3 style="color: var(--primary);">Shoes</h3>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center; cursor: pointer;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">💼</div>
+                            <h3 style="color: var(--primary);">Accessories</h3>
+                        </div>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Secondary Section</h3>
-                        <p style="color: var(--text-light);">Classes 6-8 with comprehensive subjects</p>
+                </div>
+
+                <div id="ecommerce-products" class="demo-section" style="display: none;">
+                    <h2>All Products</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; border-radius: 1rem; border: 1px solid var(--border); overflow: hidden;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">👕</div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Premium T-Shirt</h3>
+                                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">High quality cotton fabric</p>
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">1,499 PKR</div>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 1rem; border: 1px solid var(--border); overflow: hidden;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📱</div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Phone Case</h3>
+                                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">Protective case design</p>
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">799 PKR</div>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 1rem; border: 1px solid var(--border); overflow: hidden;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">👟</div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Sports Shoes</h3>
+                                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">Comfortable and durable</p>
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">3,999 PKR</div>
+                            </div>
+                        </div>
+                        <div style="background: white; border-radius: 1rem; border: 1px solid var(--border); overflow: hidden;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--secondary), var(--primary)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">💼</div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Leather Bag</h3>
+                                <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">Premium leather quality</p>
+                                <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">4,999 PKR</div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Higher Secondary</h3>
-                        <p style="color: var(--text-light);">Classes 9-12 with advanced studies</p>
+                </div>
+
+                <div id="ecommerce-featured" class="demo-section" style="display: none;">
+                    <h2>Featured Products</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                        <div style="background: white; border-radius: 1rem; border: 2px solid var(--primary); overflow: hidden; padding: 1rem;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin-bottom: 1rem; border-radius: 0.5rem;">⭐</div>
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Best Seller</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">Premium quality product</p>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">2,499 PKR</div>
+                            <button style="width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.75rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">Add to Cart</button>
+                        </div>
+                        <div style="background: white; border-radius: 1rem; border: 2px solid var(--primary); overflow: hidden; padding: 1rem;">
+                            <div style="height: 200px; background: linear-gradient(135deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin-bottom: 1rem; border-radius: 0.5rem;">🎁</div>
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Special Offer</h3>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">Limited time deal</p>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">1,999 PKR</div>
+                            <button style="width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.75rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: 600;">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ecommerce-contact" class="demo-section" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <h3>📞 Customer Support</h3>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+923551234567">+92 355 1234567</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:support@ecommercedemo.com">support@ecommercedemo.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- School Facilities -->
-            <div id="school-facilities" class="school-page" style="display: none;">
-                <h2>Our Facilities</h2>
-                <ul style="list-style: none; margin-top: 2rem;">
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Modern Classrooms</strong> - Equipped with interactive boards and comfortable seating
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Computer Labs</strong> - State-of-the-art technology and software
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Science Labs</strong> - Well-equipped for practical experiments
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Library</strong> - Extensive collection of books and digital resources
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Sports Ground</strong> - Facilities for multiple sports activities
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Cafeteria</strong> - Nutritious meals in a hygienic environment
-                    </li>
-                </ul>
-            </div>
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">About Zentro AI</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; align-items: center;">
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Who We Are</h3>
+                        <p>Zentro AI is a digital development agency dedicated to transforming businesses through technology. We specialize in creating innovative solutions tailored to your unique business needs.</p>
+                        <p style="margin-top: 1rem;">Our team brings expertise in web development, AI automation, digital marketing, and business optimization.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">How We Work</h3>
+                        <p>We follow a structured approach to ensure project success. From initial consultation through final delivery, we maintain transparent communication and focus on exceeding expectations.</p>
+                        <p style="margin-top: 1rem;">Our methodology combines industry best practices with creative problem-solving to deliver exceptional results.</p>
+                    </div>
+                </div>
 
-            <!-- School Faculty -->
-            <div id="school-faculty" class="school-page" style="display: none;">
-                <h2>Faculty Members</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Dr. Ahmed Khan</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Principal</p>
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 3rem;">Why Choose Zentro AI</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Result-Oriented</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Focus on delivering measurable outcomes and business growth.</p>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Ms. Fatima Ali</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">English Teacher</p>
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Fast Delivery</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Quick turnaround without compromising quality standards.</p>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Mr. Hassan Raza</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Mathematics Teacher</p>
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">💼</div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Professional Team</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Expert developers with extensive industry experience.</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 1rem; border: 1px solid var(--border); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Client Support</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Dedicated support throughout project lifecycle.</p>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 3rem;">Our Process</h3>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3 style="text-align: center;">Analyze Requirements</h3>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--text-light);">Understand your business needs and project goals through detailed consultation.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3 style="text-align: center;">Planning</h3>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--text-light);">Develop comprehensive strategy and project roadmap aligned with objectives.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3 style="text-align: center;">Development</h3>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--text-light);">Execute development using modern technologies and best practices.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3 style="text-align: center;">Testing</h3>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--text-light);">Conduct comprehensive testing including functionality, performance, and security.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">5</div>
+                        <h3 style="text-align: center;">Delivery & Support</h3>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--text-light);">Project handover with 2 months complimentary support and updates.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- School Admissions -->
-            <div id="school-admissions" class="school-page" style="display: none;">
-                <h2>Admissions Form</h2>
-                <form onsubmit="handleAdmission(event)" style="max-width: 600px; margin-top: 2rem;">
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What is the typical project timeline?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Project timelines vary based on scope and complexity. Basic projects take 3-5 days, standard projects 5-7 days, professional projects 7-10 days, premium projects 10-14 days, and custom projects minimum 14 days depending on requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you offer custom development?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer fully custom development tailored to your specific business requirements. Contact our team to discuss your project details and receive a customized proposal.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you offer emergency services?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we provide emergency services for urgent projects. Additional 10% charge applies. Contact us immediately for emergency support and quick turnaround solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What support is included after delivery?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All projects include 2 months complimentary support. During this period, we provide bug fixes, minor updates, and technical assistance at no additional cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you provide SEO optimization?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all our web development projects include basic SEO optimization. We also offer comprehensive SEO services as a standalone package for maximum search visibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>What technologies do you use?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We use modern technologies including HTML5, CSS3, JavaScript, and various frameworks. Backend development includes Node.js, Python, PHP, and databases like MySQL and MongoDB.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you offer hosting services?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We assist with hosting setup and can recommend reliable hosting providers. We can also manage hosting for you as an additional service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Pricing Plans</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Basic</h3>
+                        <div class="price">$100 - $150</div>
+                        <div class="delivery">Delivery: 3 - 5 Days</div>
+                        <ul class="pricing-features">
+                            <li>Single Page Website</li>
+                            <li>Basic SEO</li>
+                            <li>Mobile Responsive</li>
+                            <li>Email Support</li>
+                            <li>2 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPrice('Basic', '100-150')">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Standard</h3>
+                        <div class="price">$150 - $250</div>
+                        <div class="delivery">Delivery: 5 - 7 Days</div>
+                        <ul class="pricing-features">
+                            <li>5-10 Page Website</li>
+                            <li>SEO Optimization</li>
+                            <li>Contact Forms</li>
+                            <li>SSL Certificate</li>
+                            <li>2 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPrice('Standard', '150-250')">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Professional</h3>
+                        <div class="price">$250 - $400</div>
+                        <div class="delivery">Delivery: 7 - 10 Days</div>
+                        <ul class="pricing-features">
+                            <li>10-20 Page Website</li>
+                            <li>Advanced Features</li>
+                            <li>CMS Integration</li>
+                            <li>Analytics Setup</li>
+                            <li>2 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPrice('Professional', '250-400')">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Premium</h3>
+                        <div class="price">$400 - $550</div>
+                        <div class="delivery">Delivery: 10 - 14 Days</div>
+                        <ul class="pricing-features">
+                            <li>20+ Page Website</li>
+                            <li>E-commerce Features</li>
+                            <li>Payment Gateway</li>
+                            <li>Admin Dashboard</li>
+                            <li>2 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPrice('Premium', '400-550')">Get Started</button>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Custom</h3>
+                        <div class="price">$550+</div>
+                        <div class="delivery">Minimum 14 Days</div>
+                        <ul class="pricing-features">
+                            <li>Custom Requirements</li>
+                            <li>Full Features</li>
+                            <li>Advanced Development</li>
+                            <li>Priority Support</li>
+                            <li>2 Months Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPrice('Custom', 'Custom')">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <h2>Let's Start Your Project</h2>
+                <p>Ready to transform your business? Submit your requirements and let's discuss how we can help.</p>
+                <form onsubmit="handleProjectForm(event)" style="max-width: 700px; margin: 2rem auto; background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 1rem;">
                     <div class="form-group">
-                        <label>Student Name</label>
+                        <label style="color: white;">Full Name</label>
                         <input type="text" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Date of Birth</label>
-                            <input type="date" required>
+                            <label style="color: white;">Contact Number</label>
+                            <input type="tel" required>
                         </div>
                         <div class="form-group">
-                            <label>Class Applying For</label>
-                            <select required>
-                                <option>Class 1</option>
-                                <option>Class 2</option>
-                                <option>Class 3</option>
-                                <option>Class 4</option>
-                                <option>Class 5</option>
-                                <option>Class 6</option>
-                                <option>Class 7</option>
-                                <option>Class 8</option>
-                                <option>Class 9</option>
-                                <option>Class 10</option>
-                            </select>
+                            <label style="color: white;">Business Name</label>
+                            <input type="text" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Father's Name</label>
-                        <input type="text" required>
+                        <label style="color: white;">Budget Range</label>
+                        <select id="budgetSelect" required>
+                            <option>Select Budget Range</option>
+                            <option value="100-150">$100 - $150</option>
+                            <option value="150-250">$150 - $250</option>
+                            <option value="250-400">$250 - $400</option>
+                            <option value="400-550">$400 - $550</option>
+                            <option value="550+">$550+</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="tel" required>
+                        <label style="color: white;">Project Details</label>
+                        <textarea rows="5" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" required>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit Application</button>
+                    <button type="submit" class="submit-btn" style="background: white; color: var(--primary); width: 100%;">Submit Requirement</button>
                 </form>
             </div>
+        </section>
+    </main>
 
-            <!-- School Gallery -->
-            <div id="school-gallery" class="school-page" style="display: none;">
-                <h2>School Gallery</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <h4>Classroom</h4>
-                        <p>Modern learning space</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Science Lab</h4>
-                        <p>Practical experiments</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Computer Lab</h4>
-                        <p>Technology center</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Library</h4>
-                        <p>Knowledge resource</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Sports Ground</h4>
-                        <p>Physical activities</p>
-                    </div>
-                    <div class="gallery-item">
-                        <h4>Assembly Hall</h4>
-                        <p>School gatherings</p>
-                    </div>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Zentro AI</h4>
+                <p style="margin-bottom: 1rem; color: rgba(255, 255, 255, 0.7);">Premium digital development and AI solutions agency.</p>
             </div>
-
-            <!-- School Contact -->
-            <div id="school-contact" class="school-page" style="display: none;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>📞 Get In Touch</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:+923211234567">+92 321 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>WhatsApp:</strong>
-                        <a href="https://wa.me/923211234567">+92 321 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:admin@schooldemo.edu">admin@schooldemo.edu</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Address:</strong>
-                        <span>Education Complex, Demo City</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Corporate Demo Page -->
-    <div class="demo-page" id="corporate-demo">
-        <button class="back-to-site-btn" onclick="closeDemo('corporate')">← Back to Site</button>
-        <div class="demo-header">
-            <h1>Zentro Corporate Solutions</h1>
-            <div class="demo-nav">
-                <button class="active" onclick="showCorporatePage('home')">Home</button>
-                <button onclick="showCorporatePage('services')">Services</button>
-                <button onclick="showCorporatePage('team')">Team</button>
-                <button onclick="showCorporatePage('portfolio')">Portfolio</button>
-                <button onclick="showCorporatePage('contact')">Contact</button>
-            </div>
-        </div>
-
-        <div class="demo-page-content">
-            <!-- Corporate Home -->
-            <div id="corporate-home" class="corporate-page active">
-                <h2>Zentro Corporate Solutions</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">We are a leading corporate consulting firm dedicated to helping businesses achieve operational excellence and sustainable growth.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Our expert team provides strategic solutions tailored to your unique business challenges.</p>
-            </div>
-
-            <!-- Corporate Services -->
-            <div id="corporate-services" class="corporate-page" style="display: none;">
-                <h2>Our Services</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Business Strategy</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Strategic planning and implementation</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--secondary);">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Process Optimization</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Efficiency improvement initiatives</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--accent);">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Digital Transformation</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Technology integration solutions</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Corporate Team -->
-            <div id="corporate-team" class="corporate-page" style="display: none;">
-                <h2>Our Team</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Muhammad Khan</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Chief Executive Officer</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Ayesha Ahmed</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Chief Operating Officer</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Imran Ali</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Head of Strategy</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Corporate Portfolio -->
-            <div id="corporate-portfolio" class="corporate-page" style="display: none;">
-                <h2>Our Portfolio</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Alpha</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Enterprise solution implementation</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Beta</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Process automation project</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Gamma</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Digital transformation initiative</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Corporate Contact -->
-            <div id="corporate-contact" class="corporate-page" style="display: none;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>📞 Get In Touch</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:+923331234567">+92 333 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:info@corporatedemo.com">info@corporatedemo.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Address:</strong>
-                        <span>Corporate Tower, Business District, Demo City</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Healthcare Demo Page -->
-    <div class="demo-page" id="healthcare-demo">
-        <button class="back-to-site-btn" onclick="closeDemo('healthcare')">← Back to Site</button>
-        <div class="demo-header">
-            <h1>Zentro Healthcare Clinic</h1>
-            <div class="demo-nav">
-                <button class="active" onclick="showHealthcarePage('home')">Home</button>
-                <button onclick="showHealthcarePage('doctors')">Doctors</button>
-                <button onclick="showHealthcarePage('services')">Services</button>
-                <button onclick="showHealthcarePage('appointment')">Appointments</button>
-                <button onclick="showHealthcarePage('contact')">Contact</button>
-            </div>
-        </div>
-
-        <div class="demo-page-content">
-            <!-- Healthcare Home -->
-            <div id="healthcare-home" class="healthcare-page active">
-                <h2>Zentro Healthcare Clinic</h2>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro Healthcare, where we prioritize your health and wellbeing. Our clinic provides comprehensive medical services with a team of experienced doctors and modern facilities.</p>
-                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">We are committed to delivering quality healthcare with compassion and professionalism.</p>
-            </div>
-
-            <!-- Healthcare Doctors -->
-            <div id="healthcare-doctors" class="healthcare-page" style="display: none;">
-                <h2>Our Doctors</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Dr. Sarah Khan</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">General Practitioner</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Dr. Ahmed Ali</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Cardiologist</p>
-                    </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
-                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
-                        <h3 style="color: var(--primary);">Dr. Fatima Hassan</h3>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Pediatrician</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Healthcare Services -->
-            <div id="healthcare-services" class="healthcare-page" style="display: none;">
-                <h2>Our Services</h2>
-                <ul style="list-style: none; margin-top: 2rem;">
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">General Consultation</strong> - Regular checkups and health advice
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Cardiac Care</strong> - Heart health services and treatment
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Pediatric Care</strong> - Children's health and development
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Laboratory Tests</strong> - Comprehensive diagnostic services
-                    </li>
-                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
-                        <strong style="color: var(--primary);">Vaccinations</strong> - Immunization programs
-                    </li>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a onclick="scrollTo('services')">Services</a></li>
+                    <li><a onclick="scrollTo('demos')">Demos</a></li>
+                    <li><a onclick="scrollTo('pricing')">Pricing</a></li>
+                    <li><a onclick="scrollTo('contact')">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Healthcare Appointment -->
-            <div id="healthcare-appointment" class="healthcare-page" style="display: none;">
-                <h2>Book Appointment</h2>
-                <form onsubmit="handleAppointment(event)" style="max-width: 600px; margin-top: 2rem;">
-                    <div class="form-group">
-                        <label>Patient Name</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="tel" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Doctor</label>
-                            <select required>
-                                <option>Dr. Sarah Khan (GP)</option>
-                                <option>Dr. Ahmed Ali (Cardiologist)</option>
-                                <option>Dr. Fatima Hassan (Pediatrician)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Appointment Date</label>
-                            <input type="date" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Appointment Time</label>
-                        <input type="time" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Symptoms/Reason</label>
-                        <textarea rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Book Appointment</button>
-                </form>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="tel:+923238194763">+92 323 8194763</a></li>
+                    <li><a href="mailto:zentroaiagencypakistan@gmail.com">zentroaiagencypakistan@gmail.com</a></li>
+                </ul>
             </div>
-
-            <!-- Healthcare Contact -->
-            <div id="healthcare-contact" class="healthcare-page" style="display: none;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>📞 Get In Touch</h3>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:+923441234567">+92 344 1234567</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Emergency:</strong>
-                        <a href="tel:+923441234568">+92 344 1234568</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:info@healthcaredemo.com">info@healthcaredemo.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Hours:</strong>
-                        <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
-                    </div>
-                </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <a href="https://wa.me/923238194763" class="whatsapp-btn">Chat on WhatsApp</a>
             </div>
         </div>
-    </div>
-
-    <!-- Contact Section (Main Site) -->
-    <section style="padding: 4rem 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center;" id="contact">
-        <div style="max-width: 600px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Let's discuss how we can help your business grow and succeed in the digital world.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:info@zentroai.com" style="background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Email Us</a>
-                <a href="https://wa.me/923001234567" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s; border: 2px solid white;" onmouseover="this.style.background='white'; this.style.color='var(--primary)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'">WhatsApp</a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zentro AI Development Agency. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
     <script>
-        // Service Modal Functions
-        function openModal(serviceType) {
-            const modalMap = {
-                'web-dev': 'web-dev-modal',
-                'meta-ads': 'meta-ads-modal',
-                'ai-bots': 'ai-bots-modal',
-                'seo': 'seo-modal',
-                'problem-solving': 'problem-solving-modal'
-            };
-            const modal = document.getElementById(modalMap[serviceType]);
-            if (modal) {
-                modal.classList.add('active');
+        function scrollTo(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('active');
-            }
+        function openModal(id) {
+            document.getElementById(id + '-modal').classList.add('active');
         }
 
-        // Demo Site Functions
-        function showDemo(demoType) {
-            const demoMap = {
-                'restaurant': 'restaurant-demo',
-                'realestate': 'realestate-demo',
-                'school': 'school-demo',
-                'corporate': 'corporate-demo',
-                'healthcare': 'healthcare-demo'
-            };
-            const demo = document.getElementById(demoMap[demoType]);
-            if (demo) {
-                demo.classList.add('active');
-            }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
         }
 
-        function closeDemo(demoType) {
-            const demoMap = {
-                'restaurant': 'restaurant-demo',
-                'realestate': 'realestate-demo',
-                'school': 'school-demo',
-                'corporate': 'corporate-demo',
-                'healthcare': 'healthcare-demo'
-            };
-            const demo = document.getElementById(demoMap[demoType]);
-            if (demo) {
-                demo.classList.remove('active');
-            }
+        function showDemo(type) {
+            document.getElementById(type + '-demo').classList.add('active');
+        }
+
+        function closeDemo(type) {
+            document.getElementById(type + '-demo').classList.remove('active');
         }
 
         function showRestaurantPage(page) {
-            const pages = document.querySelectorAll('.restaurant-page');
-            pages.forEach(p => p.style.display = 'none');
-            document.getElementById(`restaurant-${page}`).style.display = 'block';
+            document.querySelectorAll('#restaurant-demo .demo-section').forEach(el => el.style.display = 'none');
+            document.getElementById('restaurant-' + page).style.display = 'block';
             updateDemoNav(page);
         }
 
         function showRealEstatePage(page) {
-            const pages = document.querySelectorAll('.realestate-page');
-            pages.forEach(p => p.style.display = 'none');
-            document.getElementById(`realestate-${page}`).style.display = 'block';
+            document.querySelectorAll('#realestate-demo .demo-section').forEach(el => el.style.display = 'none');
+            document.getElementById('realestate-' + page).style.display = 'block';
             updateDemoNav(page);
         }
 
         function showSchoolPage(page) {
-            const pages = document.querySelectorAll('.school-page');
-            pages.forEach(p => p.style.display = 'none');
-            document.getElementById(`school-${page}`).style.display = 'block';
+            document.querySelectorAll('#school-demo .demo-section').forEach(el => el.style.display = 'none');
+            document.getElementById('school-' + page).style.display = 'block';
             updateDemoNav(page);
         }
 
-        function showCorporatePage(page) {
-            const pages = document.querySelectorAll('.corporate-page');
-            pages.forEach(p => p.style.display = 'none');
-            document.getElementById(`corporate-${page}`).style.display = 'block';
+        function showClinicPage(page) {
+            document.querySelectorAll('#clinic-demo .demo-section').forEach(el => el.style.display = 'none');
+            document.getElementById('clinic-' + page).style.display = 'block';
             updateDemoNav(page);
         }
 
-        function showHealthcarePage(page) {
-            const pages = document.querySelectorAll('.healthcare-page');
-            pages.forEach(p => p.style.display = 'none');
-            document.getElementById(`healthcare-${page}`).style.display = 'block';
+        function showEcommercePage(page) {
+            document.querySelectorAll('#ecommerce-demo .demo-section').forEach(el => el.style.display = 'none');
+            document.getElementById('ecommerce-' + page).style.display = 'block';
             updateDemoNav(page);
         }
 
         function updateDemoNav(page) {
-            const buttons = document.querySelectorAll('.demo-nav button');
-            buttons.forEach(btn => {
+            document.querySelectorAll('.demo-nav button').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.textContent.toLowerCase().includes(page)) {
-                    btn.classList.add('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function toggleFaq(element) {
+            const question = element;
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                if (a !== answer) {
+                    a.classList.remove('active');
+                    a.previousElementSibling.classList.remove('active');
+                    a.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
                 }
             });
+
+            answer.classList.toggle('active');
+            question.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
 
-        // Form Handlers
-        function handleReservation(event) {
-            event.preventDefault();
-            alert('Thank you for your reservation! We will contact you shortly to confirm.');
-            event.target.reset();
+        function selectPrice(plan, price) {
+            document.getElementById('budgetSelect').value = price;
+            scrollTo('contact');
         }
 
-        function handleAdmission(event) {
-            event.preventDefault();
-            alert('Thank you for submitting your application! We will review it and contact you soon.');
-            event.target.reset();
+        function handleReservation(e) {
+            e.preventDefault();
+            alert('Reservation submitted successfully! We will contact you shortly to confirm.');
+            e.target.reset();
         }
 
-        function handleAppointment(event) {
-            event.preventDefault();
-            alert('Your appointment has been booked! We will send a confirmation via SMS and email.');
-            event.target.reset();
+        function handleAdmission(e) {
+            e.preventDefault();
+            alert('Application submitted successfully! We will review and contact you soon.');
+            e.target.reset();
         }
 
-        // Smooth Scroll
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
+        function handleAppointment(e) {
+            e.preventDefault();
+            alert('Appointment booked successfully! Confirmation will be sent via phone/email.');
+            e.target.reset();
         }
 
-        // Close modals on outside click
+        function handleProjectForm(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const name = e.target[0].value;
+            const phone = e.target[1].value;
+            const business = e.target[2].value;
+            const budget = e.target[3].value;
+            const details = e.target[4].value;
+
+            const message = `New Project Request:\n\nName: ${name}\nPhone: ${phone}\nBusiness: ${business}\nBudget: ${budget}\n\nDetails: ${details}`;
+
+            const mailtoLink = `mailto:zentroaiagencypakistan@gmail.com?subject=New Project Request - ${business}&body=${encodeURIComponent(message)}`;
+            window.location.href = mailtoLink;
+
+            alert('Thank you for your submission! Our team will contact you shortly.');
+            e.target.reset();
+        }
+
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
