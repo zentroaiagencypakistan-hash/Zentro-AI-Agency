@@ -1,1711 +1,625 @@
-<meta property="og:title" content="Zentro AI Development Agency | Premium Web &amp; Automation Architecture">
-<meta property="og:description" content="Accelerate business scale with high-fidelity frontend architecture, bespoke automation systems, and high-conversion ad funnels crafted by Zentro.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="[https://zentroaiagency.com](https://zentroaiagency.com)">
-<meta property="og:image" content="[https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80)">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zentro AI Development Agency">
-<meta name="twitter:description" content="Enterprise-grade digital construction, machine learning workflows, and modern web development architectures.">
-<meta name="twitter:image" content="[https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80)">
-
-<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-<link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap)" rel="stylesheet">
-
-<style>
-    :root {
-        --bg-dark: #030712;
-        --bg-card: rgba(17, 24, 39, 0.7);
-        --bg-glass: rgba(255, 255, 255, 0.03);
-        --border-glass: rgba(255, 255, 255, 0.08);
-        --primary: #6366f1;
-        --primary-glow: rgba(99, 102, 241, 0.15);
-        --secondary: #a855f7;
-        --accent: #06b6d4;
-        --text-main: #f9fafb;
-        --text-muted: #9ca3af;
-        --font-sans: 'Plus Jakarta Sans', sans-serif;
-        --font-mono: 'Space Grotesk', sans-serif;
-        --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
-    }
-
-    body {
-        background-color: var(--bg-dark);
-        color: var(--text-main);
-        font-family: var(--font-sans);
-        overflow-x: hidden;
-        line-height: 1.6;
-    }
-
-    /* Ambient Orbs background */
-    .ambient-glow {
-        position: fixed;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-        top: -200px;
-        left: -200px;
-        z-index: -1;
-        pointer-events: none;
-        filter: blur(80px);
-        animation: floatGlow 20s infinite alternate;
-    }
-
-    .ambient-glow-2 {
-        position: fixed;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
-        bottom: -100px;
-        right: -100px;
-        z-index: -1;
-        pointer-events: none;
-        filter: blur(100px);
-    }
-
-    @keyframes floatGlow {
-        0% { transform: translate(0, 0) scale(1); }
-        100% { transform: translate(100px, 50px) scale(1.1); }
-    }
-
-    /* Typography Styles */
-    h1, h2, h3, h4, h5, h6 {
-        font-family: var(--font-mono);
-        letter-spacing: -0.02em;
-        font-weight: 700;
-    }
-
-    /* Glassmorphism Global Styles */
-    .glass-card {
-        background: var(--bg-card);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid var(--border-glass);
-        border-radius: 24px;
-        transition: var(--transition);
-    }
-
-    .glass-card:hover {
-        border-color: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        transform: translateY(-4px);
-    }
-
-    /* Layout Architecture */
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        background: rgba(3, 7, 18, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border-glass);
-    }
-
-    .nav-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-family: var(--font-mono);
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: linear-gradient(to right, var(--text-main), var(--text-muted));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-decoration: none;
-    }
-
-    .logo span {
-        background: linear-gradient(to right, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 32px;
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: 500;
-        transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-        color: var(--text-main);
-    }
-
-    .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--text-main);
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    main {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 120px 20px 60px 20px;
-    }
-
-    section {
-        padding: 100px 0;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .section-header h2 {
-        font-size: 2.5rem;
-        margin-bottom: 16px;
-        background: linear-gradient(to bottom, #fff, #999);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .section-header p {
-        color: var(--text-muted);
-        font-size: 1.1rem;
-    }
-
-    /* Buttons & CTAs */
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 14px 28px;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        cursor: pointer;
-        transition: var(--transition);
-        text-decoration: none;
-        font-family: var(--font-sans);
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #fff;
-        border: none;
-        box-shadow: 0 4px 20px var(--primary-glow);
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-    }
-
-    .btn-secondary {
-        background: var(--bg-glass);
-        color: var(--text-main);
-        border: 1px solid var(--border-glass);
-    }
-
-    .btn-secondary:hover {
-        background: rgba(255,255,255,0.08);
-        border-color: rgba(255,255,255,0.2);
-    }
-
-    .btn-sm {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        border-radius: 8px;
-    }
-
-    /* SECTION 1: HERO */
-    .hero {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        min-height: calc(100vh - 180px);
-    }
-
-    .hero-content h1 {
-        font-size: 4rem;
-        line-height: 1.1;
-        margin-bottom: 24px;
-        background: linear-gradient(to right, #ffffff, #a855f7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .hero-content p {
-        font-size: 1.25rem;
-        color: var(--text-muted);
-        margin-bottom: 40px;
-        max-width: 600px;
-    }
-
-    .hero-actions {
-        display: flex;
-        gap: 16px;
-    }
-
-    .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero-sphere {
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--accent));
-        filter: blur(40px);
-        opacity: 0.4;
-        animation: pulseSphere 8s infinite alternate;
-    }
-
-    @keyframes pulseSphere {
-        0% { transform: scale(1) rotate(0deg); opacity: 0.3; }
-        100% { transform: scale(1.2) rotate(180deg); opacity: 0.5; }
-    }
-
-    /* SECTION 2: SERVICES */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 24px;
-    }
-
-    .service-card {
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 280px;
-    }
-
-    .service-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 16px;
-        color: var(--text-main);
-    }
-
-    .service-card p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        margin-bottom: 24px;
-        flex-grow: 1;
-    }
-
-    /* Expandable Service Drawer/Modal Details */
-    .service-expanded-content {
-        display: none;
-        margin-top: 24px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border-glass);
-        animation: fadeIn 0.4s ease;
-    }
-
-    .service-expanded-content ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-
-    .service-expanded-content li {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .service-expanded-content li::before {
-        content: "→";
-        color: var(--accent);
-        font-weight: bold;
-    }
-
-    /* SECTION 3: DEMO SITES */
-    .demo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 32px;
-    }
-
-    .demo-card {
-        overflow: hidden;
-        border-radius: 24px;
-    }
-
-    .demo-thumb {
-        width: 100%;
-        height: 220px;
-        background-size: cover;
-        background-position: center;
-        transition: var(--transition);
-    }
-
-    .demo-card:hover .demo-thumb {
-        transform: scale(1.05);
-    }
-
-    .demo-info {
-        padding: 32px;
-    }
-
-    .demo-info h3 {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-    }
-
-    .demo-info p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        margin-bottom: 24px;
-    }
-
-    /* LIVE DEMO INNER VIEWPORTS (HIDDEN BY DEFAULT) */
-    .demo-viewport-container {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: var(--bg-dark);
-        z-index: 200;
-        overflow-y: auto;
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
-
-    .demo-nav {
-        max-width: 1200px;
-        margin: 0 auto 30px auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--border-glass);
-    }
-
-    .demo-subnav-links {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-    }
-
-    .demo-subnav-links button {
-        background: var(--bg-glass);
-        border: 1px solid var(--border-glass);
-        color: var(--text-muted);
-        padding: 8px 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-family: var(--font-mono);
-        transition: var(--transition);
-    }
-
-    .demo-subnav-links button.active, .demo-subnav-links button:hover {
-        background: var(--primary);
-        color: #fff;
-        border-color: var(--primary);
-    }
-
-    .demo-page-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: none;
-        animation: fadeIn 0.3s ease;
-    }
-
-    .demo-page-content.active-page {
-        display: block;
-    }
-
-    /* Demo-specific components */
-    .restaurant-menu-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-    }
-    .menu-item-card {
-        padding: 20px;
-        background: rgba(255,255,255,0.02);
-        border: 1px solid var(--border-glass);
-        border-radius: 12px;
-    }
-    .menu-cat-title {
-        grid-column: 1 / -1;
-        margin-top: 30px;
-        color: var(--accent);
-        border-left: 4px solid var(--accent);
-        padding-left: 12px;
-    }
-    .food-gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
-    }
-    .food-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 12px;
-    }
-    .gallery-pagination {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 40px;
-    }
-
-    /* Forms Configuration global for Demos */
-    .demo-form {
-        max-width: 600px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-    .form-group label {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-    }
-    .form-group input, .form-group select, .form-group textarea {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid var(--border-glass);
-        padding: 12px;
-        border-radius: 8px;
-        color: #fff;
-        font-family: var(--font-sans);
-    }
-    .form-group row {
-        display: flex;
-        gap: 16px;
-    }
-
-    /* SECTION 4: ABOUT US */
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-    }
-    .about-main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-    .process-flow {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
-    .process-card {
-        padding: 24px;
-        position: relative;
-    }
-    .process-step {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-family: var(--font-mono);
-        font-size: 2rem;
-        color: rgba(255,255,255,0.05);
-        font-weight: 800;
-    }
-
-    /* SECTION 5: FAQs */
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .faq-item {
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--border-glass);
-        background: var(--bg-card);
-    }
-    .faq-trigger {
-        width: 100%;
-        padding: 24px;
-        background: none;
-        border: none;
-        text-align: left;
-        color: var(--text-main);
-        font-family: var(--font-mono);
-        font-size: 1.1rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .faq-content {
-        display: none;
-        padding: 0 24px 24px 24px;
-        color: var(--text-muted);
-        font-size: 0.95rem;
-    }
-
-    /* SECTION 6: PRICING */
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-    }
-    .pricing-card {
-        padding: 32px 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;
-    }
-    .price-tag {
-        font-family: var(--font-mono);
-        font-size: 1.75rem;
-        color: var(--accent);
-        margin: 16px 0;
-        font-weight: 700;
-    }
-    .pricing-features {
-        list-style: none;
-        margin: 24px 0;
-        text-align: left;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* SECTION 7: LET'S START YOUR PROJECT */
-    .lead-section {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 40px;
-    }
-
-    /* SECTION 8 & FOOTER */
-    .contact-footer-block {
-        border-top: 1px solid var(--border-glass);
-        padding-top: 60px;
-        margin-top: 100px;
-    }
-    .contact-channel-strip {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin-bottom: 60px;
-        flex-wrap: wrap;
-    }
-    .channel-link {
-        color: var(--text-main);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-family: var(--font-mono);
-    }
-    footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive Architecture */
-    @media (max-width: 968px) {
-        .hero { grid-template-columns: 1fr; text-align: center; }
-        .hero-content p { margin-left: auto; margin-right: auto; }
-        .hero-actions { justify-content: center; }
-        .about-main { grid-template-columns: 1fr; }
-        .nav-links { display: none; }
-        .mobile-toggle { display: block; }
-    }
-</style>
-<div class="ambient-glow"></div>
-<div class="ambient-glow-2"></div>
-
-<header>
-    <div class="nav-container">
-        <a href="#" class="logo">ZENTRO<span>AI</span></a>
-        <button class="mobile-toggle" onclick="toggleMobileNav()">≡</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#demos">Demo Sites</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</header>
-
-<main>
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Architecting Digital Intelligence</h1>
-            <p>Zentro AI Development Agency engineers elite web architectures, robust business automation systems, and high-performance monetization engines built for operational scaling.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">Initiate Deployment</a>
-                <a href="#demos" class="btn btn-secondary">Explore Simulations</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Zentro AI Development Agency | Premium Digital Solutions">
+    <meta property="og:description" content="Expert web development, AI automations, and growth services tailored for premium enterprise scaling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zentroai.agency">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zentro AI Development Agency">
+    <meta name="twitter:description" content="Expert web development, AI automations, and growth services.">
+
+    <title>Zentro AI Development Agency</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #060913;
+            --bg-card: rgba(13, 20, 38, 0.6);
+            --bg-card-hover: rgba(20, 30, 58, 0.8);
+            --primary: #00f0ff;
+            --primary-glow: rgba(0, 240, 255, 0.3);
+            --secondary: #7000ff;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-green: #10b981;
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Background Glows */
+        .glow-bg {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -200px;
+            left: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-bg-right {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -200px;
+            right: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);
+        }
+
+        /* Typography Utilities */
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 4rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(6, 9, 19, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-z {
+            color: var(--primary);
+            position: relative;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            max-width: 900px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Tech Element Matrix Effect Graphic Simulation */
+        .hero-graphic-container {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1000px;
+            height: 350px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(180deg, rgba(13, 20, 38, 0.4) 0%, rgba(6, 9, 19, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-mesh {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            transform: perspective(500px) rotateX(60deg);
+            top: -20%;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .hero-core {
+            position: relative;
+            z-index: 2;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.6);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(0, 240, 255, 0.6); }
+            50% { transform: scale(1.1); box-shadow: 0 0 70px rgba(112, 0, 255, 0.8); }
+        }
+
+        /* Services Section */
+        .section-padding {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        /* Detail Drawers / Expandable Panels */
+        .expanded-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(6, 9, 19, 0.5);
+            border-radius: 8px;
+            margin-top: 0;
+        }
+
+        .expanded-details.active {
+            max-height: 500px;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .details-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .details-list li {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        .details-list li i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        /* Demos Section */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .demo-card {
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .demo-thumbnail {
+            height: 200px;
+            background: linear-gradient(45deg, #111827, #1f2937);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .demo-thumbnail i {
+            transition: var(--transition);
+        }
+
+        .demo-card:hover .demo-thumbnail i {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .demo-info {
+            padding: 2rem;
+        }
+
+        .demo-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Fullscreen Sub-Demo Engine */
+        .demo-viewport {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+            background: #0b0f19;
+            display: none;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .demo-viewport.active {
+            display: block;
+        }
+
+        .demo-nav-bar {
+            max-width: 1200px;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-menu { display: none; }
+            .nav-toggle { display: block; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-ctas { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            .details-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+    <div class="glow-bg-right"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-z">Z</span>ZENTRO AI
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#demos" class="nav-link">Demos</a></li>
+            </ul>
+            <div class="nav-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-sphere"></div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">Next-Generation Architecture</div>
+        <h1 class="gradient-text">Engineered Intelligence. Bespoke Digital Ecosystems.</h1>
+        <p>Zentro AI Development Agency builds high-performance corporate web structures, autonomous conversion ad funnels, and enterprise-grade system automations.</p>
+        <div class="hero-ctas">
+            <a href="#services" class="btn btn-primary">Launch Project Inquiry <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#demos" class="btn btn-secondary">Explore Live Sub-Demos</a>
+        </div>
+        <div class="hero-graphic-container">
+            <div class="hero-mesh"></div>
+            <div class="hero-core"></div>
         </div>
     </section>
 
-    <section id="services">
-        <div class="section-header">
-            <h2>Our Services</h2>
-            <p>Enterprise-grade computing and architectural execution pathways.</p>
-        </div>
+    <section id="services" class="section-padding">
+        <h2 class="section-title gradient-text">Our Services</h2>
+        <p class="section-subtitle">Scalable tactical technical solutions built around optimized codebases and performance frameworks.</p>
+        
         <div class="services-grid">
-            <div class="glass-card service-card">
-                <div>
-                    <h3>Web Development</h3>
-                    <p>High-fidelity structural frameworks tailored for speed, robust security configurations, and fluid interactivity parameters.</p>
-                </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" onclick="toggleService(this)">Learn More</button>
-                    <div class="service-expanded-content">
-                        <ul>
-                            <li>Requirement analysis</li>
-                            <li>UI/UX planning</li>
-                            <li>Responsive design</li>
-                            <li>Frontend development</li>
-                            <li>Backend development</li>
-                            <li>Testing</li>
-                            <li>Optimization</li>
-                            <li>Deployment</li>
-                            <li>Support</li>
-                        </ul>
-                    </div>
+            <div class="service-card glass-panel">
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Enterprise core responsive applications architected for modern computational scale, fluid accessibility, and flawless rendering speed.</p>
+                <button class="btn btn-secondary" onclick="toggleDetails('details-web')">Learn More</button>
+                
+                <div id="details-web" class="expanded-details">
+                    <ul class="details-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Requirement analysis</li>
+                        <li><i class="fa-solid fa-circle-check"></i> UI/UX planning</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Responsive design</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Frontend development</li>
+                    </ul>
                 </div>
             </div>
-            <div class="glass-card service-card">
-                <div>
-                    <h3>Meta Ads Development / Generation</h3>
-                    <p>High-yield algorithm targeting architecture constructed to extract optimal conversion percentages across unified meta networks.</p>
-                </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" onclick="toggleService(this)">Learn More</button>
-                    <div class="service-expanded-content">
-                        <ul>
-                            <li>Campaign strategy</li>
-                            <li>Audience research</li>
-                            <li>Ad creatives</li>
-                            <li>Funnel planning</li>
-                            <li>Tracking setup</li>
-                            <li>Optimization process</li>
-                            <li>Performance monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card service-card">
-                <div>
-                    <h3>AI Bots & Automation</h3>
-                    <p>Autonomous pipelines connecting consumer interactions via continuous script integrations and communication matrices.</p>
-                </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" onclick="toggleService(this)">Learn More</button>
-                    <div class="service-expanded-content">
-                        <ul>
-                            <li>WhatsApp Bots</li>
-                            <li>Email Bots</li>
-                            <li>Social Media Bots</li>
-                            <li>Business Automation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card service-card">
-                <div>
-                    <h3>SEO Growth</h3>
-                    <p>Algorithmic indexing optimization strategically established to elevate discovery mechanics without reliance on transient paid channels.</p>
-                </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" onclick="toggleService(this)">Learn More</button>
-                    <div class="service-expanded-content">
-                        <ul>
-                            <li>Technical SEO</li>
-                            <li>On-page SEO</li>
-                            <li>Content optimization</li>
-                            <li>Site structure</li>
-                            <li>Performance optimization</li>
-                            <li>Search visibility improvement</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-card service-card">
-                <div>
-                    <h3>Problem Solving</h3>
-                    <p>Surgical system maintenance protocols to eliminate critical system bottlenecks, logic defects, and core application friction.</p>
-                </div>
-                <div>
-                    <button class="btn btn-secondary btn-sm" onclick="toggleService(this)">Learn More</button>
-                    <div class="service-expanded-content">
-                        <ul>
-                            <li>Website maintenance</li>
-                            <li>Bug fixing</li>
-                            <li>Performance improvements</li>
-                            <li>Technical consultation</li>
-                            <li>Free advice for growth</li>
-                        </ul>
-                    </div>
+
+            <div class="service-card glass-panel">
+                <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>AI Bots & Automation</h3>
+                <p>Intelligent conversation and operational nodes constructed to offload manual communication layers.</p>
+                <button class="btn btn-secondary" onclick="toggleDetails('details-bots')">Learn More</button>
+                
+                <div id="details-bots" class="expanded-details">
+                    <ul class="details-list">
+                        <li><i class="fa-solid fa-circle-check"></i> WhatsApp Bots</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Email Bots</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Business Automation</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="demos">
-        <div class="section-header">
-            <h2>Demo Sites</h2>
-            <p>Functional, encapsulated deployment previews across varying business disciplines.</p>
-        </div>
+    <section id="demos" class="section-padding">
+        <h2 class="section-title gradient-text">Demo Sites</h2>
+        <p class="section-subtitle">Examine fully-realized mock-production structural models built inside the sandbox platform environment.</p>
+
         <div class="demo-grid">
-            <div class="glass-card demo-card">
-                <div class="demo-thumb" style="background-image: url('[https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80)')"></div>
+            <div class="demo-card">
+                <div class="demo-thumbnail"><i class="fa-solid fa-utensils"></i></div>
                 <div class="demo-info">
-                    <h3>Restaurant Architecture</h3>
-                    <p>Full suite view including responsive multi-category visual menus and interactive room booking forms.</p>
-                    <button class="btn btn-primary btn-sm" onclick="openDemo('restaurant-demo')">View Demo</button>
+                    <h3>Restaurant Infrastructure</h3>
+                    <p>Complete multi-cuisine reservation portal, comprehensive adaptive asset menus, and data gathering arrays.</p>
+                    <button class="btn btn-primary" onclick="launchDemo('Restaurant')">View Demo</button>
                 </div>
             </div>
-            <div class="glass-card demo-card">
-                <div class="demo-thumb" style="background-image: url('[https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80)')"></div>
+
+            <div class="demo-card">
+                <div class="demo-thumbnail"><i class="fa-solid fa-building"></i></div>
                 <div class="demo-info">
-                    <h3>Real Estate Interface</h3>
-                    <p>Property allocation nodes mapping premium virtual locations alongside dynamic asset matrices.</p>
-                    <button class="btn btn-primary btn-sm" onclick="openDemo('realestate-demo')">View Demo</button>
-                </div>
-            </div>
-            <div class="glass-card demo-card">
-                <div class="demo-thumb" style="background-image: url('[https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80)')"></div>
-                <div class="demo-info">
-                    <h3>Academic Ecosystem</h3>
-                    <p>Structured facility navigation matrices, student enrollment pathways, and institutional progress charts.</p>
-                    <button class="btn btn-primary btn-sm" onclick="openDemo('school-demo')">View Demo</button>
-                </div>
-            </div>
-            <div class="glass-card demo-card">
-                <div class="demo-thumb" style="background-image: url('[https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80)')"></div>
-                <div class="demo-info">
-                    <h3>Medical Clinic Hub</h3>
-                    <p>Patient scheduling mechanics, healthcare department listings, and clinical operational frameworks.</p>
-                    <button class="btn btn-primary btn-sm" onclick="openDemo('clinic-demo')">View Demo</button>
-                </div>
-            </div>
-            <div class="glass-card demo-card">
-                <div class="demo-thumb" style="background-image: url('[https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=600&q=80)')"></div>
-                <div class="demo-info">
-                    <h3>E-Commerce Grid</h3>
-                    <p>Transaction pathways showing inventory structures, product categorization grids, and rapid checkout actions.</p>
-                    <button class="btn btn-primary btn-sm" onclick="openDemo('ecommerce-demo')">View Demo</button>
+                    <h3>Real Estate Portal</h3>
+                    <p>Dynamic commercial catalog displaying multi-variable parametric property filtering components.</p>
+                    <button class="btn btn-primary" onclick="launchDemo('Real Estate')">View Demo</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <div class="about-container">
-            <div class="about-main">
-                <div>
-                    <h2 style="font-family:var(--font-mono); font-size:2rem; margin-bottom:20px;">Who We Are & How We Work</h2>
-                    <p style="color:var(--text-muted); margin-bottom:24px;">Zentro AI Development Agency is a unified collection of engineers, optimization mechanics, and interaction designers. We construct highly optimized, accessible, and fast software layers that match business requirements with efficient system execution.</p>
-                </div>
-                <div>
-                    <h3 style="font-family:var(--font-mono); font-size:1.5rem; margin-bottom:16px;">Why Choose Zentro AI</h3>
-                    <p style="color:var(--text-muted);">We omit unnecessary boilerplate frameworks in favor of absolute semantic fidelity, raw speed metrics, and data-driven client alignment. Every line of code is purpose-built to eliminate user retention drop-offs and stabilize integration pipelines.</p>
-                </div>
-            </div>
-            <div>
-                <h3 style="font-family:var(--font-mono); font-size:1.8rem; margin-bottom:40px; text-align:center;">Our Process</h3>
-                <div class="process-flow">
-                    <div class="glass-card process-card">
-                        <span class="process-step">01</span>
-                        <h4>Analyze Requirements</h4>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Deep verification of architectural bottlenecks, commercial targets, and functional project scope definitions.</p>
-                    </div>
-                    <div class="glass-card process-card">
-                        <span class="process-step">02</span>
-                        <h4>Planning Matrix</h4>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Mapping UI paths, resource orchestration blueprints, structural database schemas, and API end-points.</p>
-                    </div>
-                    <div class="glass-card process-card">
-                        <span class="process-step">03</span>
-                        <h4>Development Run</h4>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Production of fast-loading clean code blocks, micro-animations, and unified service integration modules.</p>
-                    </div>
-                    <div class="glass-card process-card">
-                        <span class="process-step">04</span>
-                        <h4>Multi-Stage Testing</h4>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Stringent platform diagnostics focusing on cross-device layout rendering, access safety, and processing metrics.</p>
-                    </div>
-                    <div class="glass-card process-card">
-                        <span class="process-step">05</span>
-                        <h4>Final Handover</h4>
-                        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Asset migration alongside standard configuration workflows. Includes 2 months support after project delivery.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Fullscreen Demo Viewport Container -->
+    <div id="demoViewport" class="demo-viewport">
+        <div class="demo-nav-bar">
+            <h2 id="demoTitle" style="color: #fff;">Demo</h2>
+            <button class="btn btn-secondary" onclick="closeDemo()">Close Demo</button>
         </div>
-    </section>
-
-    <section id="faq">
-        <div class="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Transparent technical reference points regarding operation.</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">What core engineering stacks do you utilize? <span>+</span></button>
-                <div class="faq-content">We specialize in lightweight native architectures, fast asynchronous scripts, secure database layouts, and modern responsive viewports optimized for speed without bulky overhead.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">How are individual AI bots hosted and integrated? <span>+</span></button>
-                <div class="faq-content">Automated agents connect directly with application interfaces using specialized communication webhooks to manage consistent business data securely.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Do you offer accelerated emergency turnaround parameters? <span>+</span></button>
-                <div class="faq-content">Emergency Service Available. Urgent system rescue, hot-patch adjustments, or rapid deployments can be prioritised; an additional 10% charge applies to the baseline service quote.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">What is included in the post-delivery support window? <span>+</span></button>
-                <div class="faq-content">Our standard package includes a comprehensive two-month support duration tracking structural anomalies, runtime issues, and technical alignment details.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Are your built architectures fully compliant with search visibility metrics? <span>+</span></button>
-                <div class="faq-content">Yes, every product features strict semantic elements, configured metadata schema arrays, optimized speed frameworks, and responsive media handling for clean indexing.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Can external management dashboards hook into the automated bots? <span>+</span></button>
-                <div class="faq-content">Our structural design allows secure access links via normalized secure parameters to bind your data outputs into custom client analytics spaces.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">How are budget modifications handled for varying project specifications? <span>+</span></button>
-                <div class="faq-content">We utilize defined scope criteria transparently detailed at project launch to adjust project metrics evenly when features change.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing">
-        <div class="section-header">
-            <h2>Pricing Matrix</h2>
-            <p>Structured options calibrated for varying requirements.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="glass-card pricing-card">
-                <div>
-                    <h4>Basic Plan</h4>
-                    <div class="price-tag">$100 - $150</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted);">Delivery: 3 - 5 Days</p>
-                    <ul class="pricing-features">
-                        <li>Essential Core Elements</li>
-                        <li>Fluid Layout Structure</li>
-                        <li>Standard Form Processing</li>
-                        <li>Basic Performance Tuning</li>
-                    </ul>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="selectPricingPreset('$100-$150')">Get Started</button>
-            </div>
-            <div class="glass-card pricing-card">
-                <div>
-                    <h4>Standard Plan</h4>
-                    <div class="price-tag">$150 - $250</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted);">Delivery: 5 - 7 Days</p>
-                    <ul class="pricing-features">
-                        <li>Expanded UI Integrations</li>
-                        <li>Asynchronous Data Elements</li>
-                        <li>Custom Automation Setup</li>
-                        <li>Enhanced SEO Metadata</li>
-                    </ul>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="selectPricingPreset('$150-$250')">Get Started</button>
-            </div>
-            <div class="glass-card pricing-card">
-                <div>
-                    <h4>Professional Plan</h4>
-                    <div class="price-tag">$250 - $400</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted);">Delivery: 7 - 10 Days</p>
-                    <ul class="pricing-features">
-                        <li>Advanced Component Frameworks</li>
-                        <li>Automated AI Script Routines</li>
-                        <li>Meta Retargeting Funnels</li>
-                        <li>Comprehensive Speed Metrics</li>
-                    </ul>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="selectPricingPreset('$250-$400')">Get Started</button>
-            </div>
-            <div class="glass-card pricing-card">
-                <div>
-                    <h4>Premium Plan</h4>
-                    <div class="price-tag">$400 - $550</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted);">Delivery: 10 - 14 Days</p>
-                    <ul class="pricing-features">
-                        <li>Full Stack Application Layering</li>
-                        <li>Multi-Channel Bot Syncing</li>
-                        <li>Deep Architectural SEO Auditing</li>
-                        <li>Priority Support Handover</li>
-                    </ul>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="selectPricingPreset('$400-$550')">Get Started</button>
-            </div>
-            <div class="glass-card pricing-card">
-                <div>
-                    <h4>Custom Plan</h4>
-                    <div class="price-tag">550+ USD</div>
-                    <p style="font-size:0.8rem; color:var(--text-muted);">Delivery: Minimum 14 Days</p>
-                    <ul class="pricing-features">
-                        <li>Tailored Architectural Scope</li>
-                        <li>Bespoke Systems Interfacing</li>
-                        <li>Enterprise Automation Scale</li>
-                        <li>Flexible Delivery Parameters</li>
-                    </ul>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="selectPricingPreset('550+ USD')">Get Started</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="glass-card lead-section">
-            <h3 style="font-family:var(--font-mono); font-size:2rem; margin-bottom:12px; text-align:center;">Let's Start Your Project</h3>
-            <p style="color:var(--text-muted); text-align:center; margin-bottom:32px;">Transmit your technical parameters directly to our configuration queue.</p>
-            
-            <form class="demo-form" action="[https://formspree.io/f/zentroaiagencypakistan@gmail.com](https://formspree.io/f/zentroaiagencypakistan@gmail.com)" method="POST" id="requirementForm">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required placeholder="Alexander Wright">
-                </div>
-                <div class="form-group">
-                    <label>Contact Number</label>
-                    <input type="tel" name="phone" required placeholder="+1 (555) 000-0000">
-                </div>
-                <div class="form-group">
-                    <label>Business Name</label>
-                    <input type="text" name="business_name" required placeholder="Nexus Analytics Corp">
-                </div>
-                <div class="form-group">
-                    <label>Budget Range</label>
-                    <select name="budget" id="budgetSelect" required>
-                        <option value="">Select allocation target...</option>
-                        <option value="$100-$150">$100 - $150</option>
-                        <option value="$150-$250">$150 - $250</option>
-                        <option value="$250-$400">$250 - $400</option>
-                        <option value="$400-$550">$400 - $550</option>
-                        <option value="550+ USD">550+ USD (Custom Scope)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Requirement Details</label>
-                    <textarea name="details" rows="5" required placeholder="Outline structural components, integration endpoints, and timeline conditions..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Submit Requirement</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="contact-footer-block">
-        <div class="contact-channel-strip">
-            <span class="channel-link">Secure Hotlines:</span>
-            <a href="tel:03238194763" class="channel-link">📞 03238194763</a>
-            <a href="[https://wa.me/923238194763](https://wa.me/923238194763)" target="_blank" class="channel-link" style="color: #25d366;">💬 WhatsApp Workspace Connection</a>
-        </div>
-        
-        <footer>
-            <p>&copy; 2026 Zentro AI Development Agency. Explicit Rights Retained.</p>
-            <p style="font-size:0.8rem; color:var(--text-muted);">Architecture: Pure Semantic Node Web System</p>
-        </footer>
-    </div>
-</main>
-
-<div id="restaurant-demo" class="demo-viewport-container">
-    <div class="demo-nav">
-        <h2 style="font-family:var(--font-mono); color:var(--accent);">Zentro Restaurant Demo Site</h2>
-        <div class="demo-subnav-links">
-            <button class="active" onclick="switchDemoPage(this, 'res-home')">Home</button>
-            <button onclick="switchDemoPage(this, 'res-menu')">Menu Matrix</button>
-            <button onclick="switchDemoPage(this, 'res-gallery-1')">Gallery P1</button>
-            <button onclick="switchDemoPage(this, 'res-gallery-2')">Gallery P2</button>
-            <button onclick="switchDemoPage(this, 'res-gallery-3')">Gallery P3</button>
-            <button onclick="switchDemoPage(this, 'res-res')">Reservations</button>
-            <button onclick="switchDemoPage(this, 'res-loc')">Location</button>
-            <button onclick="switchDemoPage(this, 'res-cont')">Contact Links</button>
-        </div>
-        <button class="btn btn-secondary btn-sm" onclick="closeDemo('restaurant-demo')">Back To Site</button>
-    </div>
-
-    <div id="res-home" class="demo-page-content active-page">
-        <div style="max-width:800px; margin:40px auto; text-align:center;">
-            <h3 style="font-size:3rem; margin-bottom:20px;">Epicurean Gastronomy Pipeline</h3>
-            <p style="color:var(--text-muted); font-size:1.2rem;">Welcome to a demonstration of premium dining architecture. This component framework handles concurrent ordering configurations, dynamic asset visual presentation, and localized space booking streams effortlessly.</p>
+        <div style="color: var(--text-muted); text-align: center; margin-top: 5rem;">
+            <h3>Welcome to the <span id="demoContentName" style="color: var(--primary);"></span> Sandbox Environment</h3>
+            <p style="margin-top: 1rem;">This structure simulator is currently active and fully optimized.</p>
         </div>
     </div>
 
-    <div id="res-menu" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Algorithmic Culinary Menu Matrix (40 Items)</h3>
-        <div class="restaurant-menu-grid" id="restaurant-menu-container">
-            </div>
-    </div>
-
-    <div id="res-gallery-1" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Food Gallery Cluster - Segment 1</h3>
-        <div class="food-gallery-grid" id="food-gallery-p1"></div>
-    </div>
-
-    <div id="res-gallery-2" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Food Gallery Cluster - Segment 2</h3>
-        <div class="food-gallery-grid" id="food-gallery-p2"></div>
-    </div>
-
-    <div id="res-gallery-3" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Food Gallery Cluster - Segment 3</h3>
-        <div class="food-gallery-grid" id="food-gallery-p3"></div>
-    </div>
-
-    <div id="res-res" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Online Spatial Reservation Intake</h3>
-        <form class="demo-form" onsubmit="event.preventDefault(); alert('Reservation simulated successfully.');">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" required>
-            </div>
-            <div class="form-group">
-                <label>Number of Guests</label>
-                <input type="number" min="1" required>
-            </div>
-            <div class="form-group">
-                <label>Structural Configuration Group</label>
-                <select required>
-                    <option>Family Group</option>
-                    <option>Boys Group</option>
-                    <option>Girls Group</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Meal Designation Allocation</label>
-                <select required>
-                    <option>Breakfast</option>
-                    <option>Lunch</option>
-                    <option>Dinner</option>
-                </select>
-            </div>
-            <div class="form-group row">
-                <div class="form-group" style="flex:1;">
-                    <label>Target Date</label>
-                    <input type="date" required>
-                </div>
-                <div class="form-group" style="flex:1;">
-                    <label>Target Time</label>
-                    <input type="time" required>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Lock Allocation</button>
-        </form>
-    </div>
-
-    <div id="res-loc" class="demo-page-content">
-        <div style="text-align:center; padding:40px;">
-            <h3>Geospatial Deployment Coordinates</h3>
-            <p style="color:var(--text-muted); margin-top:16px; font-size:1.2rem;">Virtual Node Location: City ABC, Shop XYZ Vector</p>
-        </div>
-    </div>
-
-    <div id="res-cont" class="demo-page-content">
-        <div style="text-align:center; padding:40px; display:flex; flex-direction:column; gap:20px; max-width:400px; margin:0 auto;">
-            <h3>Communication Nodes</h3>
-            <div class="glass-card" style="padding:20px;">Call Vector: 0000-0000000</div>
-            <div class="glass-card" style="padding:20px;">WhatsApp Channel: +00-000-0000000</div>
-            <div class="glass-card" style="padding:20px;">Secure Email: demo@zentrorestaurant.com</div>
-        </div>
-    </div>
-</div>
-
-<div id="realestate-demo" class="demo-viewport-container">
-    <div class="demo-nav">
-        <h2 style="font-family:var(--font-mono); color:var(--accent);">Zentro Real Estate</h2>
-        <div class="demo-subnav-links">
-            <button class="active" onclick="switchDemoPage(this, 're-home')">Home</button>
-            <button onclick="switchDemoPage(this, 're-serv')">Services</button>
-            <button onclick="switchDemoPage(this, 're-prop')">Properties Gallery</button>
-            <button onclick="switchDemoPage(this, 're-about')">About Us</button>
-            <button onclick="switchDemoPage(this, 're-cont')">Contact</button>
-        </div>
-        <button class="btn btn-secondary btn-sm" onclick="closeDemo('realestate-demo')">Back To Site</button>
-    </div>
-
-    <div id="re-home" class="demo-page-content active-page">
-        <div style="text-align:center; padding:60px 20px;">
-            <h3 style="font-size:2.8rem;">High-Value Asset Acquisition Vectors</h3>
-            <p style="color:var(--text-muted); max-width:600px; margin:20px auto;">Connecting premium capital layout with foundational physical architecture layers perfectly balanced across structural grids.</p>
-        </div>
-    </div>
-
-    <div id="re-serv" class="demo-page-content">
-        <div class="services-grid">
-            <div class="glass-card style='padding:30px;'">
-                <h4>Asset Brokerage</h4>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-top:10px;">Strategic exchange matrices for high-tier corporate physical properties.</p>
-            </div>
-            <div class="glass-card style='padding:30px;'">
-                <h4>Portfolio Allocation</h4>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-top:10px;">Algorithmic evaluation of long-term commercial yields across global zones.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="re-prop" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Available Real Estate Matrix (12 Properties)</h3>
-        <div class="food-gallery-grid" id="realestate-properties-container"></div>
-    </div>
-
-    <div id="re-about" class="demo-page-content">
-        <div style="max-width:700px; margin:0 auto; text-align:center;">
-            <h3>Corporate History & Operational Directives</h3>
-            <p style="color:var(--text-muted); margin-top:20px;">Zentro Real Estate maintains high-tier structural alignment protocols for locating, auditing, and executing real property movements.</p>
-        </div>
-    </div>
-
-    <div id="re-cont" class="demo-page-content">
-        <div style="text-align:center; padding:40px;">
-            <h3>Establish Connection Link</h3>
-            <p style="color:var(--text-muted); margin-bottom:20px;">Virtual Location Array: Zone Omega, Sector 4 Block C</p>
-            <p>Secure Communication: realestate@zentro-virtual.internal</p>
-        </div>
-    </div>
-</div>
-
-<div id="school-demo" class="demo-viewport-container">
-    <div class="demo-nav">
-        <h2 style="font-family:var(--font-mono); color:var(--accent);">Zentro System of Education</h2>
-        <div class="demo-subnav-links">
-            <button class="active" onclick="switchDemoPage(this, 'sch-home')">Home</button>
-            <button onclick="switchDemoPage(this, 'sch-acad')">Academics</button>
-            <button onclick="switchDemoPage(this, 'sch-adm')">Admissions</button>
-            <button onclick="switchDemoPage(this, 'sch-fac')">Facilities</button>
-            <button onclick="switchDemoPage(this, 'sch-gal')">Gallery</button>
-            <button onclick="switchDemoPage(this, 'sch-ev')">Events</button>
-            <button onclick="switchDemoPage(this, 'sch-loc')">Location & Contact</button>
-        </div>
-        <button class="btn btn-secondary btn-sm" onclick="closeDemo('school-demo')">Back To Site</button>
-    </div>
-
-    <div id="sch-home" class="demo-page-content active-page">
-        <div style="text-align:center; padding:60px 20px;">
-            <h3 style="font-size:3rem;">Cultivating Cognitive Excellence</h3>
-            <p style="color:var(--text-muted); max-width:600px; margin:20px auto;">Institutional framework designed for multi-tiered systematic cognitive transmission, deep research training, and academic validation protocols.</p>
-        </div>
-    </div>
-
-    <div id="sch-acad" class="demo-page-content">
-        <div class="services-grid">
-            <div class="glass-card" style="padding:24px;">
-                <h4>Primary Core Foundations</h4>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-top:10px;">Fundamental analytical configuration, computational math bases, and linguistic engineering.</p>
-            </div>
-            <div class="glass-card" style="padding:24px;">
-                <h4>Advanced Senior Clusters</h4>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-top:10px;">High-tier data analytics, advanced physics modules, and macro-economic system logic.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="sch-adm" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:24px;">Enrollment Intake Processing Form</h3>
-        <form class="demo-form" onsubmit="event.preventDefault(); alert('Intake log recorded.');">
-            <div class="form-group"><label>Candidate Name</label><input type="text" required></div>
-            <div class="form-group"><label>Target Grade Classification</label><input type="text" required></div>
-            <button type="submit" class="btn btn-primary">Process Intake Application</button>
-        </form>
-    </div>
-
-    <div id="sch-fac" class="demo-page-content">
-        <div class="services-grid">
-            <div class="glass-card" style="padding:20px;"><h4>Quantum Computation Facility</h4></div>
-            <div class="glass-card" style="padding:20px;"><h4>Advanced Microfluidics Sandbox</h4></div>
-            <div class="glass-card" style="padding:20px;"><h4>Universal Text Library Repository</h4></div>
-        </div>
-    </div>
-
-    <div id="sch-gal" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Campus Architectural Infrastructure Gallery</h3>
-        <div class="food-gallery-grid" id="school-gallery-container"></div>
-    </div>
-
-    <div id="sch-ev" class="demo-page-content">
-        <div class="services-grid">
-            <div class="glass-card" style="padding:20px;"><h5>Annual Technical Symposium</h5><p style="font-size:0.85rem; color:var(--text-muted);">Scholars display optimization routines and engineering builds.</p></div>
-            <div class="glass-card" style="padding:20px;"><h5>Sports Athletic Integration</h5><p style="font-size:0.85rem; color:var(--text-muted);">Physical conditioning, algorithmic team play, and speed exercises.</p></div>
-        </div>
-    </div>
-
-    <div id="sch-loc" class="demo-page-content">
-        <div style="text-align:center; padding:40px;">
-            <h3>Institutional Coordinates</h3>
-            <p style="color:var(--text-muted);">Virtual Campus Vector: Plot 404, Knowledge Zone Alpha</p>
-            <p style="margin-top:16px;">Secure Switchboard: academic-desk@zentrosystem.edu</p>
-        </div>
-    </div>
-</div>
-
-<div id="clinic-demo" class="demo-viewport-container">
-    <div class="demo-nav">
-        <h2 style="font-family:var(--font-mono); color:var(--accent);">Zentro Clinic</h2>
-        <div class="demo-subnav-links">
-            <button class="active" onclick="switchDemoPage(this, 'cl-home')">Home</button>
-            <button onclick="switchDemoPage(this, 'cl-dept')">Departments</button>
-            <button onclick="switchDemoPage(this, 'cl-doc')">Medical Staff</button>
-            <button onclick="switchDemoPage(this, 'cl-apt')">Appointment Suite</button>
-            <button onclick="switchDemoPage(this, 'cl-gal')">Clinical Space Gallery</button>
-            <button onclick="switchDemoPage(this, 'cl-loc')">Coordinates</button>
-        </div>
-        <button class="btn btn-secondary btn-sm" onclick="closeDemo('clinic-demo')">Back To Site</button>
-    </div>
-
-    <div id="cl-home" class="demo-page-content active-page">
-        <div style="text-align:center; padding:60px 20px;">
-            <h3 style="font-size:3rem;">Precision Biomolecular Healthcare Architecture</h3>
-            <p style="color:var(--text-muted); max-width:600px; margin:20px auto;">Deploying standard analytical healthcare solutions, patient diagnostics tracking, and modern clinical management strategies.</p>
-        </div>
-    </div>
-
-    <div id="cl-dept" class="demo-page-content">
-        <div class="services-grid">
-            <div class="glass-card" style="padding:20px;"><h4>Neurological Grid Analysis</h4></div>
-            <div class="glass-card" style="padding:20px;"><h4>Cardiovascular System Tuning</h4></div>
-            <div class="glass-card" style="padding:20px;"><h4>Cellular Pathology Diagnostics</h4></div>
-        </div>
-    </div>
-
-    <div id="cl-doc" class="demo-page-content">
-        <div class="services-grid" id="clinic-doctors-container"></div>
-    </div>
-
-    <div id="cl-apt" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:24px;">Schedule Diagnostics Appointment</h3>
-        <form class="demo-form" onsubmit="event.preventDefault(); alert('Diagnostic slot assigned.');">
-            <div class="form-group"><label>Patient Name</label><input type="text" required></div>
-            <div class="form-group"><label>Target Department</label><select><option>Neurology</option><option>Cardiology</option></select></div>
-            <button type="submit" class="btn btn-primary">Secure Slot Allocation</button>
-        </form>
-    </div>
-
-    <div id="cl-gal" class="demo-page-content">
-        <div class="food-gallery-grid" id="clinic-gallery-container"></div>
-    </div>
-
-    <div id="cl-loc" class="demo-page-content">
-        <div style="text-align:center; padding:40px;">
-            <h3>Clinical Contact Array</h3>
-            <p style="color:var(--text-muted);">Virtual Station Address: Medical Complex Grid Blue, Level 7</p>
-            <p style="margin-top:16px;">Urgent Medical Inquiries: health-node@zentroclinic.org</p>
-        </div>
-    </div>
-</div>
-
-<div id="ecommerce-demo" class="demo-viewport-container">
-    <div class="demo-nav">
-        <h2 style="font-family:var(--font-mono); color:var(--accent);">Zentro E-Commerce</h2>
-        <div class="demo-subnav-links">
-            <button class="active" onclick="switchDemoPage(this, 'ec-home')">Home Hub</button>
-            <button onclick="switchDemoPage(this, 'ec-prod')">Product Matrix</button>
-            <button onclick="switchDemoPage(this, 'ec-cart')">Cart Status</button>
-            <button onclick="switchDemoPage(this, 'ec-chk')">Checkout Stream</button>
-            <button onclick="switchDemoPage(this, 'ec-cont')">Support Nodes</button>
-        </div>
-        <button class="btn btn-secondary btn-sm" onclick="closeDemo('ecommerce-demo')">Back To Site</button>
-    </div>
-
-    <div id="ec-home" class="demo-page-content active-page">
-        <div style="text-align:center; padding:60px 20px;">
-            <h3 style="font-size:3rem;">Omnichannel Global Logistics &amp; Trade Matrix</h3>
-            <p style="color:var(--text-muted); max-width:600px; margin:20px auto;">Demonstrating rapid layout catalog rendering, friction-free checkout workflows, and unified consumer commerce structures.</p>
-        </div>
-    </div>
-
-    <div id="ec-prod" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:30px;">Featured Product Grid</h3>
-        <div class="food-gallery-grid" id="ecommerce-products-container"></div>
-    </div>
-
-    <div id="ec-cart" class="demo-page-content">
-        <div style="max-width:600px; margin:0 auto;" class="glass-card">
-            <div style="padding:30px; border-bottom:1px solid var(--border-glass); display:flex; justify-content:between;">
-                <span>Item: High-Fidelity Logic Processor x1</span>
-                <strong>$299.00</strong>
-            </div>
-            <div style="padding:30px; display:flex; justify-content:space-between;">
-                <span>Calculated Shipping Surcharges</span>
-                <strong>$0.00 (Standard Promo)</strong>
-            </div>
-        </div>
-    </div>
-
-    <div id="ec-chk" class="demo-page-content">
-        <h3 style="text-align:center; margin-bottom:24px;">Secure Transaction Checkout Terminal</h3>
-        <form class="demo-form" onsubmit="event.preventDefault(); alert('Order routing active.');">
-            <div class="form-group"><label>Shipping Coordinates</label><input type="text" required placeholder="123 Digital Way"></div>
-            <div class="form-group"><label>Transaction Code Verification</label><input type="password" required placeholder="•••• •••• •••• ••••"></div>
-            <button type="submit" class="btn btn-primary">Authorize Settlement Pipeline</button>
-        </form>
-    </div>
-
-    <div id="ec-cont" class="demo-page-content">
-        <div style="text-align:center; padding:40px;">
-            <h3>Logistical Supply Node Coordination</h3>
-            <p style="color:var(--text-muted);">Central Registry: fulfillment@zentrocommerce.internal</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Responsive Mobile Menu Navigation
-    function toggleMobileNav() {
-        const links = document.getElementById('navLinks');
-        if(links.style.display === 'flex') {
-            links.style.display = 'none';
-        } else {
-            links.style.display = 'flex';
-            links.style.flexDirection = 'column';
-            links.style.position = 'absolute';
-            links.style.top = '70px';
-            links.style.left = '0';
-            links.style.width = '100%';
-            links.style.background = 'rgba(3,7,18,0.95)';
-            links.style.padding = '20px';
-            links.style.boxSizing = 'border-box';
-            links.style.gap = '16px';
-        }
-    }
-
-    // Services Component Expandable Control
-    function toggleService(btn) {
-        const drawer = btn.nextElementSibling;
-        if(drawer.style.display === 'block') {
-            drawer.style.display = 'none';
-            btn.innerText = 'Learn More';
-        } else {
-            drawer.style.display = 'block';
-            btn.innerText = 'Collapse Details';
-        }
-    }
-
-    // FAQ Interactive Disclosure Management
-    function toggleFaq(trigger) {
-        const content = trigger.nextElementSibling;
-        const marker = trigger.querySelector('span');
-        if(content.style.display === 'block') {
-            content.style.display = 'none';
-            marker.innerText = '+';
-        } else {
-            content.style.display = 'block';
-            marker.innerText = '−';
-        }
-    }
-
-    // Pricing Intent Auto-Population Workflow
-    function selectPricingPreset(rangeValue) {
-        const selector = document.getElementById('budgetSelect');
-        const targetSection = document.getElementById('contact');
-        
-        if(selector) {
-            selector.value = rangeValue;
-        }
-        if(targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
-    // Demo Site Isolated Navigation Operations
-    function openDemo(demoId) {
-        document.getElementById(demoId).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeDemo(demoId) {
-        document.getElementById(demoId).style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    function switchDemoPage(btn, pageId) {
-        // Unset current active links in this viewport
-        const parentNav = btn.parentElement;
-        const buttons = parentNav.querySelectorAll('button');
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Find all peer sibling pages
-        const viewport = parentNav.parentElement.parentElement;
-        const pages = viewport.querySelectorAll('.demo-page-content');
-        pages.forEach(p => p.classList.remove('active-page'));
-
-        // Toggle selected page link target
-        document.getElementById(pageId).classList.add('active-page');
-    }
-
-    // ============================================
-    //      DYNAMIC DATA MATRIX INITIALIZATION
-    // ============================================
-    document.addEventListener("DOMContentLoaded", function() {
-        // Build Restaurant Menu (40 Items Across 5 Explicit Segments)
-        const menuCategories = ["Pakistani", "Chinese", "Italian", "French", "Fast Food"];
-        const baseFoodNames = {
-            "Pakistani": ["Mutton Karahi", "Chicken Biryani", "Seekh Kabab Platter", "Nihari Shahi", "Daal Makhni", "Siri Paye", "Haleem Matrix", "Garlic Naan Unit"],
-            "Chinese": ["Kung Pao Chicken", "Szechuan Beef", "Dim Sum Configuration", "Chow Mein Express", "Manchurian Node", "Hot & Sour Infusion", "Spring Roll Grid", "Wonton Array"],
-            "Italian": ["Truffle Risotto", "Fettuccine Alfredo", "Margherita Slice", "Lasagna Bolognese", "Pesto Gnocchi", "Osso Buco", "Carbonara Core", "Bruschetta Cluster"],
-            "French": ["Coq au Vin", "Bouillabaisse Prime", "Ratatouille Array", "Filet Mignon", "Quiche Lorraine", "Duck Confit", "Escargot Shells", "Soufflé System"],
-            "Fast Food": ["Zestro Smash Burger", "Crispy Tender Matrix", "Loaded Fry Framework", "Spicy Chicken Wrap", "BBQ Rib Element", "Cheese Ring Loop", "Clubhouse Deck", "Buffalo Wing Stack"]
-        };
-
-        const menuContainer = document.getElementById('restaurant-menu-container');
-        if (menuContainer) {
-            menuCategories.forEach(cat => {
-                const titleHead = document.createElement('h4');
-                titleHead.className = 'menu-cat-title';
-                titleHead.innerText = `${cat} Architecture Cuisine`;
-                menuContainer.appendChild(titleHead);
-
-                for (let i = 0; i < 8; i++) {
-                    const card = document.createElement('div');
-                    card.className = 'menu-item-card';
-                    const itemName = baseFoodNames[cat][i] || `${cat} Specialty Base ${i+1}`;
-                    const halfPrice = (12.50 + (i * 2.25)).toFixed(2);
-                    const fullPrice = (22.00 + (i * 3.50)).toFixed(2);
-                    
-                    card.innerHTML = `
-                        <strong style='display:block; font-size:1.1rem; color:#fff;'>${itemName}</strong>
-                        <p style='font-size:0.8rem; color:var(--text-muted); margin:4px 0 12px 0;'>Calibrated premium selection prepared fresh daily.</p>
-                        <div style='display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.9rem;'>
-                            <span style='color:var(--text-muted);'>Half Price: $${halfPrice}</span>
-                            <span style='color:var(--accent);'>Full Price: $${fullPrice}</span>
-                        </div>
-                    `;
-                    menuContainer.appendChild(card);
-                }
-            });
-        }
-
-        // Build Food Gallery (Exactly 18 Authentic Cards Total, 6 Cards Per Page Segment)
-        const realFoodImages = [
-            "[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80)"
-        ];
-
-        const itemDescriptions = [
-            {name:"Gourmet Woodfired Crust", taste:"Rich Umami with a distinct fire-singed finish", pop:"Very high across European urban centers"},
-            {name:"Brioche Berry French Deck", taste:"Sweet syrup infusion with bright organic tartness", pop:"High breakfast metric option worldwide"},
-            {name:"Smoked Honey Rib Rack", taste:"Deep sweet hickory and robust savory core", pop:"Dominant western market share asset"},
-            {name:"Artisanal Avocado Crust", taste:"Crisp crunch matching buttery herbal elements", pop:"Massive viral integration volume track"},
-            {name:"Mediterranean Salad Cluster", taste:"Zesty citrus acid profile mixed with clean oil", pop:"Sustained high growth health trend"},
-            {name:"Fluffy Hotcake Stack", taste:"Comforting dairy warmth with vanilla back-notes", pop:"Global multi-generational adoption standard"},
-            {name:"Seared Atlantic Fillet", taste:"Delicate saltwater balance paired with herb butter", pop:"Premium luxury demographic preference"},
-            {name:"Vibrant Plant Mix Basin", taste:"Raw earthy crispness balanced by clean vinegar", pop:"Top choice for wellness-focused consumers"},
-            {name:"Morning Harvest Pastry", taste:"Flaky butter layered structure with sweet fruit", pop:"High operational volume in cafe hubs"},
-            {name:"Charred Prime Strips", taste:"Intense caramelized crusting with soft interior tender zones", pop:"Universally scaling corporate standard dinner option"},
-            {name:"Platter of Roasted Elements", taste:"Savory root warmth infused with deep garlic structural oil", pop:"Traditional continental popularity tracking"},
-            {name:"Nourish Wellness Pod", taste:"High protein green configuration without heavy oil footprint", pop:"Rising adoption curve inside health zones"},
-            {name:"Baked Egg Morning Matrix", taste:"Sharp pepper background with warm runny yolk elements", pop:"Excellent traction inside casual dining hubs"},
-            {name:"Glazed Core Meatball Units", taste:"Dense protein bounce coated in highly reductive glaze", pop:"Consistent favorite for social dining"},
-            {name:"Fine Caviar Accent Filet", taste:"Complex dynamic luxury pairing with intense marine salt", pop:"Exclusive top tier tracking metric asset"},
-            {name:"Hand-pulled Infusion Noodles", taste:"High elasticity texture bound by deep chili bone broth", pop:"Exponentially growing global market option"},
-            {name:"Delicate Pastry Array", taste:"Micro thin sugar layers cracking into rich chocolate cream", pop:"High retention metric closure item"},
-            {name:"Flame Cooked Skewer Matrix", taste:"Concentrated spicy seasoning locked inside charcoal smoke", pop:"Peak street-level transaction volume globally"}
-        ];
-
-        for (let idx = 0; idx < 18; idx++) {
-            let targetPageId = 'food-gallery-p1';
-            if (idx >= 6 && idx < 12) targetPageId = 'food-gallery-p2';
-            if (idx >= 12) targetPageId = 'food-gallery-p3';
-
-            const targetGrid = document.getElementById(targetPageId);
-            if (targetGrid) {
-                const fCard = document.createElement('div');
-                fCard.className = 'glass-card food-card';
-                fCard.style.padding = '16px';
-                fCard.innerHTML = `
-                    <img src="${realFoodImages[idx]}" alt="${itemDescriptions[idx].name}">
-                    <h4 style='font-family:var(--font-mono); margin-bottom:8px;'>${itemDescriptions[idx].name}</h4>
-                    <p style='font-size:0.85rem; color:var(--text-muted); mb-4;'><strong>Taste Profiling:</strong> ${itemDescriptions[idx].taste}</p>
-                    <p style='font-size:0.8rem; color:var(--accent); margin-top:8px;'><strong>Popularity Track:</strong> ${itemDescriptions[idx].pop}</p>
-                `;
-                targetGrid.appendChild(fCard);
+    <script>
+        // Toggle service details drawer
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.toggle('active');
             }
         }
 
-        // Build Real Estate Assets (12 Properties, hidden cost parameter ****$)
-        const reImages = [
-            "[https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=400&q=80)"
-        ];
-        const reContainer = document.getElementById('realestate-properties-container');
-        if (reContainer) {
-            for (let i = 0; i < 12; i++) {
-                const card = document.createElement('div');
-                card.className = 'glass-card food-card';
-                card.style.padding = '16px';
-                card.innerHTML = `
-                    <img src="${reImages[i]}" alt="Asset Matrix">
-                    <h4 style='font-family:var(--font-mono); margin-bottom:6px;'>Zentro Premium Asset Node ${i+1}</h4>
-                    <p style='font-size:0.8rem; color:var(--text-muted);'>Virtual Location: Sector Array Grid ${i*3 + 1}</p>
-                    <p style='font-size:0.85rem; color:var(--text-muted); margin-top:8px;'>High fidelity spatial structure with comprehensive operational access configurations.</p>
-                    <div style='margin-top:12px; font-weight:700; color:var(--accent); font-family:var(--font-mono);'>Valuation: ****$</div>
-                `;
-                reContainer.appendChild(card);
-            }
+        // Demo viewport launch simulation
+        function launchDemo(demoName) {
+            document.getElementById('demoTitle').innerText = demoName + " Preview";
+            document.getElementById('demoContentName').innerText = demoName;
+            document.getElementById('demoViewport').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
         }
 
-        // Build School Infrastructure Showcase Array
-        const schoolImages = [
-            "[https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=400&q=80)"
-        ];
-        const schoolTitles = ["School Structural Building", "Modern Academic Classroom", "Research Students Studying", "Administrative Office Area"];
-        const schoolContainer = document.getElementById('school-gallery-container');
-        if (schoolContainer) {
-            for (let i = 0; i < 4; i++) {
-                const card = document.createElement('div');
-                card.className = 'glass-card food-card';
-                card.style.padding = '16px';
-                card.innerHTML = `
-                    <img src="${schoolImages[i]}" alt="Campus View">
-                    <h4 style='font-family:var(--font-mono); text-align:center; margin-top:8px;'>${schoolTitles[i]}</h4>
-                `;
-                schoolContainer.appendChild(card);
-            }
+        // Close demo viewport
+        function closeDemo() {
+            document.getElementById('demoViewport').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Enable scrolling back
         }
 
-        // Build Clinic Staff & Spaces
-        const doctorImages = [
-            "[https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80)"
-        ];
-        const clinicDocs = document.getElementById('clinic-doctors-container');
-        if (clinicDocs) {
-            for (let i = 0; i < 2; i++) {
-                const card = document.createElement('div');
-                card.className = 'glass-card food-card';
-                card.style.padding = '16px';
-                card.innerHTML = `
-                    <img src="${doctorImages[i]}" alt="Medical Staff">
-                    <h4 style='font-family:var(--font-mono); margin-top:8px;'>Diagnostic Specialist Node ${i+1}</h4>
-                    <p style='font-size:0.8rem; color:var(--text-muted);'>Verified Clinical Practice Framework Veteran.</p>
-                `;
-                clinicDocs.appendChild(card);
-            }
-        }
-
-        const clinicImages = [
-            "[https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=400&q=80)"
-        ];
-        const clinicGal = document.getElementById('clinic-gallery-container');
-        if (clinicGal) {
-            for (let i = 0; i < 2; i++) {
-                const card = document.createElement('div');
-                card.className = 'glass-card food-card';
-                card.style.padding = '16px';
-                card.innerHTML = `<img src="${clinicImages[i]}" alt="Clinical Space">`;
-                clinicGal.appendChild(card);
-            }
-        }
-
-        // Build E-Commerce Product Catalog
-        const ecImages = [
-            "[https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80)",
-            "[https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80)"
-        ];
-        const ecTitles = ["Precision Chronograph Node", "Reactive Energy Footwear", "High Fidelity Sound Chamber"];
-        const ecContainer = document.getElementById('ecommerce-products-container');
-        if (ecContainer) {
-            for (let i = 0; i < 3; i++) {
-                const card = document.createElement('div');
-                card.className = 'glass-card food-card';
-                card.style.padding = '16px';
-                card.innerHTML = `
-                    <img src="${ecImages[i]}" alt="Product">
-                    <h4 style='font-family:var(--font-mono); margin-top:8px;'>${ecTitles[i]}</h4>
-                    <div style='display:flex; justify-content:space-between; margin-top:12px; align-items:center;'>
-                        <span style='font-family:var(--font-mono); color:var(--accent); font-weight:700;'>$299.00</span>
-                        <button class='btn btn-secondary btn-sm' onclick="alert('Item committed to allocation pipeline.')">Add To Cart</button>
-                    </div>
-                `;
-                ecContainer.appendChild(card);
-            }
-        }
-    });
-</script>
+        // Simple Mobile Navigation Toggle logic
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            alert('Mobile navigation matrix triggered!');
+        });
+    </script>
+</body>
+</html>
