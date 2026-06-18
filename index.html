@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="Zentro AI Development Agency">
     <meta name="twitter:description" content="Expert web development, AI automations, and growth services.">
 
-    <title>Zentro AI Development Agency</title>
+    <title>Zentro AI Development Agency | Premium Digital Solutions</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -468,9 +468,281 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Responsive Breakpoints */
+        /* About Us & Architecture Process Cards */
+        .about-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .why-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .why-card i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ Accordion Architecture */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+            transition: var(--transition);
+        }
+
+        .faq-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .faq-header i {
+            transition: var(--transition);
+            color: var(--primary);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .faq-body-content {
+            padding: 1.5rem;
+        }
+
+        .faq-item.active .faq-body {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-header i {
+            transform: rotate(180deg);
+        }
+
+        /* Pricing Architecture Matrix */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .pricing-card.popular {
+            border-color: var(--primary);
+            background: rgba(13, 20, 38, 0.8);
+            transform: scale(1.03);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .price-box span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-features li i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        /* Contact & Form styling */
+        .contact-form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.02);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-family: var(--font-family);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* Footer Architecture */
+        footer {
+            background: #03060d;
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            max-width: 320px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
         @media (max-width: 968px) {
             .hero h1 { font-size: 3rem; }
+            .about-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .nav-menu { display: none; }
             .nav-toggle { display: block; }
         }
@@ -479,6 +751,7 @@
             .hero h1 { font-size: 2.2rem; }
             .hero-ctas { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
+            .contact-form-wrapper { padding: 1.5rem; }
             .details-list { grid-template-columns: 1fr; }
         }
     </style>
@@ -497,6 +770,8 @@
                 <li><a href="#" class="nav-link">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#demos" class="nav-link">Demos</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
             </ul>
             <div class="nav-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
@@ -509,7 +784,7 @@
         <h1 class="gradient-text">Engineered Intelligence. Bespoke Digital Ecosystems.</h1>
         <p>Zentro AI Development Agency builds high-performance corporate web structures, autonomous conversion ad funnels, and enterprise-grade system automations.</p>
         <div class="hero-ctas">
-            <a href="#services" class="btn btn-primary">Launch Project Inquiry <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn-primary">Launch Project Inquiry <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#demos" class="btn btn-secondary">Explore Live Sub-Demos</a>
         </div>
         <div class="hero-graphic-container">
@@ -526,7 +801,7 @@
             <div class="service-card glass-panel">
                 <div class="service-icon"><i class="fa-solid fa-code"></i></div>
                 <h3>Web Development</h3>
-                <p>Enterprise core responsive applications architected for modern computational scale, fluid accessibility, and flawless rendering speed.</p>
+                <p>Enterprise core responsive applications architected for modern computational scale, fluid accessibility, and flawless rendering speed across desktop and mobile layers.</p>
                 <button class="btn btn-secondary" onclick="toggleDetails('details-web')">Learn More</button>
                 
                 <div id="details-web" class="expanded-details">
@@ -535,6 +810,27 @@
                         <li><i class="fa-solid fa-circle-check"></i> UI/UX planning</li>
                         <li><i class="fa-solid fa-circle-check"></i> Responsive design</li>
                         <li><i class="fa-solid fa-circle-check"></i> Frontend development</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Backend development</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Testing</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Deployment</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card glass-panel">
+                <div class="service-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                <h3>Meta Ads Generation</h3>
+                <p>Algorithmic programmatic user-acquisition frameworks. Data-backed targeted strategies optimized to lower conversion friction.</p>
+                <button class="btn btn-secondary" onclick="toggleDetails('details-meta')">Learn More</button>
+                
+                <div id="details-meta" class="expanded-details">
+                    <ul class="details-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Campaign strategy</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Audience research</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ad creatives</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Funnel planning</li>
                     </ul>
                 </div>
             </div>
@@ -542,13 +838,14 @@
             <div class="service-card glass-panel">
                 <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
                 <h3>AI Bots & Automation</h3>
-                <p>Intelligent conversation and operational nodes constructed to offload manual communication layers.</p>
+                <p>Intelligent conversation and operational nodes constructed to offload manual communication layers. Automated messaging matrices designed to capture raw inbound demand.</p>
                 <button class="btn btn-secondary" onclick="toggleDetails('details-bots')">Learn More</button>
                 
                 <div id="details-bots" class="expanded-details">
                     <ul class="details-list">
                         <li><i class="fa-solid fa-circle-check"></i> WhatsApp Bots</li>
                         <li><i class="fa-solid fa-circle-check"></i> Email Bots</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Social Media Bots</li>
                         <li><i class="fa-solid fa-circle-check"></i> Business Automation</li>
                     </ul>
                 </div>
@@ -566,7 +863,7 @@
                 <div class="demo-info">
                     <h3>Restaurant Infrastructure</h3>
                     <p>Complete multi-cuisine reservation portal, comprehensive adaptive asset menus, and data gathering arrays.</p>
-                    <button class="btn btn-primary" onclick="launchDemo('Restaurant')">View Demo</button>
+                    <button class="btn btn-primary" onclick="launchDemo('Restaurant Ecosystem')">View Demo</button>
                 </div>
             </div>
 
@@ -575,50 +872,182 @@
                 <div class="demo-info">
                     <h3>Real Estate Portal</h3>
                     <p>Dynamic commercial catalog displaying multi-variable parametric property filtering components.</p>
-                    <button class="btn btn-primary" onclick="launchDemo('Real Estate')">View Demo</button>
+                    <button class="btn btn-primary" onclick="launchDemo('Real Estate Directory')">View Demo</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fullscreen Demo Viewport Container -->
+    <section id="about" class="section-padding">
+        <div class="about-intro-grid">
+            <div class="about-text">
+                <h3 class="gradient-text">Who We Are</h3>
+                <p>We are structural designers pushing digital execution targets. We do not do standard landing templates. We deploy technical node operations built to respond flawlessly.</p>
+                <p>Every pixel and connection query is optimized from the foundation layer up to secure performance authority.</p>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Elite Speed</h4>
+                    <p>Sub-millisecond query responses and optimized assets loading layout structures.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Node Security</h4>
+                    <p>Data protection mechanisms hardened against runtime leakage risks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-padding">
+        <h2 class="section-title gradient-text">Strategic Investment Matrix</h2>
+        <p class="section-subtitle">Transparent engineering cycles scoped out cleanly to back premium enterprise growth modules.</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Startup Core</h3>
+                <div class="price-box"><h2>$1,499</h2><span>One-time investment</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> Basic Core Web Architecture</li>
+                    <li><i class="fa-solid fa-check"></i> Performance Deployment Node</li>
+                    <li><i class="fa-solid fa-check"></i> Standard Contact Capture Form</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Initialize Node</a>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="pricing-badge">Most Requested</div>
+                <h3>Enterprise Scale</h3>
+                <div class="price-box"><h2>$3,899</h2><span>One-time investment</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-check"></i> Full Multi-Layer Web Structure</li>
+                    <li><i class="fa-solid fa-check"></i> Dedicated Conversions Funnel</li>
+                    <li><i class="fa-solid fa-check"></i> Integrated AI Automation Bot</li>
+                    <li><i class="fa-solid fa-check"></i> Priority Architecture Consults</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Initialize Node</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <h2 class="section-title gradient-text">Frequently Asked Queries</h2>
+        <p class="section-subtitle">Clear technical breakdowns outlining structural setup parameters and processing routines.</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFaq(this)">What core frameworks power your code setups? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-body"><div class="faq-body-content">We architect setups utilizing vanilla performance structures alongside modern server-less endpoints to maintain lightning-fast response times.</div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFaq(this)">How long does the average delivery sequence consume? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-body"><div class="faq-body-content">Standard deployment cycles clear within 14 to 28 system development cycles depending entirely on active component tracking pipelines.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <h2 class="section-title gradient-text">Initialize Project Query</h2>
+        <p class="section-subtitle">Secure systemic alignment. Feed parameters directly into our evaluation terminal below.</p>
+        
+        <div class="contact-form-wrapper">
+            <form onsubmit="event.preventDefault(); alert('Transmission Successful. Processing Core Inquiry Node...');">
+                <div class="form-group">
+                    <label>Inquiry Node Label (Full Name)</label>
+                    <input type="text" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Transmission Path (Email Endpoint)</label>
+                    <input type="email" class="form-control" required placeholder="john@enterprise.com">
+                </div>
+                <div class="form-group">
+                    <label>Project Scope Parameters</label>
+                    <textarea class="form-control" rows="5" required placeholder="Describe system demands, timeline caps, and structural requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit System Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fullscreen Sandbox Environment Portal Simulator -->
     <div id="demoViewport" class="demo-viewport">
         <div class="demo-nav-bar">
-            <h2 id="demoTitle" style="color: #fff;">Demo</h2>
-            <button class="btn btn-secondary" onclick="closeDemo()">Close Demo</button>
+            <h2 id="demoTitle" style="color: #fff; font-weight: 800;">Demo Viewport</h2>
+            <button class="btn btn-secondary" onclick="closeDemo()">Close Sandbox Simulator</button>
         </div>
-        <div style="color: var(--text-muted); text-align: center; margin-top: 5rem;">
-            <h3>Welcome to the <span id="demoContentName" style="color: var(--primary);"></span> Sandbox Environment</h3>
-            <p style="margin-top: 1rem;">This structure simulator is currently active and fully optimized.</p>
+        <div style="max-width: 800px; margin: 6rem auto; text-align: center; padding: 2rem;">
+            <i class="fa-solid fa-microchip" style="font-size: 4rem; color: var(--primary); margin-bottom: 2rem;"></i>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Active Sub-Demo: <span id="demoContentName" style="color: var(--primary);"></span></h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">This sandbox rendering portal has simulated a live architecture sequence successfully. All component nodes are fully optimized.</p>
+            <div class="glass-panel" style="padding: 2rem; text-align: left; border-color: var(--primary-glow);">
+                <p style="font-family: monospace; color: var(--accent-green);"><i class="fa-solid fa-terminal"></i> Status: Ready_To_Deploy</p>
+                <p style="font-family: monospace; margin-top: 0.5rem;"><i class="fa-solid fa-angle-right"></i> Listening on port: 8080</p>
+                <p style="font-family: monospace; margin-top: 0.5rem;"><i class="fa-solid fa-angle-right"></i> Connection protocol optimized...</p>
+            </div>
         </div>
     </div>
 
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span class="logo-z">Z</span>ZENTRO AI</a>
+                <p>Next-generation corporate architectures engineered to secure premium operational conversions parameters.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Ecosystem</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#demos">Sandbox Demos</a></li>
+                    <li><a href="#pricing">Pricing Matrix</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal Matrix</h4>
+                <ul>
+                    <li><a href="#">Privacy Nodes</a></li>
+                    <li><a href="#">Terms Protocol</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zentro AI Development Agency. All engineering rights protected.</p>
+            <p>Node Latency: Optimal</p>
+        </div>
+    </footer>
+
     <script>
-        // Toggle service details drawer
+        // Details expand/collapse trigger
         function toggleDetails(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.classList.toggle('active');
+            const block = document.getElementById(id);
+            if(block) {
+                block.classList.toggle('active');
             }
         }
 
-        // Demo viewport launch simulation
-        function launchDemo(demoName) {
-            document.getElementById('demoTitle').innerText = demoName + " Preview";
-            document.getElementById('demoContentName').innerText = demoName;
-            document.getElementById('demoViewport').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        // Accordion FAQ trigger
+        function toggleFaq(headerElement) {
+            const parent = headerElement.parentElement;
+            parent.classList.toggle('active');
         }
 
-        // Close demo viewport
+        // Launch Sandbox Demo simulator
+        function launchDemo(name) {
+            document.getElementById('demoContentName').innerText = name;
+            document.getElementById('demoTitle').innerText = name + " Simulator Terminal";
+            document.getElementById('demoViewport').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Sandbox Demo simulator
         function closeDemo() {
             document.getElementById('demoViewport').classList.remove('active');
-            document.body.style.overflow = 'auto'; // Enable scrolling back
+            document.body.style.overflow = 'auto';
         }
 
-        // Simple Mobile Navigation Toggle logic
+        // Mobile Menu fallback alert logic
         document.getElementById('menuToggle').addEventListener('click', function() {
-            alert('Mobile navigation matrix triggered!');
+            alert("Mobile menu system operational. Navigate using structural section links directly.");
         });
     </script>
 </body>
