@@ -3,653 +3,640 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Zentro AI Development Agency | Premium Digital Solutions">
-    <meta property="og:description" content="Expert web development, AI automations, and growth services tailored for premium enterprise scaling.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zentroai.agency">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zentro AI Development Agency">
-    <meta name="twitter:description" content="Expert web development, AI automations, and growth services.">
-
-    <title>Zentro AI Development Agency | Premium Digital Solutions</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>Zentro AI Development Agency</title>
     <style>
-        :root {
-            --bg-dark: #060913;
-            --bg-card: rgba(13, 20, 38, 0.6);
-            --bg-card-hover: rgba(20, 30, 58, 0.8);
-            --primary: #00f0ff;
-            --primary-glow: rgba(0, 240, 255, 0.3);
-            --secondary: #7000ff;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --accent-green: #10b981;
-            --font-family: 'Plus Jakarta Sans', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+            --text: #1e293b;
+            --text-light: #64748b;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-family);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: var(--text);
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Ambient Background Glows */
-        .glow-bg {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            top: -200px;
-            left: -200px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .glow-bg-right {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-            bottom: -200px;
-            right: -200px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Glassmorphism Styles */
-        .glass-panel {
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            transition: var(--transition);
-        }
-
-        .glass-panel:hover {
-            border-color: rgba(0, 240, 255, 0.3);
-            background: var(--bg-card-hover);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);
-        }
-
-        /* Typography Utilities */
-        .gradient-text {
-            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 4rem auto;
-            font-size: 1.1rem;
-        }
-
-        /* Navigation Header */
-        header {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            z-index: 100;
-            background: rgba(6, 9, 19, 0.7);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 1.4rem;
-            letter-spacing: 1px;
-            color: #fff;
-            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .logo-z {
-            color: var(--primary);
-            position: relative;
-            text-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .nav-menu {
+        .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
 
-        .nav-link {
-            color: var(--text-muted);
+        .nav-links a {
             text-decoration: none;
+            color: var(--text);
             font-weight: 500;
-            transition: var(--transition);
-            font-size: 0.95rem;
+            transition: color 0.3s;
+            cursor: pointer;
         }
 
-        .nav-link:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-toggle {
-            display: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-            gap: 8px;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            border: none;
-            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
         }
 
         /* Hero Section */
         .hero {
-            padding: 10rem 2rem 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-badge {
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-            max-width: 900px;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-        }
-
-        /* Tech Element Matrix Effect Graphic Simulation */
-        .hero-graphic-container {
-            margin-top: 4rem;
-            width: 100%;
-            max-width: 1000px;
-            height: 350px;
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: linear-gradient(180deg, rgba(13, 20, 38, 0.4) 0%, rgba(6, 9, 19, 0.8) 100%);
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 2rem;
+            overflow: hidden;
         }
 
-        .hero-mesh {
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            transform: perspective(500px) rotateX(60deg);
-            top: -20%;
-            animation: gridMove 20s linear infinite;
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
         }
 
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100%; }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            animation: slideInLeft 0.8s ease;
         }
 
-        .hero-core {
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            animation: slideInLeft 0.8s ease 0.1s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease 0.2s both;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .trust-message {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            animation: slideInLeft 0.8s ease 0.3s both;
+        }
+
+        .hero-visual {
             position: relative;
-            z-index: 2;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 50%;
-            box-shadow: 0 0 50px rgba(0, 240, 255, 0.6);
-            animation: pulse 3s ease-in-out infinite;
+            height: 400px;
+            animation: slideInRight 0.8s ease;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(0, 240, 255, 0.6); }
-            50% { transform: scale(1.1); box-shadow: 0 0 70px rgba(112, 0, 255, 0.8); }
+        .ai-sphere {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            top: 50px;
+            right: 0;
+            opacity: 0.8;
+            filter: blur(40px);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .ai-sphere-2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            bottom: 50px;
+            left: 50px;
+            opacity: 0.6;
+            filter: blur(40px);
+            animation: float 4s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         /* Services Section */
-        .section-padding {
-            padding: 8rem 2rem;
+        .services {
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
-            padding: 2.5rem;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
         }
 
-        .service-icon {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
-            font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--primary);
         }
 
         .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        /* Detail Drawers / Expandable Panels */
-        .expanded-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(6, 9, 19, 0.5);
-            border-radius: 8px;
-            margin-top: 0;
-        }
-
-        .expanded-details.active {
-            max-height: 500px;
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .details-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-        }
-
-        .details-list li {
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-main);
-        }
-
-        .details-list li i {
-            color: var(--primary);
-            font-size: 0.8rem;
-        }
-
-        /* Demos Section */
-        .demo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .demo-card {
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .demo-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .demo-thumbnail {
-            height: 200px;
-            background: linear-gradient(45deg, #111827, #1f2937);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255,255,255,0.1);
-            position: relative;
-        }
-
-        .demo-thumbnail i {
-            transition: var(--transition);
-        }
-
-        .demo-card:hover .demo-thumbnail i {
-            color: var(--primary);
-            transform: scale(1.1);
-        }
-
-        .demo-info {
-            padding: 2rem;
-        }
-
-        .demo-info h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .demo-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: var(--text-light);
             margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
-        /* Fullscreen Sub-Demo Engine */
-        .demo-viewport {
+        .learn-more-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .learn-more-btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 200;
-            background: #0b0f19;
-            display: none;
-            overflow-y: auto;
-            padding: 2rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s;
         }
 
-        .demo-viewport.active {
-            display: block;
-        }
-
-        .demo-nav-bar {
-            max-width: 1200px;
-            margin: 0 auto 2rem auto;
+        .modal.active {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* About Us & Architecture Process Cards */
-        .about-intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            align-items: center;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .about-text h3 {
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
             font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .modal ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .modal ul li {
+            padding: 0.75rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal ul li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Demo Sites Section */
+        .demo-sites {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+        }
+
+        .demo-card-header {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
             font-weight: 700;
+        }
+
+        .demo-card-body {
+            padding: 2rem;
+        }
+
+        .demo-card-body h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .demo-card-body ul {
+            list-style: none;
             margin-bottom: 1.5rem;
         }
 
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+        .demo-card-body ul li {
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
         }
 
-        .why-choose-grid {
+        .demo-card-body ul li:before {
+            content: "•";
+            color: var(--primary);
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+
+        .view-demo-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-demo-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Demo Page Styling */
+        .demo-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 3000;
+            overflow-y: auto;
+        }
+
+        .demo-page.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .demo-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .demo-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .demo-nav button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .demo-nav button:hover,
+        .demo-nav button.active {
+            background: white;
+            color: var(--primary);
+        }
+
+        .demo-page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .back-to-site-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 101;
+            transition: all 0.3s;
+        }
+
+        .back-to-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Restaurant Demo */
+        .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 6rem;
+            margin: 2rem 0;
         }
 
-        .why-card {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+        .menu-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
         }
 
-        .why-card i {
-            font-size: 1.8rem;
+        .menu-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .menu-item h4 {
             color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        /* FAQ Accordion Architecture */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .faq-item {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            background: var(--bg-card);
-            transition: var(--transition);
-        }
-
-        .faq-header {
-            padding: 1.5rem;
+        .price-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
             font-weight: 600;
-            user-select: none;
         }
 
-        .faq-header i {
-            transition: var(--transition);
-            color: var(--primary);
-        }
-
-        .faq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            background: rgba(0,0,0,0.1);
-        }
-
-        .faq-body-content {
-            padding: 1.5rem;
-        }
-
-        .faq-item.active .faq-body {
-            max-height: 200px;
-        }
-
-        .faq-item.active .faq-header i {
-            transform: rotate(180deg);
-        }
-
-        /* Pricing Architecture Matrix */
-        .pricing-grid {
+        /* Gallery */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            align-items: stretch;
+            margin: 2rem 0;
         }
 
-        .pricing-card {
-            padding: 2.5rem 1.5rem;
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            color: white;
+            min-height: 250px;
             display: flex;
             flex-direction: column;
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            text-align: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .pricing-card.popular {
-            border-color: var(--primary);
-            background: rgba(13, 20, 38, 0.8);
-            transform: scale(1.03);
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
-        .pricing-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--primary);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-
-        .pricing-card h3 {
+        .gallery-item h4 {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .price-box {
-            margin-bottom: 1.5rem;
+        .gallery-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .price-box h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .price-box span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            text-align: left;
-            flex-grow: 1;
-        }
-
-        .pricing-features li {
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pricing-features li i {
-            color: var(--primary);
-            font-size: 0.8rem;
-        }
-
-        /* Contact & Form styling */
-        .contact-form-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.02);
-            padding: 3rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
+        /* Form Styling */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -657,398 +644,1537 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-main);
+            color: var(--text);
+            font-weight: 600;
         }
 
-        .form-control {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 0.8rem 1rem;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            color: #fff;
-            font-family: var(--font-family);
-            transition: var(--transition);
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
         }
 
-        .form-control:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        /* Footer Architecture */
-        footer {
-            background: #03060d;
-            border-top: 1px solid var(--border-color);
-            padding: 4rem 2rem 2rem 2rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
+        .form-row {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        .footer-brand p {
-            color: var(--text-muted);
-            margin-top: 1rem;
-            max-width: 320px;
-            font-size: 0.9rem;
-        }
-
-        .footer-links h4 {
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
             font-size: 1rem;
-            margin-bottom: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .footer-links ul {
-            list-style: none;
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Properties Grid */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .property-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .property-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
+        .property-details {
+            padding: 1.5rem;
+        }
+
+        .property-details h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .property-location {
+            color: var(--text-light);
             font-size: 0.9rem;
-            transition: var(--transition);
+            margin-bottom: 1rem;
         }
 
-        .footer-links a:hover {
+        .property-price {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--primary);
         }
 
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
         }
 
-        @media (max-width: 968px) {
-            .hero h1 { font-size: 3rem; }
-            .about-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .nav-menu { display: none; }
-            .nav-toggle { display: block; }
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-visual {
+                height: 300px;
+            }
+
+            .ai-sphere {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-heading h2 {
+                font-size: 1.8rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .demo-nav {
+                gap: 0.5rem;
+            }
+
+            .demo-nav button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-site-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero-ctas { flex-direction: column; width: 100%; }
-            .btn { width: 100%; }
-            .contact-form-wrapper { padding: 1.5rem; }
-            .details-list { grid-template-columns: 1fr; }
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .service-card, .demo-card {
+                padding: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="glow-bg"></div>
-    <div class="glow-bg-right"></div>
-
-    <header>
+    <!-- Navigation -->
+    <nav>
         <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-z">Z</span>ZENTRO AI
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#demos" class="nav-link">Demos</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+            <div class="logo">Zentro AI</div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('services')">Services</a></li>
+                <li><a onclick="scrollToSection('demos')">Demo Sites</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="menuToggle">
-                <i class="fa-solid fa-bars"></i>
-            </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero">
-        <div class="hero-badge">Next-Generation Architecture</div>
-        <h1 class="gradient-text">Engineered Intelligence. Bespoke Digital Ecosystems.</h1>
-        <p>Zentro AI Development Agency builds high-performance corporate web structures, autonomous conversion ad funnels, and enterprise-grade system automations.</p>
-        <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary">Launch Project Inquiry <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#demos" class="btn btn-secondary">Explore Live Sub-Demos</a>
-        </div>
-        <div class="hero-graphic-container">
-            <div class="hero-mesh"></div>
-            <div class="hero-core"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Premium AI Development Solutions</h1>
+                <p>We build high-performance websites, intelligent automation systems, and data-driven marketing campaigns for businesses ready to scale.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('services')">Explore Services</button>
+                    <button class="btn-secondary" onclick="scrollToSection('contact')">Get Started</button>
+                </div>
+                <p class="trust-message">Trusted by businesses across Pakistan</p>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-sphere"></div>
+                <div class="ai-sphere-2"></div>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="section-padding">
-        <h2 class="section-title gradient-text">Our Services</h2>
-        <p class="section-subtitle">Scalable tactical technical solutions built around optimized codebases and performance frameworks.</p>
-        
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-heading">
+            <h2>Our Services</h2>
+        </div>
         <div class="services-grid">
-            <div class="service-card glass-panel">
-                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="service-card">
                 <h3>Web Development</h3>
-                <p>Enterprise core responsive applications architected for modern computational scale, fluid accessibility, and flawless rendering speed across desktop and mobile layers.</p>
-                <button class="btn btn-secondary" onclick="toggleDetails('details-web')">Learn More</button>
-                
-                <div id="details-web" class="expanded-details">
-                    <ul class="details-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Requirement analysis</li>
-                        <li><i class="fa-solid fa-circle-check"></i> UI/UX planning</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Responsive design</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Frontend development</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Backend development</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Testing</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Optimization</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Deployment</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Support</li>
-                    </ul>
-                </div>
+                <p>Custom websites and web applications built with modern technologies for optimal performance and user experience.</p>
+                <button class="learn-more-btn" onclick="openModal('web-dev')">Learn More</button>
             </div>
-
-            <div class="service-card glass-panel">
-                <div class="service-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
-                <h3>Meta Ads Generation</h3>
-                <p>Algorithmic programmatic user-acquisition frameworks. Data-backed targeted strategies optimized to lower conversion friction.</p>
-                <button class="btn btn-secondary" onclick="toggleDetails('details-meta')">Learn More</button>
-                
-                <div id="details-meta" class="expanded-details">
-                    <ul class="details-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Campaign strategy</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Audience research</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Ad creatives</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Funnel planning</li>
-                    </ul>
-                </div>
+            <div class="service-card">
+                <h3>Meta Ads Development</h3>
+                <p>Strategic Facebook and Instagram campaigns designed to reach your target audience and drive conversions.</p>
+                <button class="learn-more-btn" onclick="openModal('meta-ads')">Learn More</button>
             </div>
-
-            <div class="service-card glass-panel">
-                <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="service-card">
                 <h3>AI Bots & Automation</h3>
-                <p>Intelligent conversation and operational nodes constructed to offload manual communication layers. Automated messaging matrices designed to capture raw inbound demand.</p>
-                <button class="btn btn-secondary" onclick="toggleDetails('details-bots')">Learn More</button>
-                
-                <div id="details-bots" class="expanded-details">
-                    <ul class="details-list">
-                        <li><i class="fa-solid fa-circle-check"></i> WhatsApp Bots</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Email Bots</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Social Media Bots</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Business Automation</li>
-                    </ul>
+                <p>Intelligent automation systems including WhatsApp bots, email automation, and workflow optimization.</p>
+                <button class="learn-more-btn" onclick="openModal('ai-bots')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <h3>SEO Growth</h3>
+                <p>Comprehensive SEO strategies to increase your search visibility and organic traffic.</p>
+                <button class="learn-more-btn" onclick="openModal('seo')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <h3>Problem Solving</h3>
+                <p>Technical consultation, maintenance, bug fixing, and performance improvements for your digital assets.</p>
+                <button class="learn-more-btn" onclick="openModal('problem-solving')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modals -->
+    <div class="modal" id="web-dev-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('web-dev-modal')">×</button>
+            <h3>Web Development</h3>
+            <p>Our comprehensive web development process ensures quality results:</p>
+            <ul>
+                <li>Planning & Strategy</li>
+                <li>Market & Competitor Research</li>
+                <li>Wireframing & Information Architecture</li>
+                <li>UI Design</li>
+                <li>UX Design & Testing</li>
+                <li>Frontend Development</li>
+                <li>Backend Development</li>
+                <li>Quality Assurance & Testing</li>
+                <li>Performance Optimization</li>
+                <li>Deployment</li>
+                <li>Ongoing Maintenance & Support</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="meta-ads-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('meta-ads-modal')">×</button>
+            <h3>Meta Ads Development</h3>
+            <p>Strategic approach to Facebook and Instagram advertising:</p>
+            <ul>
+                <li>Audience Research & Segmentation</li>
+                <li>Ad Creative Design & Copywriting</li>
+                <li>Campaign Structure & Setup</li>
+                <li>Conversion Tracking Implementation</li>
+                <li>Continuous A/B Testing</li>
+                <li>Lead Generation Optimization</li>
+                <li>Performance Monitoring & Reporting</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="ai-bots-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('ai-bots-modal')">×</button>
+            <h3>AI Bots & Automation</h3>
+            <p>Intelligent systems to streamline your business operations:</p>
+            <ul>
+                <li>WhatsApp Business Bots</li>
+                <li>Email Automation Systems</li>
+                <li>Social Media Automation</li>
+                <li>Business Process Automation</li>
+                <li>Lead Capture Automation</li>
+                <li>Customer Support Automation</li>
+                <li>Workflow Automation & Integration</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="seo-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('seo-modal')">×</button>
+            <h3>SEO Growth</h3>
+            <p>Complete SEO strategy to boost your online presence:</p>
+            <ul>
+                <li>Technical SEO Audit & Implementation</li>
+                <li>On-Page SEO Optimization</li>
+                <li>Keyword Research & Strategy</li>
+                <li>Content Creation & Optimization</li>
+                <li>Website Performance Optimization</li>
+                <li>Search Visibility Enhancement</li>
+                <li>Monthly Reporting & Analysis</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="problem-solving-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('problem-solving-modal')">×</button>
+            <h3>Problem Solving</h3>
+            <p>Technical expertise to maintain and improve your digital presence:</p>
+            <ul>
+                <li>Website Maintenance Services</li>
+                <li>Bug Fixing & Debugging</li>
+                <li>Technical Consultation</li>
+                <li>Performance Improvements</li>
+                <li>Growth Suggestions</li>
+                <li>Free Technical Advice</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Demo Sites Section -->
+    <section class="demo-sites" id="demos">
+        <div class="demo-container">
+            <div class="section-heading">
+                <h2>Demo Sites</h2>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <div class="demo-card-header">🍽️ Restaurant</div>
+                    <div class="demo-card-body">
+                        <h3>Restaurant Platform</h3>
+                        <ul>
+                            <li>Menu Management</li>
+                            <li>Food Gallery</li>
+                            <li>Online Reservations</li>
+                            <li>Location Details</li>
+                            <li>Contact Information</li>
+                        </ul>
+                        <button class="view-demo-btn" onclick="showDemo('restaurant')">View Demo</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-header">🏠 Real Estate</div>
+                    <div class="demo-card-body">
+                        <h3>Real Estate Platform</h3>
+                        <ul>
+                            <li>Property Listings</li>
+                            <li>Advanced Filters</li>
+                            <li>Property Details</li>
+                            <li>Location Maps</li>
+                            <li>Contact Agents</li>
+                        </ul>
+                        <button class="view-demo-btn" onclick="showDemo('realestate')">View Demo</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-header">🎓 School</div>
+                    <div class="demo-card-body">
+                        <h3>School Management</h3>
+                        <ul>
+                            <li>Academics Info</li>
+                            <li>Faculty Directory</li>
+                            <li>Student Gallery</li>
+                            <li>Online Admissions</li>
+                            <li>Contact Details</li>
+                        </ul>
+                        <button class="view-demo-btn" onclick="showDemo('school')">View Demo</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-header">🏢 Corporate</div>
+                    <div class="demo-card-body">
+                        <h3>Corporate Portal</h3>
+                        <ul>
+                            <li>About Company</li>
+                            <li>Services Overview</li>
+                            <li>Team Directory</li>
+                            <li>Portfolio Projects</li>
+                            <li>Client Inquiries</li>
+                        </ul>
+                        <button class="view-demo-btn" onclick="showDemo('corporate')">View Demo</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-card-header">💼 Healthcare</div>
+                    <div class="demo-card-body">
+                        <h3>Healthcare Clinic</h3>
+                        <ul>
+                            <li>Doctor Profiles</li>
+                            <li>Services Available</li>
+                            <li>Appointment Booking</li>
+                            <li>Patient Resources</li>
+                            <li>Contact & Hours</li>
+                        </ul>
+                        <button class="view-demo-btn" onclick="showDemo('healthcare')">View Demo</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="demos" class="section-padding">
-        <h2 class="section-title gradient-text">Demo Sites</h2>
-        <p class="section-subtitle">Examine fully-realized mock-production structural models built inside the sandbox platform environment.</p>
-
-        <div class="demo-grid">
-            <div class="demo-card">
-                <div class="demo-thumbnail"><i class="fa-solid fa-utensils"></i></div>
-                <div class="demo-info">
-                    <h3>Restaurant Infrastructure</h3>
-                    <p>Complete multi-cuisine reservation portal, comprehensive adaptive asset menus, and data gathering arrays.</p>
-                    <button class="btn btn-primary" onclick="launchDemo('Restaurant Ecosystem')">View Demo</button>
-                </div>
-            </div>
-
-            <div class="demo-card">
-                <div class="demo-thumbnail"><i class="fa-solid fa-building"></i></div>
-                <div class="demo-info">
-                    <h3>Real Estate Portal</h3>
-                    <p>Dynamic commercial catalog displaying multi-variable parametric property filtering components.</p>
-                    <button class="btn btn-primary" onclick="launchDemo('Real Estate Directory')">View Demo</button>
-                </div>
+    <!-- Restaurant Demo Page -->
+    <div class="demo-page" id="restaurant-demo">
+        <button class="back-to-site-btn" onclick="closeDemo('restaurant')">← Back to Site</button>
+        <div class="demo-header">
+            <h1>Zentro Restaurant Demo</h1>
+            <div class="demo-nav">
+                <button class="active" onclick="showRestaurantPage('home')">Home</button>
+                <button onclick="showRestaurantPage('menu')">Menu</button>
+                <button onclick="showRestaurantPage('gallery')">Gallery</button>
+                <button onclick="showRestaurantPage('reservation')">Reservation</button>
+                <button onclick="showRestaurantPage('location')">Location</button>
+                <button onclick="showRestaurantPage('contact')">Contact</button>
             </div>
         </div>
-    </section>
 
-    <section id="about" class="section-padding">
-        <div class="about-intro-grid">
-            <div class="about-text">
-                <h3 class="gradient-text">Who We Are</h3>
-                <p>We are structural designers pushing digital execution targets. We do not do standard landing templates. We deploy technical node operations built to respond flawlessly.</p>
-                <p>Every pixel and connection query is optimized from the foundation layer up to secure performance authority.</p>
+        <div class="demo-page-content">
+            <!-- Restaurant Home -->
+            <div id="restaurant-home" class="restaurant-page active">
+                <h2>Welcome to Zentro Restaurant</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Experience authentic culinary delights with our diverse menu featuring Pakistani, Chinese, Italian, and French cuisines. Our expert chefs prepare every dish with precision and passion.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Reserve your table today and enjoy an unforgettable dining experience in a modern, comfortable atmosphere.</p>
             </div>
-            <div class="why-choose-grid">
-                <div class="why-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h4>Elite Speed</h4>
-                    <p>Sub-millisecond query responses and optimized assets loading layout structures.</p>
+
+            <!-- Restaurant Menu -->
+            <div id="restaurant-menu" class="restaurant-page" style="display: none;">
+                <h2>Our Menu</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h4>Biryani</h4>
+                        <p>Traditional Pakistani rice dish with spiced meat</p>
+                        <div class="price-row">
+                            <span>Half: 500 PKR</span>
+                            <span>Full: 900 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Karahi</h4>
+                        <p>Tender meat cooked with tomatoes and spices</p>
+                        <div class="price-row">
+                            <span>Half: 450 PKR</span>
+                            <span>Full: 800 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Nihari</h4>
+                        <p>Slow-cooked meat stew with aromatic spices</p>
+                        <div class="price-row">
+                            <span>Half: 400 PKR</span>
+                            <span>Full: 700 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Kebab</h4>
+                        <p>Grilled meat kebabs with fresh herbs</p>
+                        <div class="price-row">
+                            <span>Half: 350 PKR</span>
+                            <span>Full: 650 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Tandoori Chicken</h4>
+                        <p>Spiced chicken roasted in clay oven</p>
+                        <div class="price-row">
+                            <span>Half: 380 PKR</span>
+                            <span>Full: 700 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Tikka Masala</h4>
+                        <p>Marinated chicken in creamy tomato sauce</p>
+                        <div class="price-row">
+                            <span>Half: 420 PKR</span>
+                            <span>Full: 800 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Fried Rice (Pakistani)</h4>
+                        <p>Fragrant rice with vegetables and meat</p>
+                        <div class="price-row">
+                            <span>Regular: 300 PKR</span>
+                            <span>Large: 500 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Chow Mein</h4>
+                        <p>Chinese noodles with meat and vegetables</p>
+                        <div class="price-row">
+                            <span>Regular: 280 PKR</span>
+                            <span>Large: 480 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Kung Pao Chicken</h4>
+                        <p>Diced chicken with peanuts in spicy sauce</p>
+                        <div class="price-row">
+                            <span>Half: 400 PKR</span>
+                            <span>Full: 750 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Sweet & Sour Pork</h4>
+                        <p>Tender pork with sweet and tangy sauce</p>
+                        <div class="price-row">
+                            <span>Half: 420 PKR</span>
+                            <span>Full: 800 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Creamy pasta with bacon and parmesan</p>
+                        <div class="price-row">
+                            <span>Regular: 350 PKR</span>
+                            <span>Large: 600 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Risotto</h4>
+                        <p>Creamy Italian rice with mushrooms</p>
+                        <div class="price-row">
+                            <span>Regular: 380 PKR</span>
+                            <span>Large: 650 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Coq au Vin</h4>
+                        <p>Chicken braised in red wine</p>
+                        <div class="price-row">
+                            <span>Half: 480 PKR</span>
+                            <span>Full: 900 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Beef Bourguignon</h4>
+                        <p>Tender beef in rich wine sauce</p>
+                        <div class="price-row">
+                            <span>Half: 520 PKR</span>
+                            <span>Full: 950 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Burger</h4>
+                        <p>Juicy beef patty with fresh toppings</p>
+                        <div class="price-row">
+                            <span>Single: 250 PKR</span>
+                            <span>Double: 450 PKR</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Chicken Wings</h4>
+                        <p>Crispy fried wings with garlic sauce</p>
+                        <div class="price-row">
+                            <span>6 pcs: 200 PKR</span>
+                            <span>12 pcs: 380 PKR</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="why-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h4>Node Security</h4>
-                    <p>Data protection mechanisms hardened against runtime leakage risks.</p>
+            </div>
+
+            <!-- Restaurant Gallery -->
+            <div id="restaurant-gallery" class="restaurant-page" style="display: none;">
+                <h2>Food Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <h4>Biryani</h4>
+                        <p>Pakistan's favorite rice dish</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Karahi</h4>
+                        <p>Popular across South Asia</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Nihari</h4>
+                        <p>Traditional breakfast favorite</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Kebab</h4>
+                        <p>Grilled to perfection</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Tandoori Chicken</h4>
+                        <p>Authentic Indian preparation</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Tikka Masala</h4>
+                        <p>Loved worldwide</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Kung Pao Chicken</h4>
+                        <p>Classic Chinese cuisine</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Chow Mein</h4>
+                        <p>Chinese favorite</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Spaghetti Carbonara</h4>
+                        <p>Italian classic</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Risotto</h4>
+                        <p>Creamy and delicious</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Coq au Vin</h4>
+                        <p>French specialty</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Beef Bourguignon</h4>
+                        <p>Traditional French dish</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Burger</h4>
+                        <p>Fast food favorite</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Pizza</h4>
+                        <p>Italian favorite</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Wings</h4>
+                        <p>Crispy and tasty</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Soup</h4>
+                        <p>Warm and comforting</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Salad</h4>
+                        <p>Fresh and healthy</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Dessert</h4>
+                        <p>Sweet ending</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="pricing" class="section-padding">
-        <h2 class="section-title gradient-text">Strategic Investment Matrix</h2>
-        <p class="section-subtitle">Transparent engineering cycles scoped out cleanly to back premium enterprise growth modules.</p>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Startup Core</h3>
-                <div class="price-box"><h2>$1,499</h2><span>One-time investment</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> Basic Core Web Architecture</li>
-                    <li><i class="fa-solid fa-check"></i> Performance Deployment Node</li>
-                    <li><i class="fa-solid fa-check"></i> Standard Contact Capture Form</li>
-                </ul>
-                <a href="#contact" class="btn btn-secondary">Initialize Node</a>
+            <!-- Restaurant Reservation -->
+            <div id="restaurant-reservation" class="restaurant-page" style="display: none;">
+                <h2>Make a Reservation</h2>
+                <form onsubmit="handleReservation(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Number of Guests</label>
+                            <input type="number" min="1" max="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Time</label>
+                            <input type="time" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Meal Type</label>
+                            <select required>
+                                <option>Breakfast</option>
+                                <option>Lunch</option>
+                                <option>Dinner</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Group Type</label>
+                            <select required>
+                                <option>Family</option>
+                                <option>Boys Group</option>
+                                <option>Girls Group</option>
+                                <option>Couple</option>
+                                <option>Solo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Reserve Table</button>
+                </form>
             </div>
 
-            <div class="pricing-card popular">
-                <div class="pricing-badge">Most Requested</div>
-                <h3>Enterprise Scale</h3>
-                <div class="price-box"><h2>$3,899</h2><span>One-time investment</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> Full Multi-Layer Web Structure</li>
-                    <li><i class="fa-solid fa-check"></i> Dedicated Conversions Funnel</li>
-                    <li><i class="fa-solid fa-check"></i> Integrated AI Automation Bot</li>
-                    <li><i class="fa-solid fa-check"></i> Priority Architecture Consults</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary">Initialize Node</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section-padding">
-        <h2 class="section-title gradient-text">Frequently Asked Queries</h2>
-        <p class="section-subtitle">Clear technical breakdowns outlining structural setup parameters and processing routines.</p>
-        
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-header" onclick="toggleFaq(this)">What core frameworks power your code setups? <i class="fa-solid fa-chevron-down"></i></div>
-                <div class="faq-body"><div class="faq-body-content">We architect setups utilizing vanilla performance structures alongside modern server-less endpoints to maintain lightning-fast response times.</div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header" onclick="toggleFaq(this)">How long does the average delivery sequence consume? <i class="fa-solid fa-chevron-down"></i></div>
-                <div class="faq-body"><div class="faq-body-content">Standard deployment cycles clear within 14 to 28 system development cycles depending entirely on active component tracking pipelines.</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding">
-        <h2 class="section-title gradient-text">Initialize Project Query</h2>
-        <p class="section-subtitle">Secure systemic alignment. Feed parameters directly into our evaluation terminal below.</p>
-        
-        <div class="contact-form-wrapper">
-            <form onsubmit="event.preventDefault(); alert('Transmission Successful. Processing Core Inquiry Node...');">
-                <div class="form-group">
-                    <label>Inquiry Node Label (Full Name)</label>
-                    <input type="text" class="form-control" required placeholder="John Doe">
+            <!-- Restaurant Location -->
+            <div id="restaurant-location" class="restaurant-page" style="display: none;">
+                <h2>Our Location</h2>
+                <div class="contact-info">
+                    <h3>📍 Zentro Restaurant</h3>
+                    <p><strong>Shop 45, Restaurant Plaza</strong></p>
+                    <p><strong>Main Street, Demo City</strong></p>
+                    <p style="margin-top: 1rem; opacity: 0.9;">Located in the heart of the city with easy parking and accessible entrance.</p>
                 </div>
-                <div class="form-group">
-                    <label>Transmission Path (Email Endpoint)</label>
-                    <input type="email" class="form-control" required placeholder="john@enterprise.com">
-                </div>
-                <div class="form-group">
-                    <label>Project Scope Parameters</label>
-                    <textarea class="form-control" rows="5" required placeholder="Describe system demands, timeline caps, and structural requirements..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit System Inquiry</button>
-            </form>
-        </div>
-    </section>
+            </div>
 
-    <!-- Fullscreen Sandbox Environment Portal Simulator -->
-    <div id="demoViewport" class="demo-viewport">
-        <div class="demo-nav-bar">
-            <h2 id="demoTitle" style="color: #fff; font-weight: 800;">Demo Viewport</h2>
-            <button class="btn btn-secondary" onclick="closeDemo()">Close Sandbox Simulator</button>
-        </div>
-        <div style="max-width: 800px; margin: 6rem auto; text-align: center; padding: 2rem;">
-            <i class="fa-solid fa-microchip" style="font-size: 4rem; color: var(--primary); margin-bottom: 2rem;"></i>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Active Sub-Demo: <span id="demoContentName" style="color: var(--primary);"></span></h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">This sandbox rendering portal has simulated a live architecture sequence successfully. All component nodes are fully optimized.</p>
-            <div class="glass-panel" style="padding: 2rem; text-align: left; border-color: var(--primary-glow);">
-                <p style="font-family: monospace; color: var(--accent-green);"><i class="fa-solid fa-terminal"></i> Status: Ready_To_Deploy</p>
-                <p style="font-family: monospace; margin-top: 0.5rem;"><i class="fa-solid fa-angle-right"></i> Listening on port: 8080</p>
-                <p style="font-family: monospace; margin-top: 0.5rem;"><i class="fa-solid fa-angle-right"></i> Connection protocol optimized...</p>
+            <!-- Restaurant Contact -->
+            <div id="restaurant-contact" class="restaurant-page" style="display: none;">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+923001234567">+92 300 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>WhatsApp:</strong>
+                        <a href="https://wa.me/923001234567">+92 300 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:info@restaurantdemo.com">info@restaurantdemo.com</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo"><span class="logo-z">Z</span>ZENTRO AI</a>
-                <p>Next-generation corporate architectures engineered to secure premium operational conversions parameters.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Ecosystem</h4>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#demos">Sandbox Demos</a></li>
-                    <li><a href="#pricing">Pricing Matrix</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Legal Matrix</h4>
-                <ul>
-                    <li><a href="#">Privacy Nodes</a></li>
-                    <li><a href="#">Terms Protocol</a></li>
-                </ul>
+    <!-- Real Estate Demo Page -->
+    <div class="demo-page" id="realestate-demo">
+        <button class="back-to-site-btn" onclick="closeDemo('realestate')">← Back to Site</button>
+        <div class="demo-header">
+            <h1>Zentro Real Estate Demo</h1>
+            <div class="demo-nav">
+                <button class="active" onclick="showRealEstatePage('home')">Home</button>
+                <button onclick="showRealEstatePage('properties')">Properties</button>
+                <button onclick="showRealEstatePage('services')">Services</button>
+                <button onclick="showRealEstatePage('about')">About</button>
+                <button onclick="showRealEstatePage('contact')">Contact</button>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Zentro AI Development Agency. All engineering rights protected.</p>
-            <p>Node Latency: Optimal</p>
+
+        <div class="demo-page-content">
+            <!-- Real Estate Home -->
+            <div id="realestate-home" class="realestate-page active">
+                <h2>Find Your Dream Property</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro Real Estate, your trusted partner in finding the perfect property. We offer a comprehensive selection of residential and commercial properties in the most desirable locations.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Browse our exclusive listings and discover properties tailored to your lifestyle and investment goals.</p>
+            </div>
+
+            <!-- Real Estate Properties -->
+            <div id="realestate-properties" class="realestate-page" style="display: none;">
+                <h2>Our Properties</h2>
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <div class="property-image">🏡</div>
+                        <div class="property-details">
+                            <h4>Modern Apartment</h4>
+                            <p class="property-location">Downtown, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 2 Bath | 1000 Sq Ft</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏠</div>
+                        <div class="property-details">
+                            <h4>Family House</h4>
+                            <p class="property-location">Suburban Area, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">3 Bed | 2 Bath | 1500 Sq Ft</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏢</div>
+                        <div class="property-details">
+                            <h4>Commercial Space</h4>
+                            <p class="property-location">Business District, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">4000 Sq Ft | Ground Floor | Corner Plot</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏡</div>
+                        <div class="property-details">
+                            <h4>Luxury Villa</h4>
+                            <p class="property-location">Prime Location, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">5 Bed | 4 Bath | 3000 Sq Ft</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏢</div>
+                        <div class="property-details">
+                            <h4>Office Building</h4>
+                            <p class="property-location">Tech Park, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">6 Floors | 2000 Sq Ft each | Modern Amenities</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏠</div>
+                        <div class="property-details">
+                            <h4>Starter Home</h4>
+                            <p class="property-location">Affordable Area, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 1 Bath | 800 Sq Ft</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏡</div>
+                        <div class="property-details">
+                            <h4>Garden House</h4>
+                            <p class="property-location">Residential District, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">4 Bed | 3 Bath | 2500 Sq Ft</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏢</div>
+                        <div class="property-details">
+                            <h4>Retail Space</h4>
+                            <p class="property-location">Shopping Center, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2000 Sq Ft | High Traffic Area | Ready to Lease</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏠</div>
+                        <div class="property-details">
+                            <h4>Penthouse</h4>
+                            <p class="property-location">City Center, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">3 Bed | 3 Bath | 2000 Sq Ft | Rooftop</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏡</div>
+                        <div class="property-details">
+                            <h4>Cottage</h4>
+                            <p class="property-location">Rural Area, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">2 Bed | 1 Bath | 600 Sq Ft | Peaceful Setting</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏢</div>
+                        <div class="property-details">
+                            <h4>Industrial Lot</h4>
+                            <p class="property-location">Industrial Zone, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">50,000 Sq Ft | Open Space | Loading Access</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-image">🏠</div>
+                        <div class="property-details">
+                            <h4>Studio Apartment</h4>
+                            <p class="property-location">Urban Center, Demo City</p>
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin-bottom: 1rem;">1 Bed | 1 Bath | 500 Sq Ft | Furnished</p>
+                            <div class="property-price">****$</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Estate Services -->
+            <div id="realestate-services" class="realestate-page" style="display: none;">
+                <h2>Our Services</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Buy Properties</h3>
+                        <p style="color: var(--text-light);">Find and purchase your ideal property from our extensive listings.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Sell Properties</h3>
+                        <p style="color: var(--text-light);">List your property and connect with qualified buyers quickly.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Rent Properties</h3>
+                        <p style="color: var(--text-light);">Explore rental options across residential and commercial segments.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Investment Advice</h3>
+                        <p style="color: var(--text-light);">Get expert guidance on real estate investment opportunities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Estate About -->
+            <div id="realestate-about" class="realestate-page" style="display: none;">
+                <h2>About Zentro Real Estate</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">With over a decade of experience in the real estate industry, Zentro Real Estate is committed to providing exceptional service and helping clients achieve their property goals.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Our team of experienced professionals understands the market and is dedicated to finding the perfect property match for every client.</p>
+            </div>
+
+            <!-- Real Estate Contact -->
+            <div id="realestate-contact" class="realestate-page" style="display: none;">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+923101234567">+92 310 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>WhatsApp:</strong>
+                        <a href="https://wa.me/923101234567">+92 310 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:sales@realestatedemo.com">sales@realestatedemo.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Office:</strong>
+                        <span>Suite 100, Business Tower, Demo City</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- School Demo Page -->
+    <div class="demo-page" id="school-demo">
+        <button class="back-to-site-btn" onclick="closeDemo('school')">← Back to Site</button>
+        <div class="demo-header">
+            <h1>Zentro System of Education</h1>
+            <div class="demo-nav">
+                <button class="active" onclick="showSchoolPage('home')">Home</button>
+                <button onclick="showSchoolPage('academics')">Academics</button>
+                <button onclick="showSchoolPage('facilities')">Facilities</button>
+                <button onclick="showSchoolPage('faculty')">Faculty</button>
+                <button onclick="showSchoolPage('admissions')">Admissions</button>
+                <button onclick="showSchoolPage('gallery')">Gallery</button>
+                <button onclick="showSchoolPage('contact')">Contact</button>
+            </div>
+        </div>
+
+        <div class="demo-page-content">
+            <!-- School Home -->
+            <div id="school-home" class="school-page active">
+                <h2>Zentro System of Education</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro, where we nurture bright minds and foster excellence. Our institution is committed to providing quality education that develops students into responsible and capable individuals.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">With modern facilities, experienced faculty, and student-centered approaches, we create an environment conducive to holistic development.</p>
+            </div>
+
+            <!-- School Academics -->
+            <div id="school-academics" class="school-page" style="display: none;">
+                <h2>Academics</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Primary Section</h3>
+                        <p style="color: var(--text-light);">Classes 1-5 with foundational curriculum</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Secondary Section</h3>
+                        <p style="color: var(--text-light);">Classes 6-8 with comprehensive subjects</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Higher Secondary</h3>
+                        <p style="color: var(--text-light);">Classes 9-12 with advanced studies</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Facilities -->
+            <div id="school-facilities" class="school-page" style="display: none;">
+                <h2>Our Facilities</h2>
+                <ul style="list-style: none; margin-top: 2rem;">
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Modern Classrooms</strong> - Equipped with interactive boards and comfortable seating
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Computer Labs</strong> - State-of-the-art technology and software
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Science Labs</strong> - Well-equipped for practical experiments
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Library</strong> - Extensive collection of books and digital resources
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Sports Ground</strong> - Facilities for multiple sports activities
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Cafeteria</strong> - Nutritious meals in a hygienic environment
+                    </li>
+                </ul>
+            </div>
+
+            <!-- School Faculty -->
+            <div id="school-faculty" class="school-page" style="display: none;">
+                <h2>Faculty Members</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Dr. Ahmed Khan</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Principal</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Ms. Fatima Ali</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">English Teacher</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Mr. Hassan Raza</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Mathematics Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Admissions -->
+            <div id="school-admissions" class="school-page" style="display: none;">
+                <h2>Admissions Form</h2>
+                <form onsubmit="handleAdmission(event)" style="max-width: 600px; margin-top: 2rem;">
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Class Applying For</label>
+                            <select required>
+                                <option>Class 1</option>
+                                <option>Class 2</option>
+                                <option>Class 3</option>
+                                <option>Class 4</option>
+                                <option>Class 5</option>
+                                <option>Class 6</option>
+                                <option>Class 7</option>
+                                <option>Class 8</option>
+                                <option>Class 9</option>
+                                <option>Class 10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Father's Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+
+            <!-- School Gallery -->
+            <div id="school-gallery" class="school-page" style="display: none;">
+                <h2>School Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <h4>Classroom</h4>
+                        <p>Modern learning space</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Science Lab</h4>
+                        <p>Practical experiments</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Computer Lab</h4>
+                        <p>Technology center</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Library</h4>
+                        <p>Knowledge resource</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Sports Ground</h4>
+                        <p>Physical activities</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h4>Assembly Hall</h4>
+                        <p>School gatherings</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Contact -->
+            <div id="school-contact" class="school-page" style="display: none;">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+923211234567">+92 321 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>WhatsApp:</strong>
+                        <a href="https://wa.me/923211234567">+92 321 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:admin@schooldemo.edu">admin@schooldemo.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address:</strong>
+                        <span>Education Complex, Demo City</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Corporate Demo Page -->
+    <div class="demo-page" id="corporate-demo">
+        <button class="back-to-site-btn" onclick="closeDemo('corporate')">← Back to Site</button>
+        <div class="demo-header">
+            <h1>Zentro Corporate Solutions</h1>
+            <div class="demo-nav">
+                <button class="active" onclick="showCorporatePage('home')">Home</button>
+                <button onclick="showCorporatePage('services')">Services</button>
+                <button onclick="showCorporatePage('team')">Team</button>
+                <button onclick="showCorporatePage('portfolio')">Portfolio</button>
+                <button onclick="showCorporatePage('contact')">Contact</button>
+            </div>
+        </div>
+
+        <div class="demo-page-content">
+            <!-- Corporate Home -->
+            <div id="corporate-home" class="corporate-page active">
+                <h2>Zentro Corporate Solutions</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">We are a leading corporate consulting firm dedicated to helping businesses achieve operational excellence and sustainable growth.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Our expert team provides strategic solutions tailored to your unique business challenges.</p>
+            </div>
+
+            <!-- Corporate Services -->
+            <div id="corporate-services" class="corporate-page" style="display: none;">
+                <h2>Our Services</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary);">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Business Strategy</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Strategic planning and implementation</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--secondary);">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Process Optimization</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Efficiency improvement initiatives</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--accent);">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Digital Transformation</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Technology integration solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Team -->
+            <div id="corporate-team" class="corporate-page" style="display: none;">
+                <h2>Our Team</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Muhammad Khan</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Chief Executive Officer</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Ayesha Ahmed</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Chief Operating Officer</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Imran Ali</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Head of Strategy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Portfolio -->
+            <div id="corporate-portfolio" class="corporate-page" style="display: none;">
+                <h2>Our Portfolio</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Alpha</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Enterprise solution implementation</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Beta</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Process automation project</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0;">
+                        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Project Gamma</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Digital transformation initiative</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Contact -->
+            <div id="corporate-contact" class="corporate-page" style="display: none;">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+923331234567">+92 333 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:info@corporatedemo.com">info@corporatedemo.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address:</strong>
+                        <span>Corporate Tower, Business District, Demo City</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Healthcare Demo Page -->
+    <div class="demo-page" id="healthcare-demo">
+        <button class="back-to-site-btn" onclick="closeDemo('healthcare')">← Back to Site</button>
+        <div class="demo-header">
+            <h1>Zentro Healthcare Clinic</h1>
+            <div class="demo-nav">
+                <button class="active" onclick="showHealthcarePage('home')">Home</button>
+                <button onclick="showHealthcarePage('doctors')">Doctors</button>
+                <button onclick="showHealthcarePage('services')">Services</button>
+                <button onclick="showHealthcarePage('appointment')">Appointments</button>
+                <button onclick="showHealthcarePage('contact')">Contact</button>
+            </div>
+        </div>
+
+        <div class="demo-page-content">
+            <!-- Healthcare Home -->
+            <div id="healthcare-home" class="healthcare-page active">
+                <h2>Zentro Healthcare Clinic</h2>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">Welcome to Zentro Healthcare, where we prioritize your health and wellbeing. Our clinic provides comprehensive medical services with a team of experienced doctors and modern facilities.</p>
+                <p style="color: var(--text-light); margin: 1rem 0; line-height: 1.8;">We are committed to delivering quality healthcare with compassion and professionalism.</p>
+            </div>
+
+            <!-- Healthcare Doctors -->
+            <div id="healthcare-doctors" class="healthcare-page" style="display: none;">
+                <h2>Our Doctors</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Dr. Sarah Khan</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">General Practitioner</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Dr. Ahmed Ali</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Cardiologist</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid #e2e8f0; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 1rem;"></div>
+                        <h3 style="color: var(--primary);">Dr. Fatima Hassan</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Pediatrician</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthcare Services -->
+            <div id="healthcare-services" class="healthcare-page" style="display: none;">
+                <h2>Our Services</h2>
+                <ul style="list-style: none; margin-top: 2rem;">
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">General Consultation</strong> - Regular checkups and health advice
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Cardiac Care</strong> - Heart health services and treatment
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Pediatric Care</strong> - Children's health and development
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Laboratory Tests</strong> - Comprehensive diagnostic services
+                    </li>
+                    <li style="padding: 1rem; background: white; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                        <strong style="color: var(--primary);">Vaccinations</strong> - Immunization programs
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Healthcare Appointment -->
+            <div id="healthcare-appointment" class="healthcare-page" style="display: none;">
+                <h2>Book Appointment</h2>
+                <form onsubmit="handleAppointment(event)" style="max-width: 600px; margin-top: 2rem;">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Doctor</label>
+                            <select required>
+                                <option>Dr. Sarah Khan (GP)</option>
+                                <option>Dr. Ahmed Ali (Cardiologist)</option>
+                                <option>Dr. Fatima Hassan (Pediatrician)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Appointment Date</label>
+                            <input type="date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Time</label>
+                        <input type="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Symptoms/Reason</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                </form>
+            </div>
+
+            <!-- Healthcare Contact -->
+            <div id="healthcare-contact" class="healthcare-page" style="display: none;">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>📞 Get In Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+923441234567">+92 344 1234567</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Emergency:</strong>
+                        <a href="tel:+923441234568">+92 344 1234568</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:info@healthcaredemo.com">info@healthcaredemo.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Hours:</strong>
+                        <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section (Main Site) -->
+    <section style="padding: 4rem 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center;" id="contact">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Let's discuss how we can help your business grow and succeed in the digital world.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:info@zentroai.com" style="background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Email Us</a>
+                <a href="https://wa.me/923001234567" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s; border: 2px solid white;" onmouseover="this.style.background='white'; this.style.color='var(--primary)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'">WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Details expand/collapse trigger
-        function toggleDetails(id) {
-            const block = document.getElementById(id);
-            if(block) {
-                block.classList.toggle('active');
+        // Service Modal Functions
+        function openModal(serviceType) {
+            const modalMap = {
+                'web-dev': 'web-dev-modal',
+                'meta-ads': 'meta-ads-modal',
+                'ai-bots': 'ai-bots-modal',
+                'seo': 'seo-modal',
+                'problem-solving': 'problem-solving-modal'
+            };
+            const modal = document.getElementById(modalMap[serviceType]);
+            if (modal) {
+                modal.classList.add('active');
             }
         }
 
-        // Accordion FAQ trigger
-        function toggleFaq(headerElement) {
-            const parent = headerElement.parentElement;
-            parent.classList.toggle('active');
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
         }
 
-        // Launch Sandbox Demo simulator
-        function launchDemo(name) {
-            document.getElementById('demoContentName').innerText = name;
-            document.getElementById('demoTitle').innerText = name + " Simulator Terminal";
-            document.getElementById('demoViewport').classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Demo Site Functions
+        function showDemo(demoType) {
+            const demoMap = {
+                'restaurant': 'restaurant-demo',
+                'realestate': 'realestate-demo',
+                'school': 'school-demo',
+                'corporate': 'corporate-demo',
+                'healthcare': 'healthcare-demo'
+            };
+            const demo = document.getElementById(demoMap[demoType]);
+            if (demo) {
+                demo.classList.add('active');
+            }
         }
 
-        // Close Sandbox Demo simulator
-        function closeDemo() {
-            document.getElementById('demoViewport').classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function closeDemo(demoType) {
+            const demoMap = {
+                'restaurant': 'restaurant-demo',
+                'realestate': 'realestate-demo',
+                'school': 'school-demo',
+                'corporate': 'corporate-demo',
+                'healthcare': 'healthcare-demo'
+            };
+            const demo = document.getElementById(demoMap[demoType]);
+            if (demo) {
+                demo.classList.remove('active');
+            }
         }
 
-        // Mobile Menu fallback alert logic
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            alert("Mobile menu system operational. Navigate using structural section links directly.");
-        });
+        function showRestaurantPage(page) {
+            const pages = document.querySelectorAll('.restaurant-page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(`restaurant-${page}`).style.display = 'block';
+            updateDemoNav(page);
+        }
+
+        function showRealEstatePage(page) {
+            const pages = document.querySelectorAll('.realestate-page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(`realestate-${page}`).style.display = 'block';
+            updateDemoNav(page);
+        }
+
+        function showSchoolPage(page) {
+            const pages = document.querySelectorAll('.school-page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(`school-${page}`).style.display = 'block';
+            updateDemoNav(page);
+        }
+
+        function showCorporatePage(page) {
+            const pages = document.querySelectorAll('.corporate-page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(`corporate-${page}`).style.display = 'block';
+            updateDemoNav(page);
+        }
+
+        function showHealthcarePage(page) {
+            const pages = document.querySelectorAll('.healthcare-page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(`healthcare-${page}`).style.display = 'block';
+            updateDemoNav(page);
+        }
+
+        function updateDemoNav(page) {
+            const buttons = document.querySelectorAll('.demo-nav button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(page)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Form Handlers
+        function handleReservation(event) {
+            event.preventDefault();
+            alert('Thank you for your reservation! We will contact you shortly to confirm.');
+            event.target.reset();
+        }
+
+        function handleAdmission(event) {
+            event.preventDefault();
+            alert('Thank you for submitting your application! We will review it and contact you soon.');
+            event.target.reset();
+        }
+
+        function handleAppointment(event) {
+            event.preventDefault();
+            alert('Your appointment has been booked! We will send a confirmation via SMS and email.');
+            event.target.reset();
+        }
+
+        // Smooth Scroll
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Close modals on outside click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
     </script>
 </body>
 </html>
