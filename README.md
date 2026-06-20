@@ -1,2 +1,2 @@
-# Zentro-AI-Agency
-AI Agency Website for Automation, Chatbots and AI Solutions
+# Younex-AI-Agency
+AI Development Agency for Automation, Web Development, meta ads development, Chatbots and AI Solutions
